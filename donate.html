@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -8,18 +7,9 @@
   <meta name="description" content="Support Sarvam Educational Trust's initiatives through your generous donations">
   <meta name="keywords" content="donate, charity, education, NGO, Sarvam, Namakkal">
 
-  <!-- Favicons -->
   <link href="https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg" rel="icon">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   
   <style>
@@ -167,11 +157,16 @@
       color: #0d6efd;
     }
     .upi-section {
-      margin-top: 1rem;
-      padding: 1rem;
+      margin: 1rem 0;
+      padding: 1.5rem;
       background: #f8f9fa;
       border-radius: 8px;
       text-align: center;
+      transition: all 0.3s ease;
+    }
+    .upi-section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .upi-id {
       font-size: 1.2rem;
@@ -186,6 +181,11 @@
       border-radius: 8px;
       padding: 10px;
       background: white;
+      transition: all 0.3s ease;
+    }
+    .qr-code:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .social-links a {
       display: inline-block;
@@ -212,20 +212,25 @@
       font-weight: bold;
       color: #0d6efd;
     }
+    .campaign-dates {
+      background: #f0f7ff;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      text-align: center;
+    }
+    .campaign-dates p {
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 
 <body class="donate-page">
-
   <main class="main">
-
-    <!-- Donation Section -->
     <section id="donation" class="donation section py-5">
       <div class="container">
-
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
             <div class="donation-header">
               <img src="https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg" alt="Sarvam Educational Trust" style="max-width: 150px; margin-bottom: 1rem;">
               <h2>SARVAM EDUCATIONAL TRUST</h2>
@@ -233,7 +238,22 @@
               <p>Your donation makes a real difference in people's lives</p>
             </div>
 
-            <!-- Impact Statistics -->
+            <div class="upi-section">
+              <h4>Scan to Donate via UPI</h4>
+              <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=sarvamtrust@upi&pn=Sarvam%20Educational%20Trust&am=&cu=INR" alt="UPI QR Code" class="img-fluid">
+              </div>
+              <div class="upi-id">sarvamtrust@upi</div>
+              <button class="btn btn-outline-primary mt-2" onclick="copyUpiId()">
+                <i class="bi bi-clipboard"></i> Copy UPI ID
+              </button>
+            </div>
+
+            <div class="campaign-dates">
+              <p><strong>Campaign starts on</strong><br>01 April 2025</p>
+              <p><strong>Campaign ends on</strong><br>30 June 2025</p>
+            </div>
+
             <div class="impact-stats">
               <div class="stat-item">
                 <div class="stat-number">500+</div>
@@ -251,101 +271,30 @@
 
             <div class="donation-cause">
               <h4>Select Donation Cause</h4>
-              
-              <div class="row">
+              <div class="form-group">
+                <select class="form-control" id="donationCause" name="cause">
+                  <option value="Student College Tuition Fees">Student College Tuition Fees</option>
+                  <option value="Womens Free Training">Women's Free Training</option>
+                  <option value="Student College Exam Fees">Student College Exam Fees</option>
+                  <option value="Poor Children free providing kits">Poor Children Free Kits</option>
+                </select>
+              </div>
+              <div class="row mt-4">
                 <div class="col-md-6 mb-3">
-                  <div class="cause-option interactive-card" data-cause="education">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Education" class="cause-image">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="cause" id="education" value="Student College Tuition Fees" checked>
-                      <label class="form-check-label" for="education">
-                        Student College Tuition Fees
-                      </label>
-                    </div>
-                  </div>
+                  <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Education" class="cause-image img-fluid">
                 </div>
-                
                 <div class="col-md-6 mb-3">
-                  <div class="cause-option interactive-card" data-cause="women">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Women Empowerment" class="cause-image">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="cause" id="women" value="Womens Free Training">
-                      <label class="form-check-label" for="women">
-                        Women's Free Training
-                      </label>
-                    </div>
-                  </div>
+                  <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Women Empowerment" class="cause-image img-fluid">
                 </div>
-                
                 <div class="col-md-6 mb-3">
-                  <div class="cause-option interactive-card" data-cause="exam">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Exam Fees" class="cause-image">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="cause" id="exam" value="Student College Exam Fees">
-                      <label class="form-check-label" for="exam">
-                        Student College Exam Fees
-                      </label>
-                    </div>
-                  </div>
+                  <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Exam Fees" class="cause-image img-fluid">
                 </div>
-                
                 <div class="col-md-6 mb-3">
-                  <div class="cause-option interactive-card" data-cause="kits">
-                    <img src="https://images.unsplash.com/photo-1575425186775-b8de9a427e67?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Student Kits" class="cause-image">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="cause" id="kits" value="Poor Children free providing kits">
-                      <label class="form-check-label" for="kits">
-                        Poor Children Free Kits
-                      </label>
-                    </div>
-                  </div>
+                  <img src="https://images.unsplash.com/photo-1575425186775-b8de9a427e67?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Student Kits" class="cause-image img-fluid">
                 </div>
               </div>
             </div>
-
-            <div class="campaign-info">
-              <div class="row">
-                <div class="col-md-6">
-                  <p><strong>Campaign starts on</strong><br>01 April 2025</p>
-                  <p><strong>Campaign ends on</strong><br>30 June 2025</p>
-                </div>
-                <div class="col-md-6">
-                  <p><strong>Organiser details</strong><br>Sarvam Educational Trust, Namakkal</p>
-                  <p><strong>Tax exemption details</strong><br>Donors will get Tax exemption under 80G</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- UPI Payment Section -->
-            <div class="payment-details mb-4">
-              <h4>Direct UPI Payment</h4>
-              <div class="upi-section">
-                <p>Scan this QR code or use the UPI ID below to pay directly</p>
-                <div class="qr-code">
-                  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=sarvamtrust@upi&pn=Sarvam%20Educational%20Trust&am=&cu=INR" alt="UPI QR Code" class="img-fluid">
-                </div>
-                <div class="upi-id">sarvamtrust@upi</div>
-                <button class="btn btn-outline-primary mt-2" onclick="copyUpiId()">
-                  <i class="bi bi-clipboard"></i> Copy UPI ID
-                </button>
-              </div>
-            </div>
-
-            <div id="paymentSuccess" class="payment-success">
-              <i class="bi bi-check-circle-fill" style="font-size: 3rem; color: #28a745;"></i>
-              <h3>Payment Successful!</h3>
-              <p>Thank you for your generous donation. A receipt has been sent to your email.</p>
-              <button class="btn btn-outline-success mt-3" onclick="window.location.href='index.html'">Return to Home</button>
-            </div>
-
-            <div id="paymentProcessing" class="payment-processing">
-              <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-              <h4 class="mt-3">Processing your payment...</h4>
-              <p>Please wait while we connect to the payment gateway</p>
-            </div>
-
+            
             <div class="payment-details">
               <h4>Online Payment Details</h4>
               <form id="donateForm">
@@ -392,10 +341,25 @@
               </form>
             </div>
 
+            <div id="paymentSuccess" class="payment-success">
+              <i class="bi bi-check-circle-fill" style="font-size: 3rem; color: #28a745;"></i>
+              <h3>Payment Successful!</h3>
+              <p>Thank you for your generous donation. A receipt has been sent to your email.</p>
+              <button class="btn btn-outline-success mt-3" onclick="window.location.href='index.html'">Return to Home</button>
+            </div>
+
+            <div id="paymentProcessing" class="payment-processing">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <h4 class="mt-3">Processing your payment...</h4>
+              <p>Please wait while we connect to the payment gateway</p>
+            </div>
+
             <div class="share-section">
               <h5>Share this cause:</h5>
               <div class="social-links">
-                <a href="https://twitter.com/intent/tweet?text=Support%20Sarvam%20Educational%20Trust%20through%20your%20donation&url=https://rzp.io/l/kowjz06m" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="https://twitter.com/intent/tweet?text=Support%20Sarvam%20Educational%20Trust%20through%20your%20donation&url=https://rzp.io/l/kowjz06m" class="twitter" target="_blank"><i class="bi bi-x"></i></a>
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://rzp.io/l/kowjz06m" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
                 <a href="https://wa.me/?text=Support%20Sarvam%20Educational%20Trust%20through%20your%20donation%20https://rzp.io/l/kowjz06m" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
                 <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://rzp.io/l/kowjz06m&title=Donate%20to%20Sarvam%20Educational%20Trust&summary=Support%20education%20and%20women%20empowerment%20initiatives" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -417,32 +381,22 @@
                 <p class="small mt-2">Secure payment processing by Razorpay</p>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
-    </section><!-- /Donation Section -->
-
+    </section>
   </main>
 
-  <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Razorpay Integration -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   
   <script>
-    // Initialize animations
     document.addEventListener('DOMContentLoaded', function() {
-      // Animate elements on scroll
       const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.donation-header, .impact-stats, .donation-cause, .campaign-info, .payment-details, .share-section, .contact-info, .terms-conditions');
-        
+        const elements = document.querySelectorAll('.donation-header, .impact-stats, .donation-cause, .payment-details, .share-section, .contact-info, .terms-conditions');
         elements.forEach(element => {
           const elementPosition = element.getBoundingClientRect().top;
           const windowHeight = window.innerHeight;
-          
           if (elementPosition < windowHeight - 100) {
             element.style.opacity = '1';
             element.style.transform = 'translateY(0)';
@@ -450,161 +404,90 @@
         });
       };
       
-      // Set initial styles for animation
-      const animatedElements = document.querySelectorAll('.donation-header, .impact-stats, .donation-cause, .campaign-info, .payment-details, .share-section, .contact-info, .terms-conditions');
+      const animatedElements = document.querySelectorAll('.donation-header, .impact-stats, .donation-cause, .payment-details, .share-section, .contact-info, .terms-conditions');
       animatedElements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'all 0.6s ease-out';
       });
       
-      // Trigger initial animation
       setTimeout(animateOnScroll, 300);
-      
-      // Add scroll event listener
       window.addEventListener('scroll', animateOnScroll);
-    });
 
-    // Get cause from URL parameter if exists
-    const urlParams = new URLSearchParams(window.location.search);
-    const causeParam = urlParams.get('cause');
-    if (causeParam) {
-      const causeElement = document.querySelector(`.cause-option[data-cause="${causeParam}"] input`);
-      if (causeElement) {
-        causeElement.checked = true;
-      }
-    }
-
-    // Update payment button amount
-    document.getElementById('amount').addEventListener('input', function() {
-      const amount = this.value || '0';
-      document.getElementById('payAmount').textContent = `Pay ₹ ${amount}.00`;
-    });
-
-    // Amount button click handler
-    document.querySelectorAll('.amount-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        document.getElementById('amount').value = this.getAttribute('data-amount');
-        document.getElementById('payAmount').textContent = `Pay ₹ ${this.getAttribute('data-amount')}.00`;
-      });
-    });
-
-    // Cause option hover effect
-    document.querySelectorAll('.cause-option').forEach(option => {
-      option.addEventListener('mouseenter', function() {
-        this.querySelector('input').checked = true;
-      });
-    });
-
-    // Copy UPI ID to clipboard
-    function copyUpiId() {
-      const upiId = 'sarvamtrust@upi';
-      navigator.clipboard.writeText(upiId).then(() => {
-        alert('UPI ID copied to clipboard: ' + upiId);
-      }).catch(err => {
-        console.error('Failed to copy UPI ID: ', err);
-        // Fallback for older browsers
-        const tempInput = document.createElement('input');
-        tempInput.value = upiId;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-        alert('UPI ID copied to clipboard: ' + upiId);
-      });
-    }
-
-    // Form submission handler with Razorpay integration
-    document.getElementById('donateForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const amount = document.getElementById('amount').value * 100; // Convert to paise
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const pan = document.getElementById('pan').value;
-      const cause = document.querySelector('input[name="cause"]:checked').value;
-      const paymentMethod = document.getElementById('paymentMethod').value;
-      
-      if (!amount || amount < 10000) { // Minimum ₹100
-        alert('Please enter a valid amount (minimum ₹100)');
-        return;
+      const urlParams = new URLSearchParams(window.location.search);
+      const causeParam = urlParams.get('cause');
+      if (causeParam) {
+        const causeElement = document.querySelector(`.cause-option[data-cause="${causeParam}"] input`);
+        if (causeElement) {
+          causeElement.checked = true;
+        }
       }
 
-      // Show processing animation
-      document.getElementById('paymentProcessing').style.display = 'block';
-      document.querySelector('.payment-details').style.opacity = '0.5';
-      document.querySelector('.payment-details').style.pointerEvents = 'none';
+      document.getElementById('amount').addEventListener('input', function() {
+        const amount = this.value || '0';
+        document.getElementById('payAmount').textContent = `Pay ₹ ${amount}.00`;
+      });
 
-      // Using the Razorpay payment link from the original code
-      const razorpayPaymentLink = 'https://rzp.io/l/kowjz06m';
-      
-      // In a real implementation, you would make an AJAX call to your server here
-      // to create a Razorpay order. This is a simplified version:
-      
-      // For demo purposes, we'll redirect to the Razorpay payment link
-      // In a production environment, you would use the Razorpay Checkout integration
-      setTimeout(() => {
-        // Redirect to Razorpay payment page with prefilled data
-        window.location.href = `${razorpayPaymentLink}?amount=${amount}&prefill[name]=${encodeURIComponent(name)}&prefill[email]=${encodeURIComponent(email)}&prefill[contact]=${encodeURIComponent(phone)}&notes[pan]=${encodeURIComponent(pan)}&notes[cause]=${encodeURIComponent(cause)}`;
-        
-        // In a real implementation, you would use the Razorpay Checkout modal instead of redirecting
-        // The following code shows how you would implement the modal approach:
-        /*
-        const options = {
-          key: 'rzp_live_YOUR_RAZORPAY_KEY', // Replace with your Razorpay key
-          amount: amount,
-          currency: 'INR',
-          name: 'Sarvam Educational Trust',
-          description: cause,
-          image: 'https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg',
-          order_id: 'order_' + Math.random().toString(36).substr(2, 9), // In real app, get from server
-          handler: function(response) {
-            // Hide processing, show success
-            document.getElementById('paymentProcessing').style.display = 'none';
-            document.getElementById('paymentSuccess').style.display = 'block';
-            document.querySelector('.payment-details').style.display = 'none';
-            
-            // In a real app, you would verify the payment signature with your server
-            console.log('Payment successful:', response);
-          },
-          prefill: {
-            name: name,
-            email: email,
-            contact: phone
-          },
-          notes: {
-            address: 'Sarvam Educational Trust, Namakkal',
-            pan: pan,
-            cause: cause
-          },
-          theme: {
-            color: '#0d6efd'
-          }
-        };
-        
-        const rzp = new Razorpay(options);
-        rzp.open();
-        
-        rzp.on('payment.failed', function(response) {
-          document.getElementById('paymentProcessing').style.display = 'none';
-          document.querySelector('.payment-details').style.opacity = '1';
-          document.querySelector('.payment-details').style.pointerEvents = 'auto';
-          alert('Payment failed. Please try again.');
-          console.error('Payment failed:', response.error);
+      document.querySelectorAll('.amount-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          document.getElementById('amount').value = this.getAttribute('data-amount');
+          document.getElementById('payAmount').textContent = `Pay ₹ ${this.getAttribute('data-amount')}.00`;
         });
-        */
-      }, 1500); // Simulate network delay
+      });
+
+      document.querySelectorAll('.cause-option').forEach(option => {
+        option.addEventListener('mouseenter', function() {
+          this.querySelector('input').checked = true;
+        });
+      });
+
+      function copyUpiId() {
+        const upiId = 'sarvamtrust@upi';
+        navigator.clipboard.writeText(upiId).then(() => {
+          alert('UPI ID copied to clipboard: ' + upiId);
+        }).catch(err => {
+          console.error('Failed to copy UPI ID: ', err);
+          const tempInput = document.createElement('input');
+          tempInput.value = upiId;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          alert('UPI ID copied to clipboard: ' + upiId);
+        });
+      }
+
+      document.getElementById('donateForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const amount = document.getElementById('amount').value * 100;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const pan = document.getElementById('pan').value;
+        const cause = document.querySelector('input[name="cause"]:checked').value;
+        const paymentMethod = document.getElementById('paymentMethod').value;
+        
+        if (!amount || amount < 10000) {
+          alert('Please enter a valid amount (minimum ₹100)');
+          return;
+        }
+
+        document.getElementById('paymentProcessing').style.display = 'block';
+        document.querySelector('.payment-details').style.opacity = '0.5';
+        document.querySelector('.payment-details').style.pointerEvents = 'none';
+
+        const razorpayPaymentLink = 'https://rzp.io/l/kowjz06m';
+        setTimeout(() => {
+          window.location.href = `${razorpayPaymentLink}?amount=${amount}&prefill[name]=${encodeURIComponent(name)}&prefill[email]=${encodeURIComponent(email)}&prefill[contact]=${encodeURIComponent(phone)}&notes[pan]=${encodeURIComponent(pan)}&notes[cause]=${encodeURIComponent(cause)}`;
+        }, 1500);
+      });
+
+      if (window.opener) {
+        document.getElementById('amount').focus();
+      }
     });
-
-    // For the "Donate" button on home page that opens this in new window
-    if (window.opener) {
-      // If opened from another page, focus on amount field
-      document.getElementById('amount').focus();
-    }
   </script>
-
 </body>
 </html>
