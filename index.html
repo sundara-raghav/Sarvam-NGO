@@ -2411,7 +2411,7 @@
 
           <div class="col-lg-6">
 
-            <form action="forms/contact.php" method="post" class="php-email-form form-animate" data-aos="fade-left"
+            <!-- <form action="forms/contact.php" method="post" class="php-email-form form-animate" data-aos="fade-left"
               data-aos-delay="200">
 
               <div class="row gy-4">
@@ -2508,8 +2508,368 @@
 
               </div>
 
+            </form> -->
+             <!-- <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="51f6e9fd-0ee8-4442-89eb-1e4378cc2cb1">
+              <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html">
+            
+            
+              <div class="row gy-4">
+            
+                <div class="col-md-6">
+                  <div class="form-group floating-label">
+                    <input type="text" name="name" class="form-control" id="name" required>
+                    <label for="name">Your Name</label>
+                    <div class="focus-line"></div>
+                  </div>
+                </div>
+            
+                <div class="col-md-6">
+                  <div class="form-group floating-label">
+                    <input type="email" class="form-control" name="email" id="email" required>
+                    <label for="email">Your Email</label>
+                    <div class="focus-line"></div>
+                  </div>
+                </div>
+            
+                <div class="col-12">
+                  <div class="form-group floating-label">
+                    <input type="text" class="form-control" name="subject" id="subject" required>
+                    <label for="subject">Subject</label>
+                    <div class="focus-line"></div>
+                  </div>
+                </div>
+            
+                <div class="col-12">
+                  <div class="form-group floating-label">
+                    <textarea class="form-control" name="message" id="message" rows="6" required></textarea>
+                    <label for="message">Your Message</label>
+                    <div class="focus-line"></div>
+                  </div>
+                </div>
+            
+                <div class="col-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+            
+                  <button type="submit" class="btn-magnetic">
+                    <span class="btn-text">Send Message</span>
+                    <span class="btn-icon"><i class="bi bi-send-fill"></i></span>
+                    <span class="magnetic-area"></span>
+                  </button>
+                </div>
+            
+              </div>
+            </form> -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="51f6e9fd-0ee8-4442-89eb-1e4378cc2cb1">
+              
+              <!-- Your Form Fields -->
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <div class="form-group floating-label">
+                    <input type="text" name="name" class="form-control" id="name" required>
+                    <label for="name">Your Name</label>
+                    <div class="focus-line"></div>
+                  </div>
+                </div>
+          
+                <div class="col-md-6">
+                  <div class="form-group floating-label">
+                    <input type="email" class="form-control" name="email" id="email" required>
+                    <label for="email">Your Email</label>
+                    <div class="focus-line"></div>
+                  </div>
+                </div>
+          
+                <div class="col-12">
+                  <div class="form-group floating-label">
+                    <input type="text" class="form-control" name="subject" id="subject" required>
+                    <label for="subject">Subject</label>
+                    <div class="focus-line"></div>
+                  </div>
+                </div>
+          
+                <div class="col-12">
+                  <div class="form-group floating-label">
+                    <textarea class="form-control" name="message" id="message" rows="6" required></textarea>
+                    <label for="message">Your Message</label>
+                    <div class="focus-line"></div>
+                  </div>
+                </div>
+          
+                <div class="col-12 text-center">
+                  <div class="loading">Loading...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+          
+                  <button type="submit" class="btn-magnetic">
+                    <span class="btn-text">Send Message</span>
+                    <span class="btn-icon"><i class="bi bi-send-fill"></i></span>
+                    <span class="magnetic-area"></span>
+                  </button>
+                </div>
+              </div>
             </form>
+          
+            <!-- <script>
+              const form = document.querySelector("form");
+              const loading = document.querySelector(".loading");
+              const errorMessage = document.querySelector(".error-message");
+              const sentMessage = document.querySelector(".sent-message");
+          
+              form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission (no redirect)
+          
+                loading.style.display = "block";
+                errorMessage.style.display = "none";
+                sentMessage.style.display = "none";
+          
+                const formData = new FormData(form);
+          
+                fetch("https://api.web3forms.com/submit", {
+                  method: "POST",
+                  body: formData,
+                  headers: {
+                    "Accept": "application/json"
+                  }
+                }).then(response => {
+                  loading.style.display = "none";
+                  if (response.ok) {
+                    sentMessage.style.display = "block";
+                    form.reset();
+                  } else {
+                    response.json().then(data => {
+                      errorMessage.textContent = data.message || "Something went wrong.";
+                      errorMessage.style.display = "block";
+                    });
+                  }
+                }).catch(() => {
+                  loading.style.display = "none";
+                  errorMessage.textContent = "Network error. Please try again.";
+                  errorMessage.style.display = "block";
+                });
+              });
+            </script> -->
+              <!-- The Modal for Success Popup -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Your message has been sent. Thank you!</h2>
+    </div>
+  </div>
+  <style>
+    /* Animation Styles */
+    .title-animate {
+      animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
 
+    .subtitle-animate {
+      animation: fade-in 1.2s ease-in-out both;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes text-focus-in {
+      0% {
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Form Styles */
+    .form-animate {
+      animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @keyframes slide-in-right {
+      0% {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .floating-label {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .floating-label label {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      color: #999;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .floating-label input:focus~label,
+    .floating-label input:valid~label,
+    .floating-label textarea:focus~label,
+    .floating-label textarea:valid~label {
+      top: -10px;
+      left: 10px;
+      font-size: 12px;
+      background: white;
+      padding: 0 5px;
+      color: #4e54c8;
+    }
+
+    .focus-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+      transition: width 0.4s ease;
+    }
+
+    .floating-label input:focus~.focus-line,
+    .floating-label textarea:focus~.focus-line {
+      width: 100%;
+    }
+
+    /* Button Styles */
+    .btn-magnetic {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+    }
+
+    .btn-magnetic:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(78, 84, 200, 0.6);
+    }
+
+    .btn-magnetic .btn-icon {
+      margin-left: 10px;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .btn-magnetic:hover .btn-icon {
+      transform: translateX(5px);
+    }
+
+    .magnetic-area {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    /* Status Messages */
+    .loading,
+    .error-message,
+    .sent-message {
+      display: none;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+
+    .loading {
+      color: #4e54c8;
+    }
+
+    .error-message {
+      color: #dc3545;
+      background: #f8d7da;
+    }
+
+    .sent-message {
+      color: #28a745;
+      background: #d4edda;
+    }
+  </style>
+  
+  <script>
+    const form = document.querySelector("form");
+    const loading = document.querySelector(".loading");
+    const errorMessage = document.querySelector(".error-message");
+
+    // Modal elements
+    const modal = document.getElementById("successModal");
+    const closeModal = document.querySelector(".close");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission (no redirect)
+
+      loading.style.display = "block";
+      errorMessage.style.display = "none";
+
+      const formData = new FormData(form);
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json"
+        }
+      }).then(response => {
+        loading.style.display = "none";
+        if (response.ok) {
+          modal.style.display = "block"; // Show the success popup
+          form.reset();
+        } else {
+          response.json().then(data => {
+            errorMessage.textContent = data.message || "Something went wrong.";
+            errorMessage.style.display = "block";
+          });
+        }
+      }).catch(() => {
+        loading.style.display = "none";
+        errorMessage.textContent = "Network error. Please try again.";
+        errorMessage.style.display = "block";
+      });
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    closeModal.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside the modal, close it
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
           </div><!-- End Contact Form -->
 
 
