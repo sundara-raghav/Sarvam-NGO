@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -105,6 +105,442 @@
       padding-bottom: 10px;
       border-bottom: 2px solid #eee;
     }
+
+    /* Ultra Transparent Glassy Navbar Appearance */
+    .header {
+      background: rgba(255, 255, 255, 0.3); /* Ultra transparent background */
+      backdrop-filter: blur(20px) saturate(200%); /* Stronger blur and saturation */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
+      transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease; /* Smooth transitions */
+    }
+
+    .header.sticky-top {
+      background: rgba(255, 255, 255, 0.5); /* Slightly more opaque when sticky */
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35); /* Enhanced shadow when sticky */
+    }
+
+    .navmenu a {
+      color: #111; /* Darker text for better contrast */
+      font-weight: 600; /* Slightly bolder text */
+      transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth color and shadow transition */
+    }
+
+    .navmenu a:hover {
+      color: #0d6efd; /* Highlight color on hover */
+      text-shadow: 0 3px 6px rgba(13, 110, 253, 0.6); /* Glow effect */
+    }
+
+    /* Custom Cursor */
+    body {
+      cursor: none;
+    }
+
+    .cursor-dot {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: #148aea;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor-follower {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background: rgba(20, 138, 234, 0.2);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+    }
+
+    /* Enhanced Custom Cursor with Hover States */
+    .cursor-dot {
+      background: #ff6f61;
+      transition: background 0.3s ease;
+    }
+
+    .cursor-follower {
+      background: rgba(255, 111, 97, 0.2);
+      transition: transform 0.1s ease-out, background 0.3s ease;
+    }
+
+    /* Change cursor on hover for interactive elements */
+    button:hover ~ .cursor-dot,
+    a:hover ~ .cursor-dot {
+      background: #6a11cb;
+    }
+
+    button:hover ~ .cursor-follower,
+    a:hover ~ .cursor-follower {
+      background: rgba(106, 17, 203, 0.2);
+      transform: scale(1.5);
+    }
+
+    /* Animations */
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .floating-element {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Removed Zooming Effect on Cards */
+    .card:hover {
+      transform: none; /* Removed scaling */
+      transition: none;
+    }
+
+    .card-content {
+      transform: none; /* Removed depth */
+      transition: none;
+    }
+
+    .cta-button {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Scroll-triggered animations */
+    [data-aos] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-aos].aos-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Gradient Color Scheme */
+    :root {
+      --primary-gradient: linear-gradient(45deg, #148aea, #6a11cb);
+    }
+
+    .cta-button {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(45deg, #6a11cb, #148aea);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-gradient);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Additional Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Apply Animations */
+    .page-title {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .service-card {
+      animation: slideInFromLeft 1s ease-in-out;
+    }
+
+    .service-card:nth-child(even) {
+      animation: slideInFromRight 1s ease-in-out;
+    }
+
+    .cta-button {
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-top {
+      animation: zoomIn 0.5s ease-in-out;
+    }
+
+    /* Floating Elements */
+    .floating-element {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Hover Effects */
+    .card:hover {
+      animation: zoomIn 0.3s ease-in-out;
+    }
+
+    .filter-btn:hover {
+      animation: bounce 0.5s;
+    }
+
+    /* Micro-interactions: Button Hover Effects */
+    .button-hover {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #148aea;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .button-hover:hover {
+      transform: scale(1.1);
+      background: #0d6efd;
+    }
+
+    /* Micro-interactions: Card Flip Animation */
+    .card-flip {
+      perspective: 1000px;
+    }
+
+    .card-flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .card-flip:hover .card-flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-flip-front,
+    .card-flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card-flip-back {
+      transform: rotateY(180deg);
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      padding: 20px;
+    }
+
+    /* Parallax Scrolling Effects */
+    .parallax-section {
+      position: relative;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .parallax-section h2 {
+      font-size: 3rem;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animated Gradient Background */
+    .animated-gradient {
+      background: linear-gradient(45deg, #148aea, #6a11cb, #ff6f61);
+      background-size: 300% 300%;
+      animation: gradientAnimation 6s ease infinite;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Impact Stats: Animated Counters and Progress Bars */
+    .stats-section {
+      background: #f9f9ff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4e54c8;
+    }
+
+    .stat-item span {
+      display: block;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .progress-bar-container {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .progress-bar {
+      background: #e0e0e0;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      width: 100%;
+    }
+
+    .progress-bar-fill {
+      background: linear-gradient(45deg, #148aea, #6a11cb);
+      height: 100%;
+      width: 0;
+      transition: width 1.5s ease;
+    }
+
+    /* 3D Hover Effects on Cards */
+    .service-card {
+      perspective: 1000px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-content {
+      transform: translateZ(50px);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .card-content {
+      transform: translateZ(70px);
+    }
+
+    /* Particle.js Background */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Completely Remove Zooming Effect on Cards */
+    .service-card:hover {
+      transform: none !important; /* Ensure no scaling */
+      box-shadow: none !important; /* Remove hover shadow */
+      transition: none !important; /* Disable transition */
+    }
+
+    .card-content {
+      transform: none !important; /* Ensure no depth */
+      transition: none !important; /* Disable transition */
+    }
   </style>
 </head>
 
@@ -150,7 +586,7 @@
   <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
+    <!-- <div class="page-title" data-aos="fade">
       <div class="heading">
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
@@ -170,8 +606,24 @@
           </ol>
         </div>
       </nav>
-    </div><!-- End Page Title -->
+    </div>End Page Title -->
 
+    <!-- Particle.js Background -->
+    <div id="particles-js"></div>
+
+    <!-- Parallax Section -->
+    <section class="parallax-section" style="background-image: url('assets/img/hero-bg.jpg');">
+      <h2>Transforming Lives, One Step at a Time</h2>
+    </section>
+
+    <!-- Animated Gradient Section -->
+    <section class="animated-gradient">
+      <h2>Join Us in Making a Difference</h2>
+      <p>Your support helps us transform lives and build a better future.</p>
+    </section>
+
+    <!-- Navigation Section -->
+    
 
     <!-- Service Details Section -->
     <section id="service-details" class="service-details">
@@ -728,699 +1180,214 @@
           });
         });
       });
+
+      // Custom Cursor System
+      const cursorDot = document.createElement('div');
+      cursorDot.classList.add('cursor-dot');
+      document.body.appendChild(cursorDot);
+
+      const cursorFollower = document.createElement('div');
+      cursorFollower.classList.add('cursor-follower');
+      document.body.appendChild(cursorFollower);
+
+      window.addEventListener('mousemove', (e) => {
+        cursorDot.style.left = `${e.clientX}px`;
+        cursorDot.style.top = `${e.clientY}px`;
+
+        cursorFollower.style.left = `${e.clientX}px`;
+        cursorFollower.style.top = `${e.clientY}px`;
+      });
+
+      // Scroll-triggered animations
+      AOS.init({
+        duration: 1200, // Animation duration in milliseconds
+        offset: 100, // Offset (in pixels) from the original trigger point
+        once: true, // Whether animation should happen only once
+      });
+
+      // Add hover effect for buttons dynamically
+      const buttons = document.querySelectorAll('.button-hover');
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+          button.style.transform = 'scale(1.1)';
+        });
+        button.addEventListener('mouseleave', () => {
+          button.style.transform = 'scale(1)';
+        });
+      });
+
+      // Animated Counters
+      const counters = document.querySelectorAll('.stat-item');
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = target / 200;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 10);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+
+      // Initialize Particle.js
+      particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: "#ffffff"
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000"
+            },
+            polygon: {
+              nb_sides: 5
+            }
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false
+            }
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false
+            }
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200
+            }
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse"
+            },
+            onclick: {
+              enable: true,
+              mode: "push"
+            },
+            resize: true
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1
+              }
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4
+            },
+            push: {
+              particles_nb: 4
+            },
+            remove: {
+              particles_nb: 2
+            }
+          }
+        },
+        retina_detect: true
+      });
+    </script>
+
+    <script>
+      // Smooth scrolling for service navigation
+      const serviceLinks = document.querySelectorAll('.services-list a');
+
+      serviceLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          // Remove active class from all links
+          serviceLinks.forEach(link => link.classList.remove('active'));
+
+          // Add active class to the clicked link
+          this.classList.add('active');
+
+          // Scroll to the target section
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100, // Adjust offset for sticky header
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    </script>
+
+    <script>
+      // Ensure correct filter is applied based on URL hash for all filters
+      window.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash;
+        if (hash) {
+          const targetFilter = hash.replace('#', '').toLowerCase();
+          const filterButton = document.querySelector(`.filter-btn[data-filter="${targetFilter}"]`);
+
+          if (filterButton) {
+            // Simulate a click on the corresponding filter button
+            filterButton.click();
+          }
+        }
+      });
     </script>
   </main>
 
 
-  <footer id="footer" class="footer position-relative light-background">
-
-
-
-    <!-- Floating Background Elements -->
-
-    <div class="footer-bg-elements">
-
-      <div class="bg-circle circle-1"></div>
-
-      <div class="bg-circle circle-2"></div>
-
-      <div class="bg-circle circle-3"></div>
-
-      <div class="bg-wave wave-1"></div>
-
-      <div class="bg-wave wave-2"></div>
-
-    </div>
-
-
-
-    <div class="container footer-top">
-
-      <div class="row gy-4">
-
-        <div class="col-lg-5 col-md-12 footer-about" data-aos="fade-up" data-aos-delay="100">
-
-          <a href="index.html" class="logo d-flex align-items-center logo-animate">
-
-            <span class="sitename">Sarvam Educational Trust</span>
-
-            <div class="logo-underline"></div>
-
-          </a>
-
-          <p class="footer-description">Empowering communities through social welfare initiatives. Join us in our
-            mission to create a better future for all.</p>
-
-          <div class="social-links d-flex mt-4">
-
-            <a href="#" class="social-icon twitter"><i class="bi bi-twitter-x"></i></a>
-
-            <a href="#" class="social-icon facebook"><i class="bi bi-facebook"></i></a>
-
-            <a href="#" class="social-icon instagram"><i class="bi bi-instagram"></i></a>
-
-            <a href="#" class="social-icon linkedin"><i class="bi bi-linkedin"></i></a>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-
-          <h4 class="footer-heading">Quick Links</h4>
-
-          <ul>
-
-            <li><a href="index.html#hero" class="nav-link hover-underline"><span>Home</span></a></li>
-
-            <li><a href="index.html#about" class="nav-link hover-underline"><span>About</span></a></li>
-
-            <li><a href="index.html#portfolio" class="nav-link hover-underline"><span>Works</span></a></li>
-
-            <li><a href="blog.html" class="nav-link hover-underline"><span>Blog</span></a></li>
-
-            <li><a href="index.html#contact" class="nav-link hover-underline"><span>Contact</span></a></li>
-
-          </ul>
-
-        </div>
-
-
-
-        <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-
-          <h4 class="footer-heading">Legal</h4>
-
-          <ul>
-
-            <li><a href="terms-conditon.html" class="nav-link hover-underline"><span>Terms and Conditions</span></a>
-            </li>
-
-            <li><a href="privacy.html" class="nav-link hover-underline"><span>Privacy Policy</span></a></li>
-
-          </ul>
-
-        </div>
-
-
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start" data-aos="fade-up"
-          data-aos-delay="400">
-
-          <h4 class="footer-heading">Contact Us</h4>
-
-          <div class="contact-info">
-
-            <p><i class="bi bi-geo-alt-fill contact-icon"></i> No: 17/2016, Park Street,</p>
-
-            <p>Aanjaneya Complex, 1st Floor,</p>
-
-            <p>Namakkal, Tamil Nadu 637001</p>
-
-            <p class="mt-4"><i class="bi bi-telephone-fill contact-icon"></i> <span>+91-99526 48847</span></p>
-
-            <p><i class="bi bi-envelope-fill contact-icon"></i> <span>sarvamngo19@gmail.com</span></p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-    <div class="container copyright text-center mt-4" data-aos="fade-up" data-aos-delay="500">
-
-      <p class="copyright-text">© <span>Copyright</span> <strong class="sitename pulse">Sarvam Educational
-          Trust</strong> <span>All Rights Reserved</span></p>
-
-      <div class="credits">
-
-        Designed by <a href="https://skyspheretech.com/" class="designer-link">SkySphere Technologies</a>
-
-      </div>
-
-    </div>
-
-
-
-  </footer>
-
-
-
-  <style>
-    /* Base Footer Styles */
-
-    .footer {
-
-      position: relative;
-
-      overflow: hidden;
-
-      padding: 80px 0 40px;
-
-      background: #f9f9f9;
-
-      z-index: 1;
-
-    }
-
-
-
-    /* Background Elements */
-
-    .footer-bg-elements {
-
-      position: absolute;
-
-      width: 100%;
-
-      height: 100%;
-
-      top: 0;
-
-      left: 0;
-
-      z-index: -1;
-
-      overflow: hidden;
-
-    }
-
-
-
-    .bg-circle {
-
-      position: absolute;
-
-      border-radius: 50%;
-
-      background: rgba(78, 84, 200, 0.05);
-
-      filter: blur(30px);
-
-    }
-
-
-
-    .circle-1 {
-
-      width: 300px;
-
-      height: 300px;
-
-      top: -100px;
-
-      right: -100px;
-
-      animation: float 15s ease-in-out infinite;
-
-    }
-
-
-
-    .circle-2 {
-
-      width: 200px;
-
-      height: 200px;
-
-      bottom: 50px;
-
-      left: -50px;
-
-      animation: float 12s ease-in-out infinite reverse;
-
-    }
-
-
-
-    .circle-3 {
-
-      width: 150px;
-
-      height: 150px;
-
-      top: 30%;
-
-      left: 40%;
-
-      animation: float 10s ease-in-out infinite 2s;
-
-    }
-
-
-
-    .bg-wave {
-
-      position: absolute;
-
-      width: 200%;
-
-      height: 100px;
-
-      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%234e54c8"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%234e54c8"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%234e54c8"/></svg>');
-
-      opacity: 0.1;
-
-      bottom: 0;
-
-      left: 0;
-
-      animation: wave 20s linear infinite;
-
-    }
-
-
-
-    .wave-2 {
-
-      bottom: 20px;
-
-      animation: wave 25s linear infinite reverse;
-
-      opacity: 0.05;
-
-    }
-
-
-
-    @keyframes float {
-
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-
-      50% {
-        transform: translateY(-20px) rotate(5deg);
-      }
-
-      100% {
-        transform: translateY(0) rotate(0deg);
-      }
-
-    }
-
-
-
-    @keyframes wave {
-
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-
-    }
-
-
-
-    /* Logo Animation */
-
-    .logo-animate {
-
-      position: relative;
-
-      display: inline-block;
-
-    }
-
-
-
-    .logo-underline {
-
-      position: absolute;
-
-      bottom: -5px;
-
-      left: 0;
-
-      width: 0;
-
-      height: 2px;
-
-      background: linear-gradient(90deg, #4e54c8, #8f94fb);
-
-      transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-
-    }
-
-
-
-    .logo-animate:hover .logo-underline {
-
-      width: 100%;
-
-    }
-
-
-
-    .sitename {
-
-      font-weight: 700;
-
-      background: linear-gradient(135deg, #4e54c8, #8f94fb);
-
-      -webkit-background-clip: text;
-
-      background-clip: text;
-
-      color: transparent;
-
-      transition: all 0.3s ease;
-
-    }
-
-
-
-    .sitename.pulse {
-
-      animation: pulse 2s infinite;
-
-    }
-
-
-
-    @keyframes pulse {
-
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-
-    }
-
-
-
-    /* Social Icons */
-
-    .social-links {
-
-      gap: 15px;
-
-    }
-
-
-
-    .social-icon {
-
-      width: 40px;
-
-      height: 40px;
-
-      border-radius: 50%;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      color: white;
-
-      position: relative;
-
-      overflow: hidden;
-
-      transition: all 0.3s ease;
-
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    }
-
-
-
-    .social-icon::before {
-
-      content: '';
-
-      position: absolute;
-
-      width: 100%;
-
-      height: 100%;
-
-      background: linear-gradient(135deg, skyblue, white);
-
-      z-index: -1;
-
-      transition: all 0.3s ease;
-
-    }
-
-
-
-    .social-icon:hover {
-
-      transform: translateY(-5px) scale(1.1);
-
-      box-shadow: 0 8px 20px rgba(78, 84, 200, 0.3);
-
-    }
-
-
-
-    .social-icon:hover i {
-
-      animation: icon-bounce 0.6s ease;
-
-    }
-
-
-
-    @keyframes icon-bounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-5px);
-      }
-
-    }
-
-
-
-    /* Navigation Links */
-
-    .nav-link {
-
-      position: relative;
-
-      display: inline-block;
-
-      padding: 5px 0;
-
-      color: #333;
-
-      transition: color 0.3s ease;
-
-    }
-
-
-
-    .nav-link span {
-
-      position: relative;
-
-      z-index: 1;
-
-    }
-
-
-
-    .hover-underline::before {
-
-      content: '';
-
-      position: absolute;
-
-      bottom: 0;
-
-      left: 0;
-
-      width: 0;
-
-      height: 2px;
-
-      background: skyblue;
-
-      transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-
-    }
-
-
-
-    .nav-link:hover {
-
-      color: white;
-
-    }
-
-
-
-    .nav-link:hover::before {
-
-      width: 100%;
-
-      right: auto;
-
-    }
-
-
-
-    /* Contact Info */
-
-    .contact-icon {
-
-      color: rgb(37, 157, 222);
-
-      margin-right: 8px;
-
-      transition: transform 0.3s ease;
-
-    }
-
-
-
-    .contact-info p:hover .contact-icon {
-
-      transform: scale(1.2);
-
-    }
-
-
-
-    /* Copyright Section */
-
-    .copyright-text {
-
-      position: relative;
-
-      display: inline-block;
-
-    }
-
-
-
-    .copyright-text::after {
-
-      content: '';
-
-      position: absolute;
-
-      bottom: -5px;
-
-      left: 50%;
-
-      transform: translateX(-50%);
-
-      width: 0;
-
-      height: 2px;
-
-      background: linear-gradient(90deg, #4e54c8, #8f94fb);
-
-      transition: width 0.4s ease;
-
-    }
-
-
-
-    .copyright:hover .copyright-text::after {
-
-      width: 100%;
-
-    }
-
-
-
-    .designer-link {
-
-      position: relative;
-
-      color: #4e54c8;
-
-      font-weight: 600;
-
-    }
-
-
-
-    .designer-link::after {
-
-      content: '';
-
-      position: absolute;
-
-      bottom: -2px;
-
-      left: 0;
-
-      width: 0;
-
-      height: 2px;
-
-      background: #4e54c8;
-
-      transition: width 0.3s ease;
-
-    }
-
-
-
-    .designer-link:hover::after {
-
-      width: 100%;
-
-    }
-
-
-
-    /* Responsive Adjustments */
-
-    @media (max-width: 768px) {
-
-      .footer {
-
-        padding: 60px 0 30px;
-
-      }
-
-
-
-      .footer-links,
-      .footer-contact {
-
-        text-align: center;
-
-      }
-
-
-
-      .social-links {
-
-        justify-content: center;
-
-      }
-
-    }
-  </style>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -1438,6 +1405,7 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
