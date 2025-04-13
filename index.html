@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
+<!-- hi -->
 
 
 <head>
@@ -93,6 +93,7 @@
           <li><a href="index.html#hero" class="active">Home</a></li>
 
           <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
 
           <li><a href="index.html#portfolio">Works</a></li>
 
@@ -173,9 +174,6 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row align-items-center gy-5">
-
-
-
           <!-- About Text Section -->
 
           <div class="col-xl-5" data-aos="fade-right" data-aos-delay="150">
@@ -187,14 +185,11 @@
             </center>
 
               <h2 class="section-title">Who We Are?</h2>
-
               <p style="text-align: justify;">
-
                 Founded on July 13, 2016, in Namakkal, Tamil Nadu, Sarvam Educational Trust was established with a
                 singular purpose to bridge socio-economic gaps and empower underprivileged communities through
                 holistic development programs. We recognize that sustainable progress is only possible when education,
                 health, and social welfare are integrated into a well-structured framework.
-
               </p>
 
 
@@ -228,88 +223,46 @@
 
 
           <!-- Icon Boxes -->
-
           <div class="col-xl-7">
-
             <div class="row gy-4 icon-boxes">
-
               <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
-
                 <div class="icon-box animated-card">
-
                   <div class="icon"><i class="bi bi-book"></i></div>
-
                   <h3>Planning</h3>
-
-                  <p>Our after-school tutoring, scholarship programs, and digital literacy initiatives have helped over
-                    15,000 children access quality education.</p>
-
+                  <p>We mapped out a clear goal to spread hygiene and waste awareness using stickers, student volunteers, and local leaders.</p>
                   <div class="wave-animation"></div>
-
                 </div>
-
               </div>
-
-
-
+          
               <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
-
                 <div class="icon-box animated-card">
-
                   <div class="icon"><i class="bi bi-heart-pulse"></i></div>
-
                   <h3>Organising</h3>
-
-                  <p>Mobile health clinics, nutrition programs, and health awareness campaigns serving rural communities
-                    across Tamil Nadu.</p>
-
+                  <p>Teams handled stickers, logistics, and outreach. Materials and roles were ready ahead of time with full coordination.</p>
                   <div class="wave-animation"></div>
-
                 </div>
-
               </div>
-
-
-
+          
               <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
-
                 <div class="icon-box animated-card">
-
                   <div class="icon"><i class="bi bi-people-fill"></i></div>
-
                   <h3>Scheduling</h3>
-
-                  <p>Vocational training, microfinance support, and leadership development for women from marginalized
-                    communities.</p>
-
+                  <p>The event ran from 8 AM to 4 PM with campaigns, speeches, and group activities—all time-slotted and well-managed.</p>
                   <div class="wave-animation"></div>
-
                 </div>
-
               </div>
-
-
-
+          
               <div class="col-md-6" data-aos="zoom-in" data-aos-delay="500">
-
                 <div class="icon-box animated-card">
-
                   <div class="icon"><i class="bi bi-tree-fill"></i></div>
-
                   <h3>Executing</h3>
-
-                  <p>Sustainable farming practices, water conservation projects, and eco-awareness programs for rural
-                    development.</p>
-
+                  <p>Volunteers engaged every household. Guest talks and community sessions made it memorable and impactful for all.</p>
                   <div class="wave-animation"></div>
-
                 </div>
-
               </div>
-
             </div>
-
           </div>
+          
 
 
 
@@ -1162,7 +1115,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-education">
 
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="assets/img/blog/education.jpg" class="img-fluid" alt="">
 
               <div class="portfolio-info">
 
@@ -1185,7 +1138,7 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-environment">
 
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
+              <img src="assets/img/blog/education1.jpg" class="img-fluid" alt="">
 
               <div class="portfolio-info">
 
@@ -2708,162 +2661,163 @@
     </div>
   </div>
   <style>
-
-    .form-container {
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 600px;
-      padding: 40px;
-      transform: translateY(-50px);
-      opacity: 0;
-      animation: fadeInUp 1s forwards;
+    /* Animation Styles */
+    .title-animate {
+      animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     }
 
-    /* Fade in animation */
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(-50px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .subtitle-animate {
+      animation: fade-in 1.2s ease-in-out both;
+      animation-delay: 0.3s;
     }
 
-    .form-group {
-      margin-bottom: 20px;
+    @keyframes text-focus-in {
+      0% {
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Form Styles */
+    .form-animate {
+      animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @keyframes slide-in-right {
+      0% {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .floating-label {
       position: relative;
+      margin-bottom: 25px;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      transition: all 0.3s ease-in-out;
-      box-sizing: border-box;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #2575fc;
-      outline: none;
-      box-shadow: 0 0 10px rgba(37, 117, 252, 0.5);
-      transform: scale(1.05);
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: #aaa;
-      transition: color 0.3s ease;
-    }
-
-    input:focus::placeholder, textarea:focus::placeholder {
-      color: #2575fc;
-    }
-
-    label {
+    .floating-label label {
       position: absolute;
-      left: 12px;
-      top: 10px;
-      font-size: 16px;
-      color: #aaa;
-      transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+      top: 15px;
+      left: 15px;
+      color: #999;
+      transition: all 0.3s ease;
+      pointer-events: none;
     }
 
-    input:focus + label, textarea:focus + label {
+    .floating-label input:focus~label,
+    .floating-label input:valid~label,
+    .floating-label textarea:focus~label,
+    .floating-label textarea:valid~label {
       top: -10px;
+      left: 10px;
       font-size: 12px;
-      color: #2575fc;
+      background: white;
+      padding: 0 5px;
+      color: #4e54c8;
     }
 
-    button {
-      padding: 14px 24px;
-      background-color: #2575fc;
-      color: white;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.4s ease-in-out;
-      position: relative;
-      overflow: hidden;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    button:before {
-      content: '';
+    .focus-line {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300%;
-      height: 300%;
-      background-color: white;
-      transition: all 0.4s ease;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    button:hover:before {
-      width: 0;
-      height: 0;
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
+      bottom: 0;
       left: 0;
-      top: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+      transition: width 0.4s ease;
+    }
+
+    .floating-label input:focus~.focus-line,
+    .floating-label textarea:focus~.focus-line {
+      width: 100%;
+    }
+
+    /* Button Styles */
+    .btn-magnetic {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+    }
+
+    .btn-magnetic:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(78, 84, 200, 0.6);
+    }
+
+    .btn-magnetic .btn-icon {
+      margin-left: 10px;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .btn-magnetic:hover .btn-icon {
+      transform: translateX(5px);
+    }
+
+    .magnetic-area {
+      position: absolute;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      overflow: auto;
-      padding-top: 100px;
-      animation: fadeInModal 1s;
+      top: 0;
+      left: 0;
+      pointer-events: none;
     }
 
-    .modal-content {
-      background-color: #fff;
-      border-radius: 8px;
-      width: 70%;
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      transform: translateY(-50px);
-      animation: modalAnimation 0.5s forwards;
+    /* Status Messages */
+    .loading,
+    .error-message,
+    .sent-message {
+      display: none;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
     }
 
-    @keyframes fadeInModal {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+    .loading {
+      color: #4e54c8;
     }
 
-    @keyframes modalAnimation {
-      0% { transform: translateY(-50px); }
-      100% { transform: translateY(0); }
+    .error-message {
+      color: #dc3545;
+      background: #f8d7da;
     }
 
-    .close {
-      color: #aaa;
-      font-size: 28px;
-      font-weight: bold;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      cursor: pointer;
+    .sent-message {
+      color: #28a745;
+      background: #d4edda;
     }
-
-    .close:hover,
-    .close:focus {
-      color: #000;
-      text-decoration: none;
-    }
-
   </style>
+  
   <script>
     const form = document.querySelector("form");
     const loading = document.querySelector(".loading");
