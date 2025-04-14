@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Sarvam NGO - Make a Difference</title>
+      <!-- Favicons -->
+
+  <link href="https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #148aea;
+            --primary-dark: #148aea;
+            --secondary: #148aea;
+            --light: #f5f5f7;
+            --dark: #1d1d1f;
+            --gray: #86868b;
+            --light-gray: #e5e5e5;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+        
+        .hero-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ebf0 100%);
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            position: absolute;
+            width: 50vw;
+            max-width: 800px;
+            right: -10%;
+            bottom: -10%;
+            opacity: 0.8;
+            z-index: 0;
+            animation: float 12s ease-in-out infinite;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 113, 227, 0.05);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(5px, 10px) rotate(5deg);
+            }
+            50% {
+                transform: translate(0, 15px) rotate(0deg);
+            }
+            75% {
+                transform: translate(-5px, 10px) rotate(-5deg);
+            }
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 900px;
+            padding: 60px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 1;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .logo {
+            height: 80px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+        }
+        
+        .header h1 {
+            color: var(--dark);
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .header p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+        }
+        
+        .form-group {
+            flex: 1 0 calc(50% - 24px);
+            margin: 0 12px 30px;
+            position: relative;
+        }
+        
+        .form-group.full-width {
+            flex: 1 0 calc(100% - 24px);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--dark);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+            background: white;
+        }
+        
+        .form-control:hover {
+            border-color: #c7c7c7;
+        }
+        
+        .form-control::placeholder {
+            color: var(--gray);
+            opacity: 0.6;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 113, 227, 0.3);
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 113, 227, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .form-footer {
+            margin-top: 40px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .select-wrapper {
+            position: relative;
+        }
+        
+        .select-wrapper::after {
+            content: '⌄';
+            font-size: 1.2rem;
+            color: var(--gray);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: var(--transition);
+        }
+        
+        .select-wrapper:hover::after {
+            color: var(--primary);
+        }
+        
+        select.form-control {
+            appearance: none;
+            padding-right: 50px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        
+        .checkbox-group input {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .checkbox-group:hover input {
+            transform: scale(1.1);
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .checkbox-group:hover label {
+            color: var(--primary);
+        }
+        
+        .illustration {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .illustration img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .illustration img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: var(--light-gray);
+            border-radius: 2px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            width: 33%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+            transition: width 0.6s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+            
+            .form-group {
+                flex: 1 0 calc(100% - 24px);
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-image {
+                opacity: 0.4;
+                right: -30%;
+                bottom: -20%;
+            }
+        }
+        
+        /* Apple-like focus ring */
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 125, 250, 0.3);
+        }
+        
+        /* Floating label animation */
+        .float-label {
+            position: relative;
+        }
+        
+        .float-label label {
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            pointer-events: none;
+            transition: var(--transition);
+            color: var(--gray);
+        }
+        
+        .float-label input:focus + label,
+        .float-label input:not(:placeholder-shown) + label,
+        .float-label select:focus + label,
+        .float-label select:valid + label,
+        .float-label textarea:focus + label,
+        .float-label textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 12px;
+            font-size: 0.8rem;
+            background: white;
+            padding: 0 8px;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="hero-background">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Volunteers working together" class="hero-image">
+    </div> -->
+    
+    <div class="container animate_animated animate_fadeIn">
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        
+        <div class="header">
+            <img src="assets\img\sarvam-logo-removebg-preview (1).png" alt="Sarvam NGO Logo" class="logo">
+            <h1>Join Our Movement</h1>
+            <p>Become part of something bigger. Together we can create lasting change in our communities.</p>
+        </div>
+        
+        <div class="illustration">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Community service" class="animate_animated animate_fadeInUp">
+        </div>
+        
+        <form id="registrationForm">
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="text" id="firstName" class="form-control" placeholder=" " required>
+                    <label for="firstName">First Name</label>
+                </div>
+                
+                <div class="form-group float-label">
+                    <input type="text" id="lastName" class="form-control" placeholder=" " required>
+                    <label for="lastName">Last Name</label>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="email" id="email" class="form-control" placeholder=" " required>
+                    <label for="email">Email Address</label>
+                </div>
+                
+                <div class="form-group float-label">
+                    <input type="tel" id="phone" class="form-control" placeholder=" " required>
+                    <label for="phone">Phone Number</label>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="date" id="dob" class="form-control" required>
+                    <label for="dob">Date of Birth</label>
+                </div>
+                
+                <div class="form-group float-label">
+                    <select id="gender" class="form-control" required>
+                        <option value="" selected disabled></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                    <label for="gender">Gender</label>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="address" class="form-control" placeholder=" " required></textarea>
+                    <label for="address">Full Address</label>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="text" id="city" class="form-control" placeholder=" " required>
+                    <label for="city">City</label>
+                </div>
+                
+                <div class="form-group float-label">
+                    <input type="text" id="pincode" class="form-control" placeholder=" " required>
+                    <label for="pincode">Pincode</label>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label>Areas of Interest (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="education" name="interest" value="education">
+                        <label for="education">Education Initiatives</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="environment" name="interest" value="environment">
+                        <label for="environment">Environmental Conservation</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="healthcare" name="interest" value="healthcare">
+                        <label for="healthcare">Healthcare Programs</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="women-empowerment" name="interest" value="women-empowerment">
+                        <label for="women-empowerment">Women Empowerment</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="skills" class="form-control" placeholder=" "></textarea>
+                    <label for="skills">Skills/Expertise</label>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="motivation" class="form-control" placeholder=" " required></textarea>
+                    <label for="motivation">Why do you want to join Sarvam NGO?</label>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button type="submit" class="btn animate_animated animatepulse animateinfinite animate_slower">
+                    Continue Application
+                </button>
+            </div>
+            
+            <div class="form-footer">
+                <p>By registering, you agree to our <a href="services-details.html" class="terms-link">Terms of Service</a> and <a href="privacy.html" class="privacy-link">Privacy Policy</a>.</p>
+               
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create dynamic particles
+            const heroBg = document.querySelector('.hero-background');
+            
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 100 + 50;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                
+                particle.style.width = ${size}px;
+                particle.style.height = ${size}px;
+                particle.style.top = ${posY}%;
+                particle.style.left = ${posX}%;
+                particle.style.animationDuration = ${duration}s;
+                particle.style.animationDelay = ${delay}s;
+                particle.style.opacity = Math.random() * 0.2 + 0.05;
+                
+                heroBg.appendChild(particle);
+            }
+            
+            // Enhanced floating labels
+            const floatLabels = document.querySelectorAll('.float-label input, .float-label select, .float-label textarea');
+            floatLabels.forEach(el => {
+                el.addEventListener('focus', () => {
+                    const label = el.parentNode.querySelector('label');
+                    label.style.color = 'var(--primary)';
+                    label.style.fontWeight = '600';
+                });
+                
+                el.addEventListener('blur', () => {
+                    const label = el.parentNode.querySelector('label');
+                    if (!el.value) {
+                        label.style.color = 'var(--gray)';
+                        label.style.fontWeight = '500';
+                    }
+                });
+                
+                // Initialize labels for pre-filled values
+                if (el.value) {
+                    const label = el.parentNode.querySelector('label');
+                    label.style.top = '-10px';
+                    label.style.left = '12px';
+                    label.style.fontSize = '0.8rem';
+                    label.style.background = 'white';
+                    label.style.padding = '0 8px';
+                    label.style.color = 'var(--primary)';
+                    label.style.fontWeight = '600';
+                }
+            });
+            
+            // Form submission handling
+            const form = document.getElementById('registrationForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = '<span class="btn-loader"></span> Processing...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    // Here you would normally send the form data to your server
+                    console.log('Form submitted!');
+                    
+                    // Show success message
+                    submitBtn.innerHTML = '✓ Success!';
+                    submitBtn.style.backgroundColor = 'var(--secondary)';
+                    
+                    // Reset form after delay
+                    setTimeout(() => {
+                        form.reset();
+                        submitBtn.innerHTML = 'Continue Application';
+                        submitBtn.style.backgroundColor = 'var(--primary)';
+                        submitBtn.disabled = false;
+                        
+                        // Reset floating labels
+                        floatLabels.forEach(el => {
+                            const label = el.parentNode.querySelector('label');
+                            label.style.top = '18px';
+                            label.style.left = '20px';
+                            label.style.fontSize = '0.95rem';
+                            label.style.background = 'transparent';
+                            label.style.padding = '0';
+                            label.style.color = 'var(--gray)';
+                            label.style.fontWeight = '500';
+                        });
+                    }, 2000);
+                }, 1500);
+            });
+            
+            // Add hover effects to links
+            const links = document.querySelectorAll('.terms-link, .privacy-link, .login-link');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    link.style.textDecoration = 'underline';
+                    link.style.opacity = '0.9';
+                });
+                link.addEventListener('mouseleave', () => {
+                    link.style.textDecoration = 'none';
+                    link.style.opacity = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
