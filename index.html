@@ -218,7 +218,7 @@
 
                 <h3 class="section-title">About Us</h3>
               </center>
-          
+
               <p style="text-align: justify;">
                 Founded on July 13, 2016, in Namakkal, Tamil Nadu, Sarvam Educational Trust was established with a
                 singular purpose to bridge socio-economic gaps and empower underprivileged communities through
@@ -263,7 +263,8 @@
                 <div class="icon-box animated-card">
                   <div class="icon"><i class="bi bi-book"></i></div>
                   <h3>Planning</h3>
-                  <p>We mapped out a clear goal to spread hygiene and waste awareness using stickers, student volunteers, and local leaders.</p>
+                  <p>We mapped out a clear goal to spread hygiene and waste awareness using stickers, student
+                    volunteers, and local leaders.</p>
                   <div class="wave-animation"></div>
                 </div>
               </div>
@@ -728,414 +729,425 @@
     </script>
 
 
-<!-- 
+    <!-- 
 founder view -->
 
 
-<!--Founders views starts-->
+    <!--Founders views starts-->
 
-<section id="founders-view" class="founder-section">
-  <!-- Background Animated Shape -->
-  <div class="background-shape"></div>
+    <section id="founders-view" class="founder-section">
+      <!-- Background Animated Shape -->
+      <div class="background-shape"></div>
 
-  <div class="container">
-    <div class="row align-items-center">
-      <!-- Founder Image Section -->
-      <div class="col-lg-6 founder-image">
-        <img src="/Sarvam-NGO/assets/img/founder.jpg" alt="Founder Image">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Founder Image Section -->
+          <div class="col-lg-6 founder-image">
+            <img src="/Sarvam-NGO/assets/img/founder.jpg" alt="Founder Image">
+          </div>
+
+          <!-- Founder Text Section -->
+          <div class="col-lg-6 founder-text">
+            <h2>From the Founder</h2>
+            <h3>Our Journey & Mission</h3>
+            <p>
+              SARVAM Educational Trust was born out of a deep-rooted belief that <strong>every human deserves dignity,
+                safety, and hope</strong>.
+              Since its inception in 2016, we've been driven by the mission to transform the lives of the underserved,
+              providing education, shelter, food, and care to those in need.
+            </p>
+            <p>
+              Through each initiative, we strive to uplift individuals, empower communities, and create a sustainable
+              future. Our mission continues with unwavering dedication to improving lives, one step at a time.
+            </p>
+            <p class="founder-quote">
+              "When we see someone in need, we don’t walk away. We extend our hand, and our heart."
+              <br>– Ms.Ramya, Founder
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Founder Text Section -->
-      <div class="col-lg-6 founder-text">
-        <h2>From the Founder</h2>
-        <h3>Our Journey & Mission</h3>
-        <p>
-          SARVAM Educational Trust was born out of a deep-rooted belief that <strong>every human deserves dignity, safety, and hope</strong>. 
-          Since its inception in 2016, we've been driven by the mission to transform the lives of the underserved, providing education, shelter, food, and care to those in need.
-        </p>
-        <p>
-          Through each initiative, we strive to uplift individuals, empower communities, and create a sustainable future. Our mission continues with unwavering dedication to improving lives, one step at a time.
-        </p>
-        <p class="founder-quote">
-          "When we see someone in need, we don’t walk away. We extend our hand, and our heart."
-          <br>– Ms.Ramya, Founder
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Internal CSS (can be moved to your external CSS file) -->
+    <style>
+      .founder-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+        position: relative;
+        min-height: 500px;
+        overflow: hidden;
+      }
 
-<!-- Internal CSS (can be moved to your external CSS file) -->
-<style>
-  .founder-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-    position: relative;
-    min-height: 500px;
-    overflow: hidden;
-  }
+      /* Founder Text */
+      .founder-text {
+        flex: 1 1 500px;
+        padding: 40px;
+        animation: fadeInLeft 1.5s ease-out;
+        z-index: 10;
+      }
 
-  /* Founder Text */
-  .founder-text {
-    flex: 1 1 500px;
-    padding: 40px;
-    animation: fadeInLeft 1.5s ease-out;
-    z-index: 10;
-  }
+      .founder-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #000509;
+        /* text-transform: uppercase; */
+        letter-spacing: 2px;
+        position: relative;
+      }
 
-  .founder-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #000509;
-    /* text-transform: uppercase; */
-    letter-spacing: 2px;
-    position: relative;
-  }
+      .founder-text h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #148aea;
+        margin-top: 8px;
+      }
 
-  .founder-text h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #148aea;
-    margin-top: 8px;
-  }
+      .founder-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
 
-  .founder-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
+      .founder-quote {
+        font-style: italic;
+        color: #555;
+        border-left: 4px solid #148aea;
+        padding-left: 20px;
+        margin-top: 30px;
+        font-size: 1.3rem;
+      }
 
-  .founder-quote {
-    font-style: italic;
-    color: #555;
-    border-left: 4px solid #148aea;
-    padding-left: 20px;
-    margin-top: 30px;
-    font-size: 1.3rem;
-  }
+      /* Founder Image */
+      .founder-image {
+        flex: 1 1 450px;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+        animation: fadeInRight 1.5s ease-out;
+        z-index: 10;
+      }
 
-  /* Founder Image */
-  .founder-image {
-    flex: 1 1 450px;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    animation: fadeInRight 1.5s ease-out;
-    z-index: 10;
-  }
+      .founder-image img {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(20, 138, 234, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-  .founder-image img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(20, 138, 234, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+      .founder-image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(20, 138, 234, 0.4);
+      }
 
-  .founder-image img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(20, 138, 234, 0.4);
-  }
+      /* Background Animation */
+      .background-shape {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(45deg, #44c6f0, #148aea);
+        filter: blur(100px);
+        animation: backgroundMotion 10s infinite alternate;
+        z-index: -1;
+      }
 
-  /* Background Animation */
-  .background-shape {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(45deg, #44c6f0, #148aea);
-    filter: blur(100px);
-    animation: backgroundMotion 10s infinite alternate;
-    z-index: -1;
-  }
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
 
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
 
-  @keyframes backgroundMotion {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(50%);
-    }
-  }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-  @media (max-width: 768px) {
-    .founder-section {
-      flex-direction: column;
-      padding: 60px 20px;
-    }
+      @keyframes backgroundMotion {
+        0% {
+          transform: translateX(-50%);
+        }
 
-    .founder-text h2 {
-      font-size: 2rem;
-    }
+        100% {
+          transform: translateX(50%);
+        }
+      }
 
-    .founder-text p {
-      font-size: 1rem;
-    }
+      @media (max-width: 768px) {
+        .founder-section {
+          flex-direction: column;
+          padding: 60px 20px;
+        }
 
-    .founder-quote {
-      font-size: 1.1rem;
-    }
-  }
-</style>
+        .founder-text h2 {
+          font-size: 2rem;
+        }
 
-<!--Founders views ends-->
+        .founder-text p {
+          font-size: 1rem;
+        }
+
+        .founder-quote {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+
+    <!--Founders views ends-->
 
 
-<!--Our team section starts-->
+    <!--Our team section starts-->
 
-<section id="team" class="team section light-background">
-  <canvas id="particles-bg"></canvas>
-  <!-- Section Title -->
+    <section id="team" class="team section light-background">
+      <canvas id="particles-bg"></canvas>
+      <!-- Section Title -->
 
-  <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title" data-aos="fade-up">
 
-    <h2>Meet the Team</h2>
+        <h2>Meet the Team</h2>
 
-    <p>Our Passionate People</p>
+        <p>Our Passionate People</p>
 
-  </div><!-- End Section Title -->
+      </div><!-- End Section Title -->
 
 
-  <div class="container position-relative z-2">
-    <!-- <div class="text-center mb-5">
+      <div class="container position-relative z-2">
+        <!-- <div class="text-center mb-5">
       <h2 class="section-subtitle reveal">Meet the Team</h3>
       <h2 class="section-title light-sweep">Our Passionate People</h2>
     </div> -->
 
-    <div class="row justify-content-center gx-4 gy-5">
-      <!-- Team Member 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="team-box">
-          <div class="team-img">
-            <img src="https://via.placeholder.com/120" alt="Anita Raj">
+        <div class="row justify-content-center gx-4 gy-5">
+          <!-- Team Member 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Anita Raj">
+              </div>
+              <h4>Anita Raj</h4>
+              <p class="role">Founder & Director</p>
+              <p>Visionary behind Sarvam Trust, leading with purpose since 2016.</p>
+            </div>
           </div>
-          <h4>Anita Raj</h4>
-          <p class="role">Founder & Director</p>
-          <p>Visionary behind Sarvam Trust, leading with purpose since 2016.</p>
+
+          <!-- Team Member 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Ravi Kumar">
+              </div>
+              <h4>Ravi Kumar</h4>
+              <p class="role">Project Manager</p>
+              <p>Oversees all on-ground projects and ensures impact delivery.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Meena Devi">
+              </div>
+              <h4>Meena Devi</h4>
+              <p class="role">Health Coordinator</p>
+              <p>Leads rural health campaigns and mobile clinic initiatives.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Suresh Babu">
+              </div>
+              <h4>Suresh Babu</h4>
+              <p class="role">Education Lead</p>
+              <p>Implements after-school and digital learning programs.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 5 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Lakshmi Priya">
+              </div>
+              <h4>Lakshmi Priya</h4>
+              <p class="role">Women Empowerment Lead</p>
+              <p>Trains and mentors women in vocational and leadership skills.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 6 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Ajay Das">
+              </div>
+              <h4>Ajay Das</h4>
+              <p class="role">Environment Officer</p>
+              <p>Promotes eco-awareness and sustainable farming practices.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Team Member 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="team-box">
-          <div class="team-img">
-            <img src="https://via.placeholder.com/120" alt="Ravi Kumar">
-          </div>
-          <h4>Ravi Kumar</h4>
-          <p class="role">Project Manager</p>
-          <p>Oversees all on-ground projects and ensures impact delivery.</p>
-        </div>
-      </div>
+      <!-- STYLES -->
+      <style>
+        .team {
+          position: relative;
+          overflow: hidden;
+          padding: 100px 0;
+          background: linear-gradient(to bottom, #f4f9ff, #ffffff);
+        }
 
-      <!-- Team Member 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="team-box">
-          <div class="team-img">
-            <img src="https://via.placeholder.com/120" alt="Meena Devi">
-          </div>
-          <h4>Meena Devi</h4>
-          <p class="role">Health Coordinator</p>
-          <p>Leads rural health campaigns and mobile clinic initiatives.</p>
-        </div>
-      </div>
+        #particles-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+        }
 
-      <!-- Team Member 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="team-box">
-          <div class="team-img">
-            <img src="https://via.placeholder.com/120" alt="Suresh Babu">
-          </div>
-          <h4>Suresh Babu</h4>
-          <p class="role">Education Lead</p>
-          <p>Implements after-school and digital learning programs.</p>
-        </div>
-      </div>
+        .team-box {
+          background: #fff;
+          border-radius: 20px;
+          padding: 30px;
+          text-align: center;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
 
-      <!-- Team Member 5 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="team-box">
-          <div class="team-img">
-            <img src="https://via.placeholder.com/120" alt="Lakshmi Priya">
-          </div>
-          <h4>Lakshmi Priya</h4>
-          <p class="role">Women Empowerment Lead</p>
-          <p>Trains and mentors women in vocational and leadership skills.</p>
-        </div>
-      </div>
+        .team-box:hover {
+          transform: translateY(-12px);
+          box-shadow: 0 25px 50px rgba(20, 138, 234, 0.25);
+        }
 
-      <!-- Team Member 6 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="team-box">
-          <div class="team-img">
-            <img src="https://via.placeholder.com/120" alt="Ajay Das">
-          </div>
-          <h4>Ajay Das</h4>
-          <p class="role">Environment Officer</p>
-          <p>Promotes eco-awareness and sustainable farming practices.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+        .team-img img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 4px solid #148aea;
+          margin-bottom: 15px;
+        }
 
-  <!-- STYLES -->
-  <style>
-    .team {
-      position: relative;
-      overflow: hidden;
-      padding: 100px 0;
-      background: linear-gradient(to bottom, #f4f9ff, #ffffff);
-    }
+        .team-box h4 {
+          font-weight: 600;
+          margin-bottom: 5px;
+          color: #148aea;
+        }
 
-    #particles-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
+        .team-box .role {
+          font-size: 0.9rem;
+          color: #888;
+          margin-bottom: 10px;
+        }
 
-    .team-box {
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
+        .section-title.light-sweep {
+          display: inline-block;
+          background: linear-gradient(90deg, #148aea, #44c6f0);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          position: relative;
+        }
 
-    .team-box:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 25px 50px rgba(20,138,234,0.25);
-    }
+        .section-title.light-sweep::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -70%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+          animation: sweep 3s infinite;
+        }
 
-    .team-img img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #148aea;
-      margin-bottom: 15px;
-    }
+        @keyframes sweep {
+          0% {
+            left: -70%;
+          }
 
-    .team-box h4 {
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: #148aea;
-    }
+          100% {
+            left: 100%;
+          }
+        }
+      </style>
 
-    .team-box .role {
-      font-size: 0.9rem;
-      color: #888;
-      margin-bottom: 10px;
-    }
+      <!-- PARTICLES BACKGROUND SCRIPT -->
+      <script>
+        const canvas = document.getElementById("particles-bg");
+        const ctx = canvas.getContext("2d");
+        let particles = [];
 
-    .section-title.light-sweep {
-      display: inline-block;
-      background: linear-gradient(90deg, #148aea, #44c6f0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: relative;
-    }
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-    .section-title.light-sweep::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -70%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
-      animation: sweep 3s infinite;
-    }
+        function createParticles() {
+          particles = [];
+          for (let i = 0; i < 70; i++) {
+            particles.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              r: Math.random() * 2 + 1,
+              dx: (Math.random() - 0.5) * 0.5,
+              dy: (Math.random() - 0.5) * 0.5
+            });
+          }
+        }
 
-    @keyframes sweep {
-      0% { left: -70%; }
-      100% { left: 100%; }
-    }
-  </style>
+        function drawParticles() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(20,138,234,0.3)";
+            ctx.fill();
 
-  <!-- PARTICLES BACKGROUND SCRIPT -->
-  <script>
-    const canvas = document.getElementById("particles-bg");
-    const ctx = canvas.getContext("2d");
-    let particles = [];
+            p.x += p.dx;
+            p.y += p.dy;
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+          });
+          requestAnimationFrame(drawParticles);
+        }
 
-    function createParticles() {
-      particles = [];
-      for (let i = 0; i < 70; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 2 + 1,
-          dx: (Math.random() - 0.5) * 0.5,
-          dy: (Math.random() - 0.5) * 0.5
-        });
-      }
-    }
-
-    function drawParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(20,138,234,0.3)";
-        ctx.fill();
-
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      });
-      requestAnimationFrame(drawParticles);
-    }
-
-    createParticles();
-    drawParticles();
-  </script>
-</section>
+        createParticles();
+        drawParticles();
+      </script>
+    </section>
 
 
 
-<!--our team section ends-->
+    <!--our team section ends-->
 
     <!-- Stats Section -->
 
@@ -1312,7 +1324,8 @@ founder view -->
 
               <div>
 
-                <h4 class="title"><a href="services-details.html#environment" class="stretched-link">Environment</a></h4>
+                <h4 class="title"><a href="services-details.html#environment" class="stretched-link">Environment</a>
+                </h4>
 
                 <p class="description">Promoting environmental conservation through tree plantation drives, waste
                   management programs, and sustainable development initiatives.</p>
@@ -1333,7 +1346,8 @@ founder view -->
 
               <div>
 
-                <h4 class="title"><a href="services-details.html#women" class="stretched-link">Women Empowerment</a></h4>
+                <h4 class="title"><a href="services-details.html#women" class="stretched-link">Women Empowerment</a>
+                </h4>
 
                 <p class="description">Creating opportunities for women through skill development, financial literacy
                   programs, and support for entrepreneurship.</p>
@@ -1377,7 +1391,8 @@ founder view -->
 
                 <div>
 
-                  <h4 class="title"><a href="services-details.html#health" class="stretched-link">Health & Sanitation</a></h4>
+                  <h4 class="title"><a href="services-details.html#health" class="stretched-link">Health &
+                      Sanitation</a></h4>
 
                   <p class="description">Providing medical camps, health awareness programs, and sanitation facilities
                     to improve community health standards.</p>
@@ -2281,12 +2296,14 @@ founder view -->
 
             <div class="text-center">
 
-              <h3>Call To Action</h3>
+              <h3>Join your hands with us</h3>
 
               <p>At Sarvam NGO, we believe every individual deserves access to education, healthcare, and
-                empowerment—regardless of their background. But we can’t do it alone</p>
-
-              <a class="cta-btn" href="Register.html">Call To Action</a>
+                empowerment—regardless of their background. But we can’t do it alone.When you volunteer or support our initiatives, you become a catalyst for change. Your involvement helps
+                children go to school, families receive basic medical aid, and communities grow stronger with the tools
+                they need to thrive.</p>
+              
+              <a class="cta-btn" href="Register.html">Register now</a>
 
             </div>
 
@@ -3050,7 +3067,7 @@ founder view -->
                   <div class="loading"></div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
-          
+
                   <button type="submit" class="btn-magnetic">
                     <span class="btn-text">Send Message</span>
                     <span class="btn-icon"><i class="bi bi-send-fill"></i></span>
