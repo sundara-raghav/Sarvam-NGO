@@ -128,7 +128,7 @@
           <li><a href="index.html#hero" class="active">Home</a></li>
 
           <li><a href="index.html#about">About</a></li>
-          <li><a href="services-details.html">Services</a></li>
+          <li><a href="services-details.html#all">Services</a></li>
 
           <li><a href="index.html#portfolio">Works</a></li>
 
@@ -315,120 +315,268 @@
       <!-- Internal Style (can be moved to CSS file) -->
 
       <style>
-        .animated-list {
-
-          list-style: none;
-
-          padding: 0;
-
+        /* Service Details Section */
+        .service-details {
+          padding: 60px 0;
+          background-color: #f9f9f9;
         }
-
-
-
-        .animated-list li {
-
-          margin-bottom: 10px;
-
-          display: flex;
-
-          align-items: center;
-
-          font-size: 1rem;
-
-        }
-
-
-
-        .animated-list i {
-
-          color: #148aea;
-
-          margin-right: 10px;
-
-        }
-
-
-
-        .stat-item {
-
-          flex: 1 1 30%;
-
-          min-width: 100px;
-
-        }
-
-
-
-        .icon-box.animated-card {
-
-          background: #fff;
-
-          border-radius: 15px;
-
+      
+        /* Filter Sidebar */
+        .filter-sidebar {
           padding: 20px;
-
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-
-          position: relative;
-
-          overflow: hidden;
-
-          transition: transform 0.3s ease;
-
+          position: sticky;
+          top: 20px;
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-
-
-
-        .icon-box.animated-card:hover {
-
-          transform: translateY(-8px);
-
-        }
-
-
-
-        .icon-box .icon {
-
-          font-size: 2rem;
-
+      
+        .filter-sidebar .heading {
           color: #148aea;
-
-          margin-bottom: 10px;
-
+          margin-bottom: 20px;
+          font-weight: 600;
         }
-
-
-
-        .wave-animation {
-
-          position: absolute;
-
-          bottom: 0;
-
-          left: 0;
-
-          height: 4px;
-
+      
+        .filter-list {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      
+        .filter-btn {
+          padding: 10px 15px;
+          border: none;
+          background: #f1f9ff;
+          color: #333;
+          border-radius: 8px;
+          text-align: left;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          font-size: 0.95rem;
+        }
+      
+        .filter-btn i {
+          margin-right: 8px;
+          font-size: 1.1rem;
+        }
+      
+        .filter-btn.active {
+          background: #148aea;
+          color: white;
+        }
+      
+        .filter-btn:not(.active):hover {
+          background: #e1f0fa;
+        }
+      
+        /* Cards Container */
+        .cards-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 20px;
+          height: auto;
+          overflow: visible;
+        }
+      
+        /* Service Card */
+        .service-card {
+          border: none;
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+      
+        .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+      
+        .card-img-container {
+          position: relative;
+          height: 200px;
+          overflow: hidden;
+        }
+      
+        .card-img {
           width: 100%;
-
-          background: linear-gradient(90deg, #148aea, #44c6f0);
-
-          animation: waveSlide 2s infinite linear;
-
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
         }
-
-
-
+      
+        .service-card:hover .card-img {
+          transform: scale(1.05);
+        }
+      
+        .card-category {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          padding: 5px 12px;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: white;
+          text-transform: uppercase;
+        }
+      
+        .education {
+          background-color: #4CAF50;
+        }
+      
+        .environment {
+          background-color: #8BC34A;
+        }
+      
+        .women {
+          background-color: #E91E63;
+        }
+      
+        .health {
+          background-color: #00BCD4;
+        }
+      
+        .hunger {
+          background-color: #FF9800;
+        }
+      
+        .card-content {
+          padding: 20px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+      
+        .card-content h3 {
+          color: #148aea;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+      
+        .card-text {
+          margin-bottom: 20px;
+          flex: 1;
+        }
+      
+        .card-text p {
+          color: #555;
+          margin-bottom: 10px;
+          font-size: 0.95rem;
+        }
+      
+        .card-stats {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          margin-top: auto;
+        }
+      
+        .stat-item {
+          display: flex;
+          align-items: center;
+          font-size: 0.9rem;
+          color: #666;
+        }
+      
+        .stat-item i {
+          margin-right: 5px;
+          color: #148aea;
+        }
+      
+        /* Animated List Styles */
+        .animated-list {
+          list-style: none;
+          padding: 0;
+        }
+      
+        .animated-list li {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          font-size: 1rem;
+        }
+      
+        .animated-list i {
+          color: #148aea;
+          margin-right: 10px;
+        }
+      
+        /* Icon Box Animation */
+        .icon-box.animated-card {
+          background: #fff;
+          border-radius: 15px;
+          padding: 20px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s ease;
+        }
+      
+        .icon-box.animated-card:hover {
+          transform: translateY(-8px);
+        }
+      
+        .icon-box .icon {
+          font-size: 2rem;
+          color: #148aea;
+          margin-bottom: 10px;
+        }
+      
+        .wave-animation {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 4px;
+          width: 100%;
+          background: linear-gradient(90deg, #148aea, #44c6f0);
+          animation: waveSlide 2s infinite linear;
+        }
+      
         @keyframes waveSlide {
-
           0% {
             transform: translateX(-100%);
           }
-
           100% {
             transform: translateX(100%);
           }
-
+        }
+      
+        /* No Scroll on Filter */
+        .row {
+          overflow: hidden;
+        }
+      
+        .cards-container {
+          overflow: visible;
+          min-height: 600px;
+        }
+      
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+          .cards-container {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          }
+        }
+      
+        @media (max-width: 768px) {
+          .filter-sidebar {
+            position: static;
+            margin-bottom: 30px;
+          }
+          
+          .filter-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+          
+          .filter-btn {
+            flex: 1 0 auto;
+          }
         }
       </style>
 
