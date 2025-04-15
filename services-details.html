@@ -30,11 +30,460 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
   
+  <style>
+    /* Hero Section */
+    .services-hero {
+      background: linear-gradient(135deg, rgba(78, 84, 200, 0.9), rgba(143, 148, 251, 0.9));
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('assets/img/services-bg-pattern.png') center/cover;
+      opacity: 0.1;
+    }
+    
+    .services-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .services-hero h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+    }
+    
+    .services-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    /* Breadcrumb */
+    .breadcrumb-container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px 0;
+    }
+    
+    .breadcrumb {
+      justify-content: center;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .breadcrumb-item a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .breadcrumb-item a:hover {
+      color: #f8f9fa;
+      text-decoration: underline;
+    }
+    
+    .breadcrumb-item.active {
+      color: #f8f9fa;
+    }
+    
+    .breadcrumb-item+.breadcrumb-item::before {
+      color: white;
+    }
+    
+    /* Service Categories Section */
+    .service-categories {
+      padding: 80px 0;
+      background: #f9f9ff;
+    }
+    
+    .category-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .category-header h2 {
+      font-size: 2.5rem;
+      color: #4e54c8;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .category-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #4e54c8;
+      border-radius: 2px;
+    }
+    
+    .category-header p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Filter Buttons */
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    
+    .filter-btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: #4e54c8;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    
+    .filter-btn i {
+      font-size: 1.1rem;
+    }
+    
+    .filter-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(78, 84, 200, 0.2);
+    }
+    
+    .filter-btn.active {
+      background: #4e54c8;
+      color: white;
+    }
+    
+    /* Service Cards */
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(78, 84, 200, 0.15);
+    }
+    
+    .card-img-container {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .service-card:hover .card-img {
+      transform: scale(1.05);
+    }
+    
+    .card-category {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 6px 15px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .education {
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    }
+    
+    .environment {
+      background: linear-gradient(135deg, #28a745, #5cb85c);
+    }
+    
+    .women {
+      background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    }
+    
+    .health {
+      background: linear-gradient(135deg, #17a2b8, #5bc0de);
+    }
+    
+    .hunger {
+      background: linear-gradient(135deg, #fd7e14, #f0ad4e);
+    }
+    
+    .card-content {
+      padding: 25px;
+    }
+    
+    .card-content h3 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .card-content h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #4e54c8;
+    }
+    
+    .card-text p {
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+    
+    .card-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .stat-item i {
+      color: #4e54c8;
+      font-size: 1.1rem;
+    }
+    
+    /* Impact Section */
+    .impact-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, rgba(78, 84, 200, 0.05), rgba(143, 148, 251, 0.05));
+    }
+    
+    .impact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .impact-container h2 {
+      font-size: 2.5rem;
+      color: #4e54c8;
+      margin-bottom: 20px;
+    }
+    
+    .impact-container p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    
+    .impact-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .impact-stat {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      width: 200px;
+      transition: all 0.3s ease;
+    }
+    
+    .impact-stat:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(78, 84, 200, 0.1);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #4e54c8;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: #666;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: white;
+      text-align: center;
+    }
+    
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .cta-container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta-container p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .cta-btn {
+      display: inline-block;
+      padding: 15px 35px;
+      background: white;
+      color: #4e54c8;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cta-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .service-cards {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+      
+      .impact-stat {
+        width: 160px;
+        padding: 25px 15px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .services-hero h1 {
+        font-size: 2.8rem;
+      }
+      
+      .services-hero p {
+        font-size: 1rem;
+      }
+      
+      .category-header h2 {
+        font-size: 2rem;
+      }
+      
+      .filter-buttons {
+        gap: 10px;
+      }
+      
+      .filter-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .impact-stat {
+        width: 120px;
+        padding: 20px 10px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .services-hero {
+        padding: 100px 0 60px;
+      }
+      
+      .services-hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .service-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .impact-stats {
+        gap: 15px;
+      }
+      
+      .impact-stat {
+        width: 45%;
+      }
+    }
+  </style>
 </head>
 
-<body class="services-details-page">
+<body class="services-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
@@ -46,27 +495,17 @@
       <nav id="navmenu" class="navmenu">
 
         <ul>
-
-          <li><a href="index.html#hero" >Home</a></li>
-
+          <li><a href="index.html#hero">Home</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#services" class="active">Services</a></li>
-
           <li><a href="index.html#portfolio">Works</a></li>
-
-          <!-- <li><a href="index.html#team">Team</a></li>  -->
-
           <li><a href="blog.html">Blog</a></li>
-
           <li><a href="index.html#contact">Contact</a></li>
-
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 
       </nav>
-
-
 
       <a href="donate.html" target="_blank" class="btn-getstarted">DONATE</a>
 
@@ -75,1663 +514,318 @@
 
   <main class="main">
 
-    <!-- Page Title -->
-    <!-- <div class="page-title" data-aos="fade">
-      <div class="heading">
+    <!-- Hero Section -->
+    <section class="services-hero">
+      <div class="container">
+        <h1 data-aos="fade-up">Our Impactful Services</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Comprehensive social welfare initiatives transforming rural communities in Namakkal district</p>
+      </div>
+      
+      <div class="breadcrumb-container" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>Our Services</h1>
-              <p class="mb-0">Comprehensive social welfare initiatives transforming rural communities in Namakkal
-                district</p>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Services</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Categories Section -->
+    <section class="service-categories">
+      <div class="container">
+        <div class="category-header" data-aos="fade-up">
+          <h2>Our Areas of Impact</h2>
+          <p>Discover how Sarvam Educational Trust is making a difference across multiple sectors in rural communities</p>
+        </div>
+        
+        <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
+          <button class="filter-btn active" data-filter="all">
+            <i class="bi bi-grid-fill"></i> All Services
+          </button>
+          <button class="filter-btn" data-filter="education">
+            <i class="bi bi-book"></i> Education
+          </button>
+          <button class="filter-btn" data-filter="environment">
+            <i class="bi bi-tree"></i> Environment
+          </button>
+          <button class="filter-btn" data-filter="women">
+            <i class="bi bi-gender-female"></i> Women
+          </button>
+          <button class="filter-btn" data-filter="health">
+            <i class="bi bi-heart-pulse"></i> Health
+          </button>
+          <button class="filter-btn" data-filter="hunger">
+            <i class="bi bi-egg-fried"></i> No Hunger
+          </button>
+        </div>
+        
+        <div class="service-cards" id="service-cards-container">
+          <!-- Education Card -->
+          <div class="service-card" data-category="education" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-img-container">
+              <img src="assets/img/services/education.jpg" alt="Education Program" class="card-img">
+              <div class="card-category education">Education</div>
+            </div>
+            <div class="card-content">
+              <h3>Education Support Programs</h3>
+              <div class="card-text">
+                <p>We regularly distribute educational kits containing school supplies, uniforms, and books to underprivileged students across government schools in Namakkal district.</p>
+                <p>Our skill development initiative offers free typing classes and vocational training programs to enhance employability among rural youth.</p>
+              </div>
+              <div class="card-stats">
+                <div class="stat-item">
+                  <i class="bi bi-people"></i>
+                  <span>500+ Students</span>
+                </div>
+                <div class="stat-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>15 Schools</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Environment Card -->
+          <div class="service-card" data-category="environment" data-aos="fade-up" data-aos-delay="250">
+            <div class="card-img-container">
+              <img src="assets/img/services/environment.jpg" alt="Environment Program" class="card-img">
+              <div class="card-category environment">Environment</div>
+            </div>
+            <div class="card-content">
+              <h3>Environmental Conservation</h3>
+              <div class="card-text">
+                <p>Our environmental programs include large-scale tree plantation drives across multiple villages in collaboration with MGNREGA workers and NSS volunteers.</p>
+                <p>We maintain a continuous cycle of sapling collection, plantation, and maintenance activities, focusing on native species that support local ecosystems.</p>
+              </div>
+              <div class="card-stats">
+                <div class="stat-item">
+                  <i class="bi bi-tree"></i>
+                  <span>2000+ Trees</span>
+                </div>
+                <div class="stat-item">
+                  <i class="bi bi-people"></i>
+                  <span>50+ Volunteers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Women Empowerment Card -->
+          <div class="service-card" data-category="women" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-img-container">
+              <img src="assets/img/services/women.jpg" alt="Women Empowerment" class="card-img">
+              <div class="card-category women">Women</div>
+            </div>
+            <div class="card-content">
+              <h3>Women Empowerment</h3>
+              <div class="card-text">
+                <p>Our women's empowerment programs focus on creating awareness about rights, health, and self-confidence in rural communities.</p>
+                <p>We distribute sanitary kits and conduct menstrual hygiene education sessions in government schools to break taboos and promote health.</p>
+              </div>
+              <div class="card-stats">
+                <div class="stat-item">
+                  <i class="bi bi-gender-female"></i>
+                  <span>300+ Women</span>
+                </div>
+                <div class="stat-item">
+                  <i class="bi bi-bank"></i>
+                  <span>10+ SHGs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Health Card -->
+          <div class="service-card" data-category="health" data-aos="fade-up" data-aos-delay="350">
+            <div class="card-img-container">
+              <img src="assets/img/services/health.jpg" alt="Health Program" class="card-img">
+              <div class="card-category health">Health</div>
+            </div>
+            <div class="card-content">
+              <h3>Health & Sanitation</h3>
+              <div class="card-text">
+                <p>We improve rural sanitation through construction of bio-toilets in villages lacking proper facilities.</p>
+                <p>Our medical camps provide free general checkups, maternal care services, and child health screenings to underserved populations.</p>
+              </div>
+              <div class="card-stats">
+                <div class="stat-item">
+                  <i class="bi bi-hospital"></i>
+                  <span>50+ Toilets</span>
+                </div>
+                <div class="stat-item">
+                  <i class="bi bi-droplet"></i>
+                  <span>1000+ Served</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Hunger Card -->
+          <div class="service-card" data-category="hunger" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-img-container">
+              <img src="assets/img/services/hunger.jpg" alt="No Hunger Initiative" class="card-img">
+              <div class="card-category hunger">No Hunger</div>
+            </div>
+            <div class="card-content">
+              <h3>No Hunger Initiative</h3>
+              <div class="card-text">
+                <p>Our food security program provides daily nutritious meals to homeless individuals in Namakkal through a network of local vendors.</p>
+                <p>The initiative focuses on consistent, reliable meal provision while connecting beneficiaries with additional support services when needed.</p>
+              </div>
+              <div class="card-stats">
+                <div class="stat-item">
+                  <i class="bi bi-egg-fried"></i>
+                  <span>5000+ Meals</span>
+                </div>
+                <div class="stat-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>5 Communities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Additional Education Card -->
+          <div class="service-card" data-category="education" data-aos="fade-up" data-aos-delay="450">
+            <div class="card-img-container">
+              <img src="assets/img/services/education2.jpg" alt="Special Education Support" class="card-img">
+              <div class="card-category education">Education</div>
+            </div>
+            <div class="card-content">
+              <h3>Special Education Support</h3>
+              <div class="card-text">
+                <p>Special educational support is provided to vulnerable groups including orphaned children and students from single-parent families.</p>
+                <p>Our team conducts village surveys to identify educational needs and provides free tuition classes for students from backward communities.</p>
+              </div>
+              <div class="card-stats">
+                <div class="stat-item">
+                  <i class="bi bi-mortarboard"></i>
+                  <span>200+ Children</span>
+                </div>
+                <div class="stat-item">
+                  <i class="bi bi-house"></i>
+                  <span>10 Villages</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Services</li>
-          </ol>
-        </div>
-      </nav>
-    </div>End Page Title -->
-
-    <!-- Particle.js Background -->
-    <div id="particles-js"></div>
-
-    <!-- Parallax Section -->
-     <center>
-    <section class="parallax-section" style="background-image: url('assets/img/hero-bg.jpg');">
-      <h2>Transforming Lives, One Step at a Time</h2>
     </section>
 
-    <!-- Animated Gradient Section -->
-    <section class="animated-gradient">
-      <h2>Join Us in Making a Difference</h2>
-      <p>Your support helps us transform lives and build a better future.</p>
-    </section>
-  </center>
-    <!-- Navigation Section -->
-    
-
-   <!-- Service Details Section -->
-   <section id="service-details" class="service-details">
-    <div class="container">
-      <div class="row">
-        <!-- Filter Sidebar -->
-        <div class="col-lg-3">
-          <div class="filter-sidebar card">
-            <h4 class="heading">Filter Initiatives</h4>
-            <div class="filter-list">
-              <button class="filter-btn active" data-filter="all">All Initiatives</button>
-              <button class="filter-btn" data-filter="education">
-                <i class="bi bi-book"></i> Education
-              </button>
-              <button class="filter-btn" data-filter="environment">
-                <i class="bi bi-tree"></i> Environment
-              </button>
-              <button class="filter-btn" data-filter="women">
-                <i class="bi bi-gender-female"></i> Women Empowerment
-              </button>
-              <button class="filter-btn" data-filter="health">
-                <i class="bi bi-heart-pulse"></i> Health & Sanitation
-              </button>
-              <button class="filter-btn" data-filter="hunger">
-                <i class="bi bi-egg-fried"></i> No Hunger
-              </button>
-            </div>
+    <!-- Impact Section -->
+    <section class="impact-section">
+      <div class="impact-container" data-aos="fade-up">
+        <h2>Our Impact in Numbers</h2>
+        <p>Measuring the difference we've made in the communities we serve</p>
+        
+        <div class="impact-stats">
+          <div class="impact-stat" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-number" data-count="5000">0</div>
+            <div class="stat-label">Meals Served</div>
+          </div>
+          <div class="impact-stat" data-aos="fade-up" data-aos-delay="150">
+            <div class="stat-number" data-count="2000">0</div>
+            <div class="stat-label">Trees Planted</div>
+          </div>
+          <div class="impact-stat" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-number" data-count="500">0</div>
+            <div class="stat-label">Students Helped</div>
+          </div>
+          <div class="impact-stat" data-aos="fade-up" data-aos-delay="250">
+            <div class="stat-number" data-count="300">0</div>
+            <div class="stat-label">Women Empowered</div>
+          </div>
+          <div class="impact-stat" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-number" data-count="50">0</div>
+            <div class="stat-label">Toilets Built</div>
           </div>
         </div>
-  
-        <!-- Cards Display -->
-        <div class="col-lg-9">
-          <div class="cards-container">
-            <!-- Education Card -->
-            <div class="service-card card" data-category="education">
-              <div class="card-img-container">
-                <img src="assets/img/services/sarvam-team.jpg" alt="Education Program" class="card-img">
-                <div class="card-category education">Education</div>
-              </div>
-              <div class="card-content">
-                <h3>Education Support Programs</h3>
-                <div class="card-text">
-                  <p>We regularly distribute educational kits containing school supplies, uniforms, and books to
-                    underprivileged students across government schools in Namakkal district. Our skill development
-                    initiative offers free typing classes and vocational training programs to enhance employability
-                    among rural youth.</p>
-                  <p>Special educational support is provided to vulnerable groups including orphaned children and
-                    students from single-parent families through study material distribution and equipment
-                    provision. Our team conducts village surveys to identify educational needs and provides free
-                    tuition classes for students from backward communities.</p>
-                </div>
-                <div class="card-stats">
-                  <div class="stat-item">
-                    <i class="bi bi-people"></i>
-                    <span>500+ Students Helped</span>
-                  </div>
-                  <div class="stat-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>15 Schools</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Environment Card -->
-            <div class="service-card card" data-category="environment">
-              <div class="card-img-container">
-                <img src="assets/img/services/sarvam-team.jpg" alt="Environment Program" class="card-img">
-                <div class="card-category environment">Environment</div>
-              </div>
-              <div class="card-content">
-                <h3>Environmental Conservation</h3>
-                <div class="card-text">
-                  <p>Our environmental programs include large-scale tree plantation drives across multiple villages
-                    in collaboration with MGNREGA workers and NSS volunteers. We maintain a continuous cycle of
-                    sapling collection, plantation, and maintenance activities, focusing on native species that
-                    support local ecosystems.</p>
-                  <p>Our team actively participates in government environmental initiatives like the Panavitha
-                    Program while conducting school-based plantations to instill environmental awareness in young
-                    students. We conduct regular waste management training programs for rural workers and organize
-                    community clean-up drives in partnership with educational institutions.</p>
-                </div>
-                <div class="card-stats">
-                  <div class="stat-item">
-                    <i class="bi bi-tree"></i>
-                    <span>2000+ Trees Planted</span>
-                  </div>
-                  <div class="stat-item">
-                    <i class="bi bi-people"></i>
-                    <span>50+ Volunteers</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Women Empowerment Card -->
-            <div class="service-card card" data-category="women">
-              <div class="card-img-container">
-                <img src="assets/img/services/sarvam-team.jpg" alt="Women Empowerment" class="card-img">
-                <div class="card-category women">Women Empowerment</div>
-              </div>
-              <div class="card-content">
-                <h3>Women Empowerment</h3>
-                <div class="card-text">
-                  <p>Our women's empowerment programs focus on creating awareness about rights, health, and
-                    self-confidence in rural communities. We distribute sanitary kits and conduct menstrual hygiene
-                    education sessions in government schools to break taboos and promote health.</p>
-                  <p>Special information sessions help women access government welfare schemes, with particular
-                    attention given to widows, single mothers, and low-income women who need support navigating
-                    bureaucratic processes. We provide vocational training and financial literacy programs to help
-                    women achieve economic independence.</p>
-                </div>
-                <div class="card-stats">
-                  <div class="stat-item">
-                    <i class="bi bi-gender-female"></i>
-                    <span>300+ Women Trained</span>
-                  </div>
-                  <div class="stat-item">
-                    <i class="bi bi-bank"></i>
-                    <span>10+ Self-help Groups</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Health Card -->
-            <div class="service-card card" data-category="health">
-              <div class="card-img-container">
-                <img src="assets/img/services/sarvam-team.jpg" alt="Health Program" class="card-img">
-                <div class="card-category health">Health & Sanitation</div>
-              </div>
-              <div class="card-content">
-                <h3>Health & Sanitation</h3>
-                <div class="card-text">
-                  <p>We improve rural sanitation through construction of bio-toilets in villages lacking proper
-                    facilities. Our medical camps provide free general checkups, maternal care services, and child
-                    health screenings to underserved populations.</p>
-                  <p>We distribute basic hygiene kits and conduct education programs on proper sanitation practices
-                    in collaboration with local Primary Health Centers that help with vaccination drives and health
-                    screenings. Our mobile health units reach remote areas to provide essential healthcare services
-                    and medicines.</p>
-                </div>
-                <div class="card-stats">
-                  <div class="stat-item">
-                    <i class="bi bi-hospital"></i>
-                    <span>50+ Toilets Built</span>
-                  </div>
-                  <div class="stat-item">
-                    <i class="bi bi-droplet"></i>
-                    <span>1000+ Beneficiaries</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Hunger Card -->
-            <div class="service-card card" data-category="hunger">
-              <div class="card-img-container">
-                <img src="assets/img/services/sarvam-team.jpg" alt="No Hunger Initiative" class="card-img">
-                <div class="card-category hunger">No Hunger</div>
-              </div>
-              <div class="card-content">
-                <h3>No Hunger Initiative</h3>
-                <div class="card-text">
-                  <p>Our food security program provides daily nutritious meals to homeless individuals in Namakkal
-                    through a network of local vendors. We maintain a system of regular monitoring to assess food
-                    and shelter needs in high-homelessness areas, adjusting our services accordingly.</p>
-                  <p>The initiative focuses on consistent, reliable meal provision while connecting beneficiaries
-                    with additional support services when needed. During festivals and extreme weather conditions,
-                    we expand our services to provide extra meals and temporary shelter arrangements.</p>
-                </div>
-                <div class="card-stats">
-                  <div class="stat-item">
-                    <i class="bi bi-egg-fried"></i>
-                    <span>5000+ Meals Served</span>
-                  </div>
-                  <div class="stat-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>5 Communities</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-container" data-aos="fade-up">
+        <h2>Join Us in Making a Difference</h2>
+        <p>Your support helps us transform lives and build a better future for rural communities in Namakkal district.</p>
+        <a href="donate.html" class="cta-btn">Donate Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <!-- Footer Content -->
+    <div class="footer-bg-elements">
+      <div class="bg-circle circle-1"></div>
+      <div class="bg-circle circle-2"></div>
+      <div class="bg-circle circle-3"></div>
+      <div class="bg-wave wave-1"></div>
+      <div class="bg-wave wave-2"></div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about" data-aos="fade-up" data-aos-delay="100">
+          <a href="index.html" class="logo d-flex align-items-center logo-animate">
+            <span class="sitename">Sarvam Educational Trust</span>
+            <div class="logo-underline"></div>
+          </a>
+          <p class="footer-description">Empowering communities through social welfare initiatives. Join us in our mission to create a better future for all.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="social-icon twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-icon instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul>
+            <li><a href="index.html#hero" class="nav-link hover-underline"><span>Home</span></a></li>
+            <li><a href="index.html#about" class="nav-link hover-underline"><span>About</span></a></li>
+            <li><a href="index.html#portfolio" class="nav-link hover-underline"><span>Works</span></a></li>
+            <li><a href="blog.html" class="nav-link hover-underline"><span>Blog</span></a></li>
+            <li><a href="index.html#contact" class="nav-link hover-underline"><span>Contact</span></a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="300">
+          <h4 class="footer-heading">Legal</h4>
+          <ul>
+            <li><a href="terms-conditon.html" class="nav-link hover-underline"><span>Terms and Conditions</span></a></li>
+            <li><a href="privacy.html" class="nav-link hover-underline"><span>Privacy Policy</span></a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start" data-aos="fade-up" data-aos-delay="400">
+          <h4 class="footer-heading">Contact Us</h4>
+          <div class="contact-info">
+            <p><i class="bi bi-geo-alt-fill contact-icon"></i> No: 17/2016, Park Street,</p>
+            <p>Aanjaneya Complex, 1st Floor,</p>
+            <p>Namakkal, Tamil Nadu 637001</p>
+            <p class="mt-4"><i class="bi bi-telephone-fill contact-icon"></i> <span>+91-99526 48847</span></p>
+            <p><i class="bi bi-envelope-fill contact-icon"></i> <span>sarvamngo19@gmail.com</span></p>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-<style>
-    .service-details .services-list a {
-      display: flex;
-      align-items: center;
-      padding: 12px 15px;
-      margin-bottom: 8px;
-      border-radius: 6px;
-    }
-
-    .service-details .services-list a.active {
-      background-color: #f0f7ff;
-      color: #0d6efd;
-    }
-
-    .service-details .services-list a i {
-      margin-right: 10px;
-      font-size: 1.2rem;
-    }
-
-    .service-details .services-img {
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    .service-details ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .service-details ul li {
-      padding: 8px 0;
-      border-bottom: 1px dashed #eee;
-    }
-
-    .service-details ul li i {
-      color: #0d6efd;
-      margin-right: 8px;
-    }
-
-    .help-box {
-      background-color: #f8f9fa;
-      padding: 30px;
-      border-radius: 8px;
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .help-icon {
-      font-size: 2.5rem;
-      color: #0d6efd;
-      margin-bottom: 15px;
-    }
-
-    .impact-highlight {
-      background-color: #f0f7ff;
-      padding: 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-
-    .service-category {
-      margin-bottom: 40px;
-    }
-
-    .service-category h4 {
-      color: #0d6efd;
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #eee;
-    }
-
-    /* Basic styling for cards */
-    .service-card {
-      margin-bottom: 30px;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .card-img-container {
-      position: relative;
-    }
-
-    .card-img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .card-category {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      padding: 5px 10px;
-      border-radius: 4px;
-      color: white;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    .education {
-      background-color: #4e54c8;
-    }
-
-    .environment {
-      background-color: #28a745;
-    }
-
-    .women {
-      background-color: #ff6b6b;
-    }
-
-    .health {
-      background-color: #17a2b8;
-    }
-
-    .hunger {
-      background-color: #fd7e14;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-stats {
-      display: flex;
-      gap: 20px;
-      margin-top: 15px;
-    }
-
-    .stat-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.9rem;
-    }
-
-    .stat-item i {
-      font-size: 1.2rem;
-    }
-
-    /* Filter sidebar styling */
-    .filter-sidebar {
-      padding: 20px;
-      position: sticky;
-      top: 20px;
-    }
-
-    .filter-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .filter-btn {
-      padding: 10px 15px;
-      border: none;
-      background: #f8f9fa;
-      text-align: left;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .filter-btn.active {
-      background-color: #f0f7ff;
-      color: #0d6efd;
-    }
-    .cards-container {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px;
-}
-
-.service-card {
-  flex: 0 0 auto;
-  width: 300px;
-}
-
-</style>
-    <footer id="footer" class="footer position-relative light-background">
-
-
-
-      <!-- Floating Background Elements -->
-  
-      <div class="footer-bg-elements">
-  
-        <div class="bg-circle circle-1"></div>
-  
-        <div class="bg-circle circle-2"></div>
-  
-        <div class="bg-circle circle-3"></div>
-  
-        <div class="bg-wave wave-1"></div>
-  
-        <div class="bg-wave wave-2"></div>
-  
+    <div class="container copyright text-center mt-4" data-aos="fade-up" data-aos-delay="500">
+      <p class="copyright-text">© <span>Copyright</span> <strong class="sitename pulse">Sarvam Educational Trust</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://skyspheretech.com/" class="designer-link">SkySphere Technologies</a>
       </div>
-  
-  
-  
-      <div class="container footer-top">
-  
-        <div class="row gy-4">
-  
-          <div class="col-lg-5 col-md-12 footer-about" data-aos="fade-up" data-aos-delay="100">
-  
-            <a href="index.html" class="logo d-flex align-items-center logo-animate">
-  
-              <span class="sitename">Sarvam Educational Trust</span>
-  
-              <div class="logo-underline"></div>
-  
-            </a>
-  
-            <p class="footer-description">Empowering communities through social welfare initiatives. Join us in our
-              mission to create a better future for all.</p>
-  
-            <div class="social-links d-flex mt-4">
-  
-              <a href="#" class="social-icon twitter"><i class="bi bi-twitter-x"></i></a>
-  
-              <a href="#" class="social-icon facebook"><i class="bi bi-facebook"></i></a>
-  
-              <a href="#" class="social-icon instagram"><i class="bi bi-instagram"></i></a>
-  
-              <a href="#" class="social-icon linkedin"><i class="bi bi-linkedin"></i></a>
-  
-            </div>
-  
-          </div>
-  
-  
-  
-          <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="200">
-  
-            <h4 class="footer-heading">Quick Links</h4>
-  
-            <ul>
-  
-              <li><a href="index.html#hero" class="nav-link hover-underline"><span>Home</span></a></li>
-  
-              <li><a href="index.html#about" class="nav-link hover-underline"><span>About</span></a></li>
-  
-              <li><a href="index.html#portfolio" class="nav-link hover-underline"><span>Works</span></a></li>
-  
-              <li><a href="blog.html" class="nav-link hover-underline"><span>Blog</span></a></li>
-  
-              <li><a href="index.html#contact" class="nav-link hover-underline"><span>Contact</span></a></li>
-  
-            </ul>
-  
-          </div>
-  
-  
-  
-          <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="300">
-  
-            <h4 class="footer-heading">Legal</h4>
-  
-            <ul>
-  
-              <li><a href="terms-conditon.html" class="nav-link hover-underline"><span>Terms and Conditions</span></a>
-              </li>
-  
-              <li><a href="privacy.html" class="nav-link hover-underline"><span>Privacy Policy</span></a></li>
-  
-            </ul>
-  
-          </div>
-  
-  
-  
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start" data-aos="fade-up"
-            data-aos-delay="400">
-  
-            <h4 class="footer-heading">Contact Us</h4>
-  
-            <div class="contact-info">
-  
-              <p><i class="bi bi-geo-alt-fill contact-icon"></i> No: 17/2016, Park Street,</p>
-  
-              <p>Aanjaneya Complex, 1st Floor,</p>
-  
-              <p>Namakkal, Tamil Nadu 637001</p>
-  
-              <p class="mt-4"><i class="bi bi-telephone-fill contact-icon"></i> <span>+91-99526 48847</span></p>
-  
-              <p><i class="bi bi-envelope-fill contact-icon"></i> <span>sarvamngo19@gmail.com</span></p>
-  
-            </div>
-  
-          </div>
-  
-        </div>
-  
-      </div>
-  
-  
-  
-      <div class="container copyright text-center mt-4" data-aos="fade-up" data-aos-delay="500">
-  
-        <p class="copyright-text">© <span>Copyright</span> <strong class="sitename pulse">Sarvam Educational
-            Trust</strong> <span>All Rights Reserved</span></p>
-  
-        <div class="credits">
-  
-          Designed by <a href="https://skyspheretech.com/" class="designer-link">SkySphere Technologies</a>
-  
-        </div>
-  
-      </div>
-  
-  
-  
-    </footer>
-  
-  
-  
-    <style>
-      /* Base Footer Styles */
-  
-      .footer {
-  
-        position: relative;
-  
-        overflow: hidden;
-  
-        padding: 80px 0 40px;
-  
-        background: #f9f9f9;
-  
-        z-index: 1;
-  
-      }
-  
-  
-  
-      /* Background Elements */
-  
-      .footer-bg-elements {
-  
-        position: absolute;
-  
-        width: 100%;
-  
-        height: 100%;
-  
-        top: 0;
-  
-        left: 0;
-  
-        z-index: -1;
-  
-        overflow: hidden;
-  
-      }
-  
-  
-  
-      .bg-circle {
-  
-        position: absolute;
-  
-        border-radius: 50%;
-  
-        background: rgba(78, 84, 200, 0.05);
-  
-        filter: blur(30px);
-  
-      }
-  
-  
-  
-      .circle-1 {
-  
-        width: 300px;
-  
-        height: 300px;
-  
-        top: -100px;
-  
-        right: -100px;
-  
-        animation: float 15s ease-in-out infinite;
-  
-      }
-  
-  
-  
-      .circle-2 {
-  
-        width: 200px;
-  
-        height: 200px;
-  
-        bottom: 50px;
-  
-        left: -50px;
-  
-        animation: float 12s ease-in-out infinite reverse;
-  
-      }
-  
-  
-  
-      .circle-3 {
-  
-        width: 150px;
-  
-        height: 150px;
-  
-        top: 30%;
-  
-        left: 40%;
-  
-        animation: float 10s ease-in-out infinite 2s;
-  
-      }
-  
-  
-  
-      .bg-wave {
-  
-        position: absolute;
-  
-        width: 200%;
-  
-        height: 100px;
-  
-        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%234e54c8"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%234e54c8"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%234e54c8"/></svg>');
-  
-        opacity: 0.1;
-  
-        bottom: 0;
-  
-        left: 0;
-  
-        animation: wave 20s linear infinite;
-  
-      }
-  
-  
-  
-      .wave-2 {
-  
-        bottom: 20px;
-  
-        animation: wave 25s linear infinite reverse;
-  
-        opacity: 0.05;
-  
-      }
-  
-  
-  
-      @keyframes float {
-  
-        0% {
-          transform: translateY(0) rotate(0deg);
-        }
-  
-        50% {
-          transform: translateY(-20px) rotate(5deg);
-        }
-  
-        100% {
-          transform: translateY(0) rotate(0deg);
-        }
-  
-      }
-  
-  
-  
-      @keyframes wave {
-  
-        0% {
-          transform: translateX(0);
-        }
-  
-        100% {
-          transform: translateX(-50%);
-        }
-  
-      }
-  
-  
-  
-      /* Logo Animation */
-  
-      .logo-animate {
-  
-        position: relative;
-  
-        display: inline-block;
-  
-      }
-  
-  
-  
-      .logo-underline {
-  
-        position: absolute;
-  
-        bottom: -5px;
-  
-        left: 0;
-  
-        width: 0;
-  
-        height: 2px;
-  
-        background: linear-gradient(90deg, #4e54c8, #8f94fb);
-  
-        transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  
-      }
-  
-  
-  
-      .logo-animate:hover .logo-underline {
-  
-        width: 100%;
-  
-      }
-  
-  
-  
-      .sitename {
-  
-        font-weight: 700;
-  
-        background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  
-        -webkit-background-clip: text;
-  
-        background-clip: text;
-  
-        color: transparent;
-  
-        transition: all 0.3s ease;
-  
-      }
-  
-  
-  
-      .sitename.pulse {
-  
-        animation: pulse 2s infinite;
-  
-      }
-  
-  
-  
-      @keyframes pulse {
-  
-        0% {
-          transform: scale(1);
-        }
-  
-        50% {
-          transform: scale(1.05);
-        }
-  
-        100% {
-          transform: scale(1);
-        }
-  
-      }
-  
-  
-  
-      /* Social Icons */
-  
-      .social-links {
-  
-        gap: 15px;
-  
-      }
-  
-  
-  
-      .social-icon {
-  
-        width: 40px;
-  
-        height: 40px;
-  
-        border-radius: 50%;
-  
-        display: flex;
-  
-        align-items: center;
-  
-        justify-content: center;
-  
-        color: white;
-  
-        position: relative;
-  
-        overflow: hidden;
-  
-        transition: all 0.3s ease;
-  
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  
-      }
-  
-  
-  
-      .social-icon::before {
-  
-        content: '';
-  
-        position: absolute;
-  
-        width: 100%;
-  
-        height: 100%;
-  
-        background: linear-gradient(135deg, skyblue, white);
-  
-        z-index: -1;
-  
-        transition: all 0.3s ease;
-  
-      }
-  
-  
-  
-      .social-icon:hover {
-  
-        transform: translateY(-5px) scale(1.1);
-  
-        box-shadow: 0 8px 20px rgba(78, 84, 200, 0.3);
-  
-      }
-  
-  
-  
-      .social-icon:hover i {
-  
-        animation: icon-bounce 0.6s ease;
-  
-      }
-  
-  
-  
-      @keyframes icon-bounce {
-  
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-  
-        50% {
-          transform: translateY(-5px);
-        }
-  
-      }
-  
-  
-  
-      /* Navigation Links */
-  
-      .nav-link {
-  
-        position: relative;
-  
-        display: inline-block;
-  
-        padding: 5px 0;
-  
-        color: #333;
-  
-        transition: color 0.3s ease;
-  
-      }
-  
-  
-  
-      .nav-link span {
-  
-        position: relative;
-  
-        z-index: 1;
-  
-      }
-  
-  
-  
-      .hover-underline::before {
-  
-        content: '';
-  
-        position: absolute;
-  
-        bottom: 0;
-  
-        left: 0;
-  
-        width: 0;
-  
-        height: 2px;
-  
-        background: skyblue;
-  
-        transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  
-      }
-  
-  
-  
-      .nav-link:hover {
-  
-        color: white;
-  
-      }
-  
-  
-  
-      .nav-link:hover::before {
-  
-        width: 100%;
-  
-        right: auto;
-  
-      }
-  
-  
-  
-      /* Contact Info */
-  
-      .contact-icon {
-  
-        color: rgb(37, 157, 222);
-  
-        margin-right: 8px;
-  
-        transition: transform 0.3s ease;
-  
-      }
-  
-  
-  
-      .contact-info p:hover .contact-icon {
-  
-        transform: scale(1.2);
-  
-      }
-  
-  
-  
-      /* Copyright Section */
-  
-      .copyright-text {
-  
-        position: relative;
-  
-        display: inline-block;
-  
-      }
-  
-  
-  
-      .copyright-text::after {
-  
-        content: '';
-  
-        position: absolute;
-  
-        bottom: -5px;
-  
-        left: 50%;
-  
-        transform: translateX(-50%);
-  
-        width: 0;
-  
-        height: 2px;
-  
-        background: linear-gradient(90deg, #4e54c8, #8f94fb);
-  
-        transition: width 0.4s ease;
-  
-      }
-  
-  
-  
-      .copyright:hover .copyright-text::after {
-  
-        width: 100%;
-  
-      }
-  
-  
-  
-      .designer-link {
-  
-        position: relative;
-  
-        color: #4e54c8;
-  
-        font-weight: 600;
-  
-      }
-  
-  
-  
-      .designer-link::after {
-  
-        content: '';
-  
-        position: absolute;
-  
-        bottom: -2px;
-  
-        left: 0;
-  
-        width: 0;
-  
-        height: 2px;
-  
-        background: #4e54c8;
-  
-        transition: width 0.3s ease;
-  
-      }
-  
-  
-  
-      .designer-link:hover::after {
-  
-        width: 100%;
-  
-      }
-  
-  
-  
-      /* Responsive Adjustments */
-  
-      @media (max-width: 768px) {
-  
-        .footer {
-  
-          padding: 60px 0 30px;
-  
-        }
-  
-  
-  
-        .footer-links,
-        .footer-contact {
-  
-          text-align: center;
-  
-        }
-  
-  
-  
-        .social-links {
-  
-          justify-content: center;
-  
-        }
-  
-      }
-    </style>
-    <style>
-      /* Base Styles */
-      .service-details {
-        padding: 80px 0;
-        background-color: #f9f9ff;
-      }
-
-      .heading {
-        color: #4e54c8;
-        font-weight: 600;
-        margin-bottom: 20px;
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .heading::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 50px;
-        height: 3px;
-        background: linear-gradient(to right, #4e54c8, #8f94fb);
-      }
-
-      /* Filter Sidebar */
-      .filter-sidebar {
-        padding: 30px;
-        position: sticky;
-        top: 20px;
-        background: white;
-        border: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        height: fit-content;
-      }
-
-      .filter-list {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin: 25px 0;
-      }
-
-      .filter-btn {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: none;
-        border: none;
-        padding: 12px 20px;
-        text-align: left;
-        cursor: pointer;
-        transition: none;
-        border-radius: 6px;
-        font-size: 15px;
-        color: #555;
-      }
-
-      .filter-btn i {
-        color: #4e54c8;
-      }
-
-      .filter-btn.active {
-        font-weight: 600;
-        box-shadow: 0 3px 10px rgba(78, 84, 200, 0.2);
-        background-color: rgba(78, 84, 200, 0.1);
-        color: #4e54c8;
-      }
-
-      /* Quick Links */
-      .quick-links {
-        margin: 30px 0;
-        padding: 20px 0;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-      }
-
-      .quick-links h4 {
-        color: #4e54c8;
-        margin-bottom: 15px;
-      }
-
-      .quick-link {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 0;
-        color: #555;
-        text-decoration: none;
-        transition: none;
-      }
-
-      .quick-link i {
-        font-size: 12px;
-      }
-
-      /* Help Box */
-      .help-box {
-        text-align: center;
-        padding: 25px;
-        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-        border-radius: 8px;
-        margin-top: 30px;
-      }
-
-      .help-icon {
-        font-size: 2.5rem;
-        color: #4e54c8;
-        margin-bottom: 15px;
-      }
-
-      .help-box h4 {
-        color: #4e54c8;
-        margin-bottom: 15px;
-      }
-
-      .help-box p {
-        margin-bottom: 8px;
-        color: #555;
-      }
-
-      .help-box i {
-        margin-right: 8px;
-        color: #4e54c8;
-      }
-
-      /* Cards Container */
-      .cards-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 35px;
-      }
-
-      .service-card {
-        display: none;
-        max-width: 1100px;
-        width: 100%;
-        position: relative;
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        transition: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        margin: 0 auto;
-      }
-
-      .service-card.active {
-        display: block;
-      }
-
-      .hover-indicator {
-        display: none;
-      }
-
-      .card-img-container {
-        position: relative;
-        height: 250px;
-        overflow: hidden;
-      }
-
-      .card-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: none;
-      }
-
-      .card-category {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        padding: 6px 15px;
-        border-radius: 20px;
-        font-size: 13px;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .education {
-        background-color: #148aea;
-      }
-
-      .environment {
-        background-color: #148aea;
-      }
-
-      .women {
-        background-color: #148aea;
-      }
-
-      .health {
-        background-color: #148aea;
-      }
-
-      .hunger {
-        background-color: #148aea;
-      }
-
-      .card-content {
-        padding: 30px;
-      }
-
-      .card-content h3 {
-        color: #333;
-        margin-bottom: 20px;
-        font-size: 24px;
-        font-weight: 700;
-        position: relative;
-        padding-left: 15px;
-      }
-
-      .card-content h3::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 5px;
-        height: 70%;
-        width: 4px;
-        background: #4e54c8;
-        border-radius: 2px;
-      }
-
-      .card-text p {
-        color: #666;
-        margin-bottom: 20px;
-        line-height: 1.7;
-        font-size: 16px;
-      }
-
-      .card-stats {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 25px;
-        padding-top: 20px;
-        border-top: 1px solid #eee;
-      }
-
-      .stat-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #666;
-        font-size: 15px;
-      }
-
-      .stat-item i {
-        color: #4e54c8;
-        font-size: 18px;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1199px) {
-        .cards-container {
-          padding: 0 20px;
-        }
-      }
-
-      @media (max-width: 991px) {
-        .filter-sidebar {
-          position: static;
-          margin-bottom: 40px;
-        }
-
-        .cards-container {
-          padding: 0 20px;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .card-img-container {
-          height: 220px;
-        }
-
-        .service-card {
-          margin-left: 0;
-        }
-      }
-    </style>
-
-    <script>
-      // Filter functionality
-      document.addEventListener('DOMContentLoaded', function () {
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const serviceCards = document.querySelectorAll('.service-card');
-
-        filterButtons.forEach(button => {
-          button.addEventListener('click', function () {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-
-            // Add active class to clicked button
-            this.classList.add('active');
-
-            const filterValue = this.getAttribute('data-filter');
-
-            // Show/hide cards based on filter
-            serviceCards.forEach(card => {
-              card.classList.remove('active');
-
-              if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                card.classList.add('active');
-              }
-            });
-          });
-        });
-
-        // Smooth scrolling for quick links
-        document.querySelectorAll('.quick-link').forEach(link => {
-          link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-              window.scrollTo({
-                top: targetElement.offsetTop - 100,
-                behavior: 'smooth'
-              });
-
-              // Highlight the filtered category
-              const category = targetElement.getAttribute('data-category');
-              filterButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-filter') === category ||
-                  (category && btn.getAttribute('data-filter') === 'all')) {
-                  btn.classList.add('active');
-                }
-              });
-
-              // Show only the relevant cards
-              serviceCards.forEach(card => {
-                card.classList.remove('active');
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                  card.classList.add('active');
-                }
-              });
-            }
-          });
-        });
-      });
-
-      // Custom Cursor System
-      const cursorDot = document.createElement('div');
-      cursorDot.classList.add('cursor-dot');
-      document.body.appendChild(cursorDot);
-
-      const cursorFollower = document.createElement('div');
-      cursorFollower.classList.add('cursor-follower');
-      document.body.appendChild(cursorFollower);
-
-      window.addEventListener('mousemove', (e) => {
-        cursorDot.style.left = `${e.clientX}px`;
-        cursorDot.style.top = `${e.clientY}px`;
-
-        cursorFollower.style.left = `${e.clientX}px`;
-        cursorFollower.style.top = `${e.clientY}px`;
-      });
-
-      // Scroll-triggered animations
-      AOS.init({
-        duration: 1200, // Animation duration in milliseconds
-        offset: 100, // Offset (in pixels) from the original trigger point
-        once: true, // Whether animation should happen only once
-      });
-
-      // Add hover effect for buttons dynamically
-      const buttons = document.querySelectorAll('.button-hover');
-      buttons.forEach(button => {
-        button.addEventListener('mouseenter', () => {
-          button.style.transform = 'scale(1.1)';
-        });
-        button.addEventListener('mouseleave', () => {
-          button.style.transform = 'scale(1)';
-        });
-      });
-
-      // Animated Counters
-      const counters = document.querySelectorAll('.stat-item');
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-          const increment = target / 200;
-
-          if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 10);
-          } else {
-            counter.innerText = target;
-          }
-        };
-        updateCount();
-      });
-
-      // Initialize Particle.js
-      particlesJS('particles-js', {
-        particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            value: "#ffffff"
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#000000"
-            },
-            polygon: {
-              nb_sides: 5
-            }
-          },
-          opacity: {
-            value: 0.5,
-            random: false,
-            anim: {
-              enable: false,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false
-            }
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: false,
-              speed: 40,
-              size_min: 0.1,
-              sync: false
-            }
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#ffffff",
-            opacity: 0.4,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200
-            }
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "repulse"
-            },
-            onclick: {
-              enable: true,
-              mode: "push"
-            },
-            resize: true
-          },
-          modes: {
-            grab: {
-              distance: 400,
-              line_linked: {
-                opacity: 1
-              }
-            },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-              speed: 3
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4
-            },
-            push: {
-              particles_nb: 4
-            },
-            remove: {
-              particles_nb: 2
-            }
-          }
-        },
-        retina_detect: true
-      });
-    </script>
-
-    <script>
-      // Smooth scrolling for service navigation
-      const serviceLinks = document.querySelectorAll('.services-list a');
-
-      serviceLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          // Remove active class from all links
-          serviceLinks.forEach(link => link.classList.remove('active'));
-
-          // Add active class to the clicked link
-          this.classList.add('active');
-
-          // Scroll to the target section
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 100, // Adjust offset for sticky header
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-    </script>
-
-    <script>
-      // Ensure correct filter is applied based on URL hash for all filters
-      window.addEventListener('DOMContentLoaded', () => {
-        const hash = window.location.hash;
-        if (hash) {
-          const targetFilter = hash.replace('#', '').toLowerCase();
-          const filterButton = document.querySelector(`.filter-btn[data-filter="${targetFilter}"]`);
-
-          if (filterButton) {
-            // Simulate a click on the corresponding filter button
-            filterButton.click();
-          }
-        }
-      });
-    </script>
-  </main>
-
-
+    </div>
+  </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -1751,32 +845,82 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    // Smooth scrolling for service navigation
-    document.querySelectorAll('.services-list a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        // Remove active class from all links
-        document.querySelectorAll('.services-list a').forEach(link => {
-          link.classList.remove('active');
-        });
-
-        // Add active class to clicked link
-        this.classList.add('active');
-
-        // Scroll to target section
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: 'smooth'
+    // Filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const serviceCards = document.querySelectorAll('.service-card');
+      
+      // Filter button click event
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const filterValue = this.getAttribute('data-filter');
+          
+          // Show/hide cards based on filter
+          serviceCards.forEach(card => {
+            if (filterValue === 'all') {
+              card.style.display = 'block';
+            } else {
+              if (card.getAttribute('data-category') === filterValue) {
+                card.style.display = 'block';
+              } else {
+                card.style.display = 'none';
+              }
+            }
           });
-        }
+          
+          // Trigger AOS animation for filtered items
+          setTimeout(() => {
+            AOS.refresh();
+          }, 500);
+        });
+      });
+      
+      // Counter animation for impact stats
+      const counters = document.querySelectorAll('.stat-number');
+      const speed = 200;
+      
+      function animateCounters() {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-count');
+          const count = +counter.innerText;
+          const increment = target / speed;
+          
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(animateCounters, 1);
+          } else {
+            counter.innerText = target;
+          }
+        });
+      }
+      
+      // Start counter animation when impact section is in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(document.querySelector('.impact-section'));
+      
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
       });
     });
   </script>
 
 </body>
-
 </html>
