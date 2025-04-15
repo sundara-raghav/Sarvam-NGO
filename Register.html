@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Sarvam NGO - Make a Difference</title>
+    <link href="https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #0076a8;
+            --primary-dark: green;
+            --secondary: white;
+            --light: #f5f9ff;
+            --dark: #1d1d1f;
+            --gray: #7a7a8c;
+            --light-gray: #e1f0ff;
+            --shadow: 0 4px 30px rgba(0, 180, 255, 0.15);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="none" stroke="%2300b4ff" stroke-width="1.5"/><circle cx="8" cy="8" r="2" fill="%2300b4ff"/></svg>'), auto;
+        }
+
+        body {
+            background-color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .hero-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #e6f4ff 0%, #cce9ff 100%);
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            width: 50vw;
+            max-width: 800px;
+            right: -10%;
+            bottom: -10%;
+            opacity: 0.8;
+            z-index: 0;
+            animation: float 12s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0, 180, 255, 0.2));
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 180, 255, 0.1);
+            animation: float 15s infinite linear;
+            filter: blur(1px);
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            animation: float-up 20s infinite linear;
+            filter: blur(2px);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(5px, 10px) rotate(5deg);
+            }
+
+            50% {
+                transform: translate(0, 15px) rotate(0deg);
+            }
+
+            75% {
+                transform: translate(-5px, 10px) rotate(-5deg);
+            }
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        .container {
+            .container {
+                background: white;
+                /* Changed to solid white */
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-radius: 24px;
+                box-shadow: var(--shadow);
+                width: 100%;
+                max-width: 900px;
+                padding: 60px;
+                transition: var(--transition);
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                /* More subtle border */
+                z-index: 1;
+            }
+
+            /* Remove the glow animation */
+            .container::before {
+                content: none;
+            }
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 180, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .logo {
+            height: 80px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            filter: drop-shadow(0 2px 10px rgba(0, 180, 255, 0.3));
+        }
+
+        .logo:hover {
+            transform: scale(1.1) rotate(-5deg);
+            filter: drop-shadow(0 5px 15px rgba(0, 180, 255, 0.4));
+        }
+
+        .header h1 {
+            color: #000;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            /* background: linear-gradient(90deg, var(--primary), var(--secondary)); */
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* color: transparent; */
+            display: inline-block;
+            text-shadow: 0 2px 10px rgba(0, 180, 255, 0.2);
+        }
+
+        .header p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: var(--transition);
+        }
+
+        .header:hover p {
+            color: var(--primary-dark);
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+        }
+
+        .form-group {
+            flex: 1 0 calc(50% - 24px);
+            margin: 0 12px 30px;
+            position: relative;
+        }
+
+        .form-group.full-width {
+            flex: 1 0 calc(100% - 24px);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--dark);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(0, 180, 255, 0.2);
+            background: white;
+        }
+
+        .form-control:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 180, 255, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: var(--gray);
+            opacity: 0.6;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 180, 255, 0.3);
+            margin-top: 10px;
+            animation: pulse 2.5s infinite;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 180, 255, 0.4);
+            animation: none;
+        }
+
+        .btn:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .form-footer {
+            margin-top: 40px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .form-footer:hover {
+            color: var(--primary-dark);
+        }
+
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .form-footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .form-footer a:hover {
+            color: var(--primary-dark);
+        }
+
+        .form-footer a:hover::after {
+            width: 100%;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: '⌄';
+            font-size: 1.2rem;
+            color: var(--gray);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .select-wrapper:hover::after {
+            color: var(--primary);
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        select.form-control {
+            appearance: none;
+            padding-right: 50px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .checkbox-group:hover {
+            background: rgba(0, 180, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .checkbox-group input {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .checkbox-group:hover input {
+            transform: scale(1.2);
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checkbox-group:hover label {
+            color: var(--primary);
+        }
+
+        .illustration {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 180, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .illustration:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 180, 255, 0.3);
+        }
+
+        .illustration img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .illustration:hover img {
+            transform: scale(1.02);
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: var(--light-gray);
+            border-radius: 3px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress {
+            height: 100%;
+            width: 33%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+            transition: width 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.8) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            animation: progress-shine 2s infinite;
+        }
+
+        @keyframes progress-shine {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            .form-group {
+                flex: 1 0 calc(100% - 24px);
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-image {
+                opacity: 0.4;
+                right: -30%;
+                bottom: -20%;
+            }
+        }
+
+        /* Apple-like focus ring */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 180, 255, 0.3);
+        }
+
+        /* Floating label animation */
+        .float-label {
+            position: relative;
+        }
+
+        .float-label label {
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            pointer-events: none;
+            transition: var(--transition);
+            color: var(--gray);
+        }
+
+        .float-label input:focus+label,
+        .float-label input:not(:placeholder-shown)+label,
+        .float-label select:focus+label,
+        .float-label select:valid+label,
+        .float-label textarea:focus+label,
+        .float-label textarea:not(:placeholder-shown)+label {
+            top: -10px;
+            left: 12px;
+            font-size: 0.8rem;
+            background: white;
+            padding: 0 8px;
+            color: var(--primary);
+            font-weight: 600;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 180, 255, 0.1);
+        }
+
+        /* Custom cursor for interactive elements */
+        button,
+        input,
+        select,
+        textarea,
+        a,
+        .checkbox-group {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="%2300b4ff" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="%2300b4ff"/></svg>'), auto;
+        }
+
+        /* Glow effect for container */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--primary));
+            z-index: -2;
+            filter: blur(20px);
+            opacity: 0.3;
+            animation: glow 8s linear infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes glow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Ripple effect for buttons */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Floating waves in background */
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%2300b4ff" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%2300b4ff" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%2300b4ff"/></svg>');
+            background-repeat: repeat-x;
+            animation: wave 15s linear infinite;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-background">
+        <div class="wave"></div>
+        <!-- <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Volunteers working together" class="hero-image"> -->
+    </div>
+
+    <div class="container animate__animated animate__fadeIn">
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="header">
+            <img src="assets/img/sarvam-logo-removebg-preview (1).png" alt="Sarvam NGO Logo" class="logo">
+            <h1>Join Our Movement</h1>
+            <p>Become part of something bigger. Together we can create lasting change in our communities.</p>
+        </div>
+
+        <div class="illustration">
+            <img src="assets\img\register-page.jpg"
+                alt="Community service" class="animate__animated animate__fadeInUp">
+        </div>
+
+        <form id="registrationForm">
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="text" id="firstName" class="form-control" placeholder=" " required>
+                    <label for="firstName">First Name</label>
+                </div>
+
+                <div class="form-group float-label">
+                    <input type="text" id="lastName" class="form-control" placeholder=" " required>
+                    <label for="lastName">Last Name</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="email" id="email" class="form-control" placeholder=" " required>
+                    <label for="email">Email Address</label>
+                </div>
+
+                <div class="form-group float-label">
+                    <input type="tel" id="phone" class="form-control" placeholder=" " required>
+                    <label for="phone">Phone Number</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="date" id="dob" class="form-control" required>
+                    <label for="dob">Date of Birth</label>
+                </div>
+
+                <div class="form-group float-label">
+                    <select id="gender" class="form-control" required>
+                        <option value="" selected disabled></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                    <label for="gender">Gender</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="address" class="form-control" placeholder=" " required></textarea>
+                    <label for="address">Full Address</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="text" id="city" class="form-control" placeholder=" " required>
+                    <label for="city">City</label>
+                </div>
+
+                <div class="form-group float-label">
+                    <input type="text" id="pincode" class="form-control" placeholder=" " required>
+                    <label for="pincode">Pincode</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label>Areas of Interest (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="education" name="interest" value="education">
+                        <label for="education">Education Initiatives</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="environment" name="interest" value="environment">
+                        <label for="environment">Environmental Conservation</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="healthcare" name="interest" value="healthcare">
+                        <label for="healthcare">Healthcare Programs</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="women-empowerment" name="interest" value="women-empowerment">
+                        <label for="women-empowerment">Women Empowerment</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="skills" class="form-control" placeholder=" "></textarea>
+                    <label for="skills">Skills/Expertise</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="motivation" class="form-control" placeholder=" " required></textarea>
+                    <label for="motivation">Why do you want to join Sarvam NGO?</label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn animate__animated animate__pulse animate__infinite animate__slower">
+                    Continue Application
+                </button>
+            </div>
+
+            <div class="form-footer">
+                <p>By registering, you agree to our <a href="services-details.html" class="terms-link">Terms of
+                        Service</a> and <a href="privacy.html" class="privacy-link">Privacy Policy</a>.</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create dynamic particles and bubbles
+            const heroBg = document.querySelector('.hero-background');
+
+            // Create particles
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                const size = Math.random() * 120 + 30;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.top = `${posY}%`;
+                particle.style.left = `${posX}%`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.opacity = Math.random() * 0.15 + 0.05;
+
+                heroBg.appendChild(particle);
+            }
+
+            // Create bubbles
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+
+                const size = Math.random() * 40 + 10;
+                const posX = Math.random() * 100;
+                const duration = Math.random() * 15 + 10;
+                const delay = Math.random() * 15;
+
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${posX}%`;
+                bubble.style.bottom = `-${size}px`;
+                bubble.style.animationDuration = `${duration}s`;
+                bubble.style.animationDelay = `${delay}s`;
+
+                heroBg.appendChild(bubble);
+            }
+
+            // Enhanced floating labels
+            const floatLabels = document.querySelectorAll('.float-label input, .float-label select, .float-label textarea');
+            floatLabels.forEach(el => {
+                el.addEventListener('focus', () => {
+                    const label = el.parentNode.querySelector('label');
+                    label.style.color = 'var(--primary)';
+                    label.style.fontWeight = '600';
+                });
+
+                el.addEventListener('blur', () => {
+                    const label = el.parentNode.querySelector('label');
+                    if (!el.value) {
+                        label.style.color = 'var(--gray)';
+                        label.style.fontWeight = '500';
+                    }
+                });
+
+                // Initialize labels for pre-filled values
+                if (el.value) {
+                    const label = el.parentNode.querySelector('label');
+                    label.style.top = '-10px';
+                    label.style.left = '12px';
+                    label.style.fontSize = '0.8rem';
+                    label.style.background = 'white';
+                    label.style.padding = '0 8px';
+                    label.style.color = 'var(--primary)';
+                    label.style.fontWeight = '600';
+                }
+            });
+
+            // Ripple effect for buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple');
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Form submission handling
+            const form = document.getElementById('registrationForm');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Show loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = '<span class="btn-loader"></span> Processing...';
+                submitBtn.disabled = true;
+
+                // Simulate form submission
+                setTimeout(() => {
+                    // Here you would normally send the form data to your server
+                    console.log('Form submitted!');
+
+                    // Show success message
+                    submitBtn.innerHTML = '✓ Success!';
+                    submitBtn.style.background = 'linear-gradient(135deg, #00cc88, #00ffaa)';
+
+                    // Reset form after delay
+                    setTimeout(() => {
+                        form.reset();
+                        submitBtn.innerHTML = 'Continue Application';
+                        submitBtn.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+                        submitBtn.disabled = false;
+
+                        // Reset floating labels
+                        floatLabels.forEach(el => {
+                            const label = el.parentNode.querySelector('label');
+                            label.style.top = '18px';
+                            label.style.left = '20px';
+                            label.style.fontSize = '0.95rem';
+                            label.style.background = 'transparent';
+                            label.style.padding = '0';
+                            label.style.color = 'var(--gray)';
+                            label.style.fontWeight = '500';
+                        });
+                    }, 2000);
+                }, 1500);
+            });
+
+            // Add hover effects to links
+            const links = document.querySelectorAll('.terms-link, .privacy-link, .login-link');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    link.style.textDecoration = 'underline';
+                    link.style.opacity = '0.9';
+                });
+                link.addEventListener('mouseleave', () => {
+                    link.style.textDecoration = 'none';
+                    link.style.opacity = '1';
+                });
+            });
+
+            // Animate progress bar on scroll
+            window.addEventListener('scroll', function () {
+                const progressBar = document.querySelector('.progress');
+                const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = `${33 + (scrollPercentage * 0.67)}%`;
+            });
+        });
+    </script>
+</body>
+
+</html>
