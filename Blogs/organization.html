@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blog Details - Sarvam Trust</title>
+  <meta name="description" content="Learn about our initiatives in education, waste management, and community health">
+  <meta name="keywords" content="NGO, education, waste management, health, community development">
+
+  <!-- Favicons -->
+  <link href="https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg" rel="icon">
+
+  <!-- Fonts -->
+  <link hreaf="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #4e54c8;
+      --secondary-color: #8f94fb;
+      --accent-color: #6a11cb;
+      --text-dark: #2d3748;
+      --text-light: #718096;
+      --light-bg: #f8fafc;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      background-color: #fff;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      background: linear-gradient(135deg, rgba(78, 84, 200, 0.8), rgba(143, 148, 251, 0.8)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    /* Floating Elements Animation */
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .floating-element {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      filter: blur(30px);
+      animation: float 15s infinite linear;
+    }
+
+    .element-1 {
+      width: 300px;
+      height: 300px;
+      top: 20%;
+      left: 10%;
+      animation-duration: 20s;
+    }
+
+    .element-2 {
+      width: 200px;
+      height: 200px;
+      top: 60%;
+      left: 70%;
+      animation-duration: 25s;
+      animation-delay: 5s;
+    }
+
+    .element-3 {
+      width: 150px;
+      height: 150px;
+      top: 30%;
+      left: 50%;
+      animation-duration: 18s;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      25% {
+        transform: translate(50px, 50px) rotate(10deg);
+      }
+
+      50% {
+        transform: translate(100px, 0) rotate(20deg);
+      }
+
+      75% {
+        transform: translate(50px, -50px) rotate(10deg);
+      }
+
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+    }
+
+    /* Blog Content Section */
+    .blog-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .article-header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .article-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .article-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .article-header:hover .article-title::after {
+      transform: scaleX(1);
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .article-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .article-image:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.8rem;
+      margin: 3rem 0 1.5rem;
+      color: var(--primary-color);
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .article-content h3::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      height: 1.5rem;
+      width: 6px;
+      background: linear-gradient(var(--primary-color), var(--secondary-color));
+      border-radius: 3px;
+    }
+
+    blockquote {
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      border-left: 4px solid var(--primary-color);
+      padding-left: 2rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    blockquote::before {
+      content: '"';
+      position: absolute;
+      font-size: 5rem;
+      color: rgba(78, 84, 200, 0.1);
+      top: -1.5rem;
+      left: 0;
+      line-height: 1;
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 3rem 0;
+    }
+
+    .grid-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: scale(1.03);
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .grid-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover .grid-caption {
+      transform: translateY(0);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      color: black;
+      padding: 60px 0;
+      margin: 60px 0;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') center center/cover;
+      opacity: 0.1;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      background: whitesmoke;
+      border-radius: 10px;
+      backdrop-filter: blur(2px);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-10px);
+      background: skyblue;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: black;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Comments Section */
+    .comments-section {
+      margin-top: 80px;
+      padding: 60px 0;
+      background-color: var(--light-bg);
+      border-radius: 15px;
+    }
+
+    .comment {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .comment:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .comment-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--primary-color);
+    }
+
+    .comment-content {
+      flex-grow: 1;
+    }
+
+    .comment-author {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--primary-color);
+    }
+
+    .comment-date {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .comment-text {
+      line-height: 1.6;
+    }
+
+    /* Form Section */
+    .form-section {
+      margin-top: 80px;
+      padding: 60px;
+      background: linear-gradient(135deg, var(--light-bg), white);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      position: relative;
+    }
+
+    .form-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .form-control {
+      height: 50px;
+      padding: 15px 20px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.2);
+    }
+
+    textarea.form-control {
+      height: 150px;
+      resize: none;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(78, 84, 200, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(78, 84, 200, 0.4);
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        height: auto;
+        padding: 100px 0;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-image {
+        height: 300px;
+      }
+
+      .form-section {
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+
+      .comment {
+        flex-direction: column;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- Blog Content -->
+  <main class="blog-content" id="article">
+    <article>
+      <header class="article-header animate-on-scroll">
+        <h2 class="article-title">Sarvam Educational and Charitable Trust: Bridging Gaps, Transforming Lives</h2>
+        <div class="article-meta">
+          <span><i class="bi bi-calendar"></i> 2016</span>
+          <span><i class="bi bi-person"></i> By Ramya</span>
+          <!-- <span><i class="bi bi-chat"></i> 12 Comments</span> -->
+        </div>
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Sarvam Educational and Charitable Trust</title>
+          <!-- Bootstrap CSS -->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+          <!-- Custom CSS -->
+          <style>
+            .card {
+              margin-bottom: 30px;
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+              height: 100%;
+              overflow: hidden;
+              border-radius: 8px;
+              border: none;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .card:hover {
+              transform: translateY(-10px);
+              box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .card-img-top {
+              height: 200px;
+              object-fit: cover;
+              transition: transform 0.5s ease;
+            }
+
+            .card:hover .card-img-top {
+              transform: scale(1.05);
+            }
+
+            .card-category {
+              position: absolute;
+              top: 15px;
+              right: 15px;
+              background-color: rgba(0, 123, 255, 0.8);
+              color: white;
+              padding: 5px 15px;
+              border-radius: 20px;
+              font-weight: 600;
+              font-size: 14px;
+              z-index: 10;
+            }
+
+            .card-title {
+              font-weight: 700;
+              margin-bottom: 15px;
+              color: #333;
+            }
+
+            .card-title a {
+              color: #333;
+              text-decoration: none;
+              transition: color 0.3s ease;
+            }
+
+            .card-title a:hover {
+              color: #007bff;
+            }
+
+            .card-text {
+              color: #666;
+              font-size: 15px;
+            }
+
+            .post-author-img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-right: 10px;
+            }
+
+            .post-meta {
+              font-size: 14px;
+            }
+
+            .post-author {
+              font-weight: 600;
+              margin-bottom: 0;
+              color: #333;
+            }
+
+            .post-date {
+              color: #888;
+              margin-bottom: 0;
+            }
+
+            .card-body {
+              padding: 20px;
+            }
+
+            .card-footer {
+              background-color: transparent;
+              border-top: 1px solid rgba(0, 0, 0, 0.05);
+              padding: 15px 20px;
+            }
+
+            /* Animation for cards to load */
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                transform: translateY(20px);
+              }
+
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+
+            .animated-card {
+              animation: fadeInUp 0.5s ease-out forwards;
+              opacity: 0;
+            }
+
+            .card:nth-child(1) {
+              animation-delay: 0.1s;
+            }
+
+            .card:nth-child(2) {
+              animation-delay: 0.2s;
+            }
+
+            .card:nth-child(3) {
+              animation-delay: 0.3s;
+            }
+
+            .card:nth-child(4) {
+              animation-delay: 0.4s;
+            }
+
+            .card:nth-child(5) {
+              animation-delay: 0.5s;
+            }
+
+            .card:nth-child(6) {
+              animation-delay: 0.6s;
+            }
+          </style>
+        </head>
+
+        <body>
+
+
+          <!-- Bootstrap JS (optional) -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+      </header>
+
+      <div class="article-content animate-on-scroll">
+        <p><strong>Sarvam Educational and Charitable Trust: Empowering Communities, Creating Futures</strong><br>
+          Since its inception in 2016 in Namakkal, Sarvam Educational and Charitable Trust has been a catalyst for
+          positive change in rural Tamil Nadu. Our vision is to foster inclusive growth through education, healthcare,
+          women's empowerment, and environmental awareness. At Sarvam, we believe in turning challenges into
+          opportunities and building a future where every individual has a voice, a purpose, and a path to success.</p>
+
+        <p>Under the leadership of our Chairperson, Ms. Ramya S., we’ve grown from a humble grassroots effort to a
+          movement that brings people together. What started as small steps to support underprivileged children has now
+          expanded into full-fledged programs that touch hundreds of families every year.</p>
+
+        <blockquote class="animate-on-scroll" style="text-align: justify;">
+          <b>"The best way to find yourself is to lose yourself in the service of others."  </b> - Mahatma Gandhi
+        </blockquote>
+
+        <h3 class="animate-on-scroll">Our Model for Lasting Impact</h3>
+        <p class="animate-on-scroll">Sarvam’s approach goes beyond providing temporary solutions. We invest in people
+          and systems to ensure sustainable development. Our key pillars include:</p>
+        <ol class="animate-on-scroll">
+          <li><strong>Community Leadership:</strong> Empowering local leaders and volunteers to lead awareness campaigns
+            and educational initiatives.</li>
+          <li><strong>Skill-Building:</strong> Offering workshops and training programs for students, women, and
+            educators to foster self-reliance.</li>
+          <li><strong>Green Mission:</strong> Encouraging eco-conscious habits like tree planting, waste reduction, and
+            clean-up drives in villages.</li>
+          <li><strong>Inclusive Learning:</strong> Making education accessible through mobile classrooms and digital
+            aids for remote learners.</li>
+        </ol>
+
+        <div class="image-grid animate-on-scroll">
+          <div class="grid-item">
+            <img
+              src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80"
+              alt="Students in classroom">
+            <div class="grid-caption">Children engaged in interactive learning</div>
+          </div>
+          <div class="grid-item">
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+              alt="Teacher training">
+            <div class="grid-caption">Community volunteers undergoing skill training</div>
+          </div>
+        </div>
+
+        <h3 class="animate-on-scroll">A Story of Transformation</h3>
+        <p class="animate-on-scroll">Take the story of Vignesh, a 13-year-old boy whose family lived below the poverty
+          line. With Sarvam’s support, Vignesh received scholarships, tutoring, and mentorship. Once shy and withdrawn,
+          he now confidently speaks at public forums and aspires to become a teacher himself. His transformation is just
+          one among hundreds we've proudly supported.</p>
+
+        <p class="animate-on-scroll">Stories like Vignesh's are a testament to the power of belief and consistent
+          support. Each child we help today becomes a beacon of hope for tomorrow.</p>
+
+        <div class="stats-section animate-on-scroll">
+          <div class="stats-bg"></div>
+          <div class="stats-container">
+            <div class="stat-item">
+              <div class="stat-number">750+</div>
+              <div class="stat-label">Children Impacted</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">90%</div>
+              <div class="stat-label">Retention Rate in Schooling</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Villages Reached</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">60+</div>
+              <div class="stat-label">Empowered Volunteers</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="animate-on-scroll">Looking Forward</h3>
+        <p class="animate-on-scroll">As we continue our journey, Sarvam aims to build a permanent learning center,
+          expand healthcare access through mobile units, and digitize learning for rural schools. We’re also nurturing
+          youth leadership programs that equip young people with the skills to lead tomorrow's change.</p>
+
+        <p class="animate-on-scroll">Join us in building a better world—where education isn't a privilege but a right,
+          and where compassion leads to collective progress. Your support can help us turn dreams into reality.</p>
+      </div>
+
+    </article>
+
+
+
+    <body class="blog-details-page">
+
+      <!-- Comment Section -->
+      <section id="blog-comments" class="blog-comments section py-5 bg-light">
+        <div class="container">
+          <h4 class="comments-count mb-4" id="commentsCount">Loading comments...</h4>
+
+          <!-- Comment Form -->
+          <div class="comment-form mb-5">
+            <h5 class="mb-3">Leave a Comment</h5>
+            <form id="commentForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" id="name" placeholder="Your Name*" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="email" class="form-control" id="email" placeholder="Your Email (optional)">
+                </div>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" id="comment" rows="4" placeholder="Your Comment*" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <span id="submitText">Post Comment</span>
+                <span id="submitSpinner" class="spinner-border spinner-border-sm d-none"></span>
+              </button>
+              <div id="formMessage" class="mt-3"></div>
+            </form>
+          </div>
+
+          <!-- Comments List -->
+          <div id="commentsList" class="comments-container">
+            <div class="text-center py-4">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading comments...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Firebase Comment System -->
+      <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCW5JtYKeVmlZc1UJcc4jI9P2gMi1eWcWE",
+          authDomain: "sarvam-ngo.firebaseapp.com",
+          databaseURL: "https://sarvam-ngo-default-rtdb.firebaseio.com",
+          projectId: "sarvam-ngo",
+          storageBucket: "sarvam-ngo.firebasestorage.app",
+          messagingSenderId: "167511858038",
+          appId: "1:167511858038:web:3b42ff2ef566ae090c3857",
+          measurementId: "G-4JXYENFTLC"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const auth = getAuth(app);
+
+        // DOM elements
+        const commentForm = document.getElementById('commentForm');
+        const commentsList = document.getElementById('commentsList');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const submitSpinner = document.getElementById('submitSpinner');
+        const formMessage = document.getElementById('formMessage');
+
+        // Emoji reactions configuration
+        const emojiReactions = [
+          { emoji: '❤️', code: 'heart', color: '#ff6b6b' },
+          { emoji: '😂', code: 'joy', color: '#feca57' },
+          { emoji: '👍', code: 'thumbsup', color: '#5f27cd' },
+          { emoji: '🔥', code: 'fire', color: '#ff9f43' },
+          { emoji: '👏', code: 'clap', color: '#1dd1a1' }
+        ];
+
+        // Initialize comment system
+        document.addEventListener('DOMContentLoaded', () => {
+          initCommentSystem();
+        });
+
+        async function initCommentSystem() {
+          try {
+            // Sign in anonymously
+            const userCredential = await signInAnonymously(auth);
+            console.log("Anonymous authentication successful", userCredential.user.uid);
+
+            // Load existing comments
+            loadComments();
+
+            // Set up form submission
+            commentForm.addEventListener('submit', handleCommentSubmit);
+
+          } catch (error) {
+            console.error("Initialization error:", error);
+            showMessage("Error initializing comments. Please refresh the page.", "danger");
+            commentsList.innerHTML = '<p class="text-danger py-4">Authentication failed. Please refresh.</p>';
+          }
+        }
+
+        function loadComments() {
+          const commentsRef = ref(db, 'comments');
+
+          onValue(commentsRef, (snapshot) => {
+            console.log("Comments snapshot:", snapshot.val()); // Debug log
+
+            commentsList.innerHTML = '';
+
+            if (!snapshot.exists()) {
+              commentsList.innerHTML = '<p class="text-muted py-4">No comments yet. Be the first to comment!</p>';
+              document.getElementById('commentsCount').textContent = "0 Comments";
+              return;
+            }
+
+            const comments = [];
+            snapshot.forEach((childSnapshot) => {
+              const commentData = childSnapshot.val();
+              console.log("Comment data:", commentData); // Debug log
+
+              // Ensure required fields exist
+              if (commentData.name && commentData.text) {
+                comments.push({
+                  id: childSnapshot.key,
+                  name: commentData.name,
+                  text: commentData.text,
+                  timestamp: commentData.timestamp || Date.now(),
+                  reactions: commentData.reactions || {}
+                });
+              }
+            });
+
+            if (comments.length === 0) {
+              commentsList.innerHTML = '<p class="text-muted py-4">No valid comments found.</p>';
+              document.getElementById('commentsCount').textContent = "0 Comments";
+              return;
+            }
+
+            // Sort by timestamp (newest first)
+            comments.sort((a, b) => b.timestamp - a.timestamp);
+
+            // Display comments
+            comments.forEach(comment => {
+              const commentElement = createCommentElement(comment);
+              commentsList.appendChild(commentElement);
+            });
+
+            // Update comment count
+            document.getElementById('commentsCount').textContent =
+              `${comments.length} Comment${comments.length !== 1 ? 's' : ''}`;
+
+          }, (error) => {
+            console.error("Error loading comments:", error);
+            commentsList.innerHTML = '<p class="text-danger py-4">Error loading comments. Please try again.</p>';
+          });
+        }
+
+        function createCommentElement(comment) {
+          const commentElement = document.createElement('div');
+          commentElement.className = 'comment mb-4 p-3 bg-white rounded shadow-sm';
+          commentElement.dataset.commentId = comment.id;
+
+          const date = new Date(comment.timestamp);
+          const formattedDate = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+
+          // Create avatar from name initial
+          const nameInitial = comment.name.charAt(0).toUpperCase();
+          const avatarColor = getAvatarColor(comment.name);
+
+          commentElement.innerHTML = `
+           <div class="d-flex gap-3">
+             <div class="flex-shrink-0">
+               <div class="avatar rounded-circle d-flex align-items-center justify-content-center" 
+                    style="background-color: ${avatarColor}; width: 40px; height: 40px; color: white; font-weight: bold">
+                 ${nameInitial}
+               </div>
+             </div>
+             <div class="flex-grow-1">
+               <div class="d-flex justify-content-between align-items-center">
+                 <h6 class="mb-0 fw-bold">${comment.name}</h6>
+                 <small class="text-muted">${formattedDate}</small>
+               </div>
+               <p class="mb-2 mt-2">${comment.text}</p>
+               
+               <div class="reactions-container d-flex gap-2 mt-3" id="reactions-${comment.id}">
+                 <!-- Reactions will be inserted here -->
+               </div>
+             </div>
+           </div>
+         `;
+
+          // Add reactions
+          const reactionsContainer = commentElement.querySelector(`#reactions-${comment.id}`);
+          emojiReactions.forEach(reaction => {
+            const reactionElement = createReactionElement(comment.id, reaction, comment.reactions);
+            reactionsContainer.appendChild(reactionElement);
+          });
+
+          return commentElement;
+        }
+
+        function createReactionElement(commentId, reaction, reactionsData) {
+          const userId = auth.currentUser?.uid;
+          const hasReacted = userId && reactionsData && reactionsData[reaction.code] && reactionsData[reaction.code].users && reactionsData[reaction.code].users[userId];
+          const reactionCount = reactionsData && reactionsData[reaction.code] ? reactionsData[reaction.code].count || 0 : 0;
+
+          const reactionElement = document.createElement('div');
+          reactionElement.className = `reaction-btn d-flex align-items-center gap-1 ${hasReacted ? 'reacted' : ''}`;
+          reactionElement.innerHTML = `
+           <span class="emoji">${reaction.emoji}</span>
+           <span class="count">${reactionCount}</span>
+         `;
+
+          reactionElement.addEventListener('click', () => handleReaction(commentId, reaction.code, hasReacted));
+
+          return reactionElement;
+        }
+
+        async function handleReaction(commentId, reactionCode, hasReacted) {
+          const userId = auth.currentUser?.uid;
+          if (!userId) {
+            showMessage("Please wait while we authenticate you", "info");
+            return;
+          }
+
+          try {
+            const updates = {};
+            const reactionPath = `comments/${commentId}/reactions/${reactionCode}`;
+
+            if (hasReacted) {
+              // Remove reaction
+              updates[`${reactionPath}/count`] = increment(-1);
+              updates[`${reactionPath}/users/${userId}`] = null;
+            } else {
+              // Add reaction
+              updates[`${reactionPath}/count`] = increment(1);
+              updates[`${reactionPath}/users/${userId}`] = true;
+            }
+
+            await update(ref(db), updates);
+
+          } catch (error) {
+            console.error("Error updating reaction:", error);
+            showMessage("Error updating reaction. Please try again.", "danger");
+          }
+        }
+
+        function increment(value) {
+          return {
+            '.sv': {
+              'increment': value
+            }
+          };
+        }
+
+        async function handleCommentSubmit(e) {
+          e.preventDefault();
+
+          const name = document.getElementById('name').value.trim();
+          const comment = document.getElementById('comment').value.trim();
+
+          if (!name || !comment) {
+            showMessage("Please fill in all required fields", "warning");
+            return;
+          }
+
+          // Show loading state
+          submitBtn.disabled = true;
+          submitText.textContent = "Posting...";
+          submitSpinner.classList.remove('d-none');
+
+          try {
+            const newComment = {
+              name: name,
+              text: comment,
+              timestamp: Date.now(),
+              reactions: {}
+            };
+
+            await push(ref(db, 'comments'), newComment);
+
+            // Clear form
+            commentForm.reset();
+            showMessage("Comment posted successfully!", "success");
+
+          } catch (error) {
+            console.error("Error posting comment:", error);
+            showMessage("Error posting comment. Please try again.", "danger");
+          } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitText.textContent = "Post Comment";
+            submitSpinner.classList.add('d-none');
+          }
+        }
+
+        function getAvatarColor(name) {
+          const colors = [
+            '#4e54c8', '#8f94fb', '#6a11cb', '#2575fc',
+            '#1488cc', '#11998e', '#38ef7d', '#a8ff78'
+          ];
+          const hash = name.split('').reduce((acc, char) => char.charCodeAt(0) + acc, 0);
+          return colors[hash % colors.length];
+        }
+
+        function showMessage(text, type) {
+          formMessage.innerHTML = `
+           <div class="alert alert-${type} alert-dismissible fade show">
+             ${text}
+             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+           </div>
+         `;
+
+          // Auto-dismiss after 5 seconds
+          setTimeout(() => {
+            const alert = formMessage.querySelector('.alert');
+            if (alert) {
+              const bsAlert = new bootstrap.Alert(alert);
+              bsAlert.close();
+            }
+          }, 5000);
+        }
+      </script>
+
+      <!-- Bootstrap Icons -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+      <!-- Required JS Libraries -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+      <style>
+        .reaction-btn {
+          padding: 4px 8px;
+          border-radius: 20px;
+          background-color: #f1f2f6;
+          cursor: pointer;
+          transition: all 0.2s;
+          user-select: none;
+        }
+
+        .reaction-btn:hover {
+          background-color: #dfe4ea;
+        }
+
+        .reaction-btn.reacted {
+          background-color: #e8f4fd;
+        }
+
+        .reaction-btn .emoji {
+          font-size: 1.1rem;
+        }
+
+        .reaction-btn .count {
+          font-size: 0.8rem;
+          font-weight: 500;
+        }
+      </style>
+    </body>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h3 class="text-white mb-4">Sarvam Trust</h3>
+          <p>Empowering communities through social welfare initiatives. Join us in our mission to create a better future
+            for all.</p>
+          <div class="social-links mt-4">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h4 class="text-white mb-4">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">About</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Our Work</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h4 class="text-white mb-4">Contact Us</h4>
+          <p><i class="bi bi-geo-alt-fill me-2"></i> No: 17/2016, Park Street, Namakkal, Tamil Nadu 637001</p>
+          <p><i class="bi bi-telephone-fill me-2"></i> +91-99526 48847</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> sarvamngo19@gmail.com</p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h4 class="text-white mb-4">Newsletter</h4>
+          <p>Subscribe to our newsletter for updates on our initiatives.</p>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Your Email">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4 bg-light">
+
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2023 Sarvam Trust. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">Designed by <a href="#" class="text-white text-decoration-none">SkySphere Technologies</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS animation
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Scroll animation for elements
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+
+    // Floating button effect
+    const buttons = document.querySelectorAll('.submit-btn, .btn-primary');
+
+    buttons.forEach(button => {
+      button.addEventListener('mousemove', (e) => {
+        const x = e.pageX - button.getBoundingClientRect().left;
+        const y = e.pageY - button.getBoundingClientRect().top;
+
+        button.style.setProperty('--x', `${x}px`);
+        button.style.setProperty('--y', `${y}px`);
+      });
+    });
+  </script>
+  =======
+  class
+  <!-- Favicons -->
+  <link href="https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg" rel="icon">
+
+  <!-- Fonts -->
+  <link hreaf="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #4e54c8;
+      --secondary-color: #8f94fb;
+      --accent-color: #6a11cb;
+      --text-dark: #2d3748;
+      --text-light: #718096;
+      --light-bg: #f8fafc;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      background-color: #fff;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      background: linear-gradient(135deg, rgba(78, 84, 200, 0.8), rgba(143, 148, 251, 0.8)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    /* Floating Elements Animation */
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .floating-element {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      filter: blur(30px);
+      animation: float 15s infinite linear;
+    }
+
+    .element-1 {
+      width: 300px;
+      height: 300px;
+      top: 20%;
+      left: 10%;
+      animation-duration: 20s;
+    }
+
+    .element-2 {
+      width: 200px;
+      height: 200px;
+      top: 60%;
+      left: 70%;
+      animation-duration: 25s;
+      animation-delay: 5s;
+    }
+
+    .element-3 {
+      width: 150px;
+      height: 150px;
+      top: 30%;
+      left: 50%;
+      animation-duration: 18s;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      25% {
+        transform: translate(50px, 50px) rotate(10deg);
+      }
+
+      50% {
+        transform: translate(100px, 0) rotate(20deg);
+      }
+
+      75% {
+        transform: translate(50px, -50px) rotate(10deg);
+      }
+
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+    }
+
+    /* Blog Content Section */
+    .blog-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .article-header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .article-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .article-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .article-header:hover .article-title::after {
+      transform: scaleX(1);
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .article-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .article-image:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.8rem;
+      margin: 3rem 0 1.5rem;
+      color: var(--primary-color);
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .article-content h3::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      height: 1.5rem;
+      width: 6px;
+      background: linear-gradient(var(--primary-color), var(--secondary-color));
+      border-radius: 3px;
+    }
+
+    blockquote {
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      border-left: 4px solid var(--primary-color);
+      padding-left: 2rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    blockquote::before {
+      content: '"';
+      position: absolute;
+      font-size: 5rem;
+      color: rgba(78, 84, 200, 0.1);
+      top: -1.5rem;
+      left: 0;
+      line-height: 1;
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 3rem 0;
+    }
+
+    .grid-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: scale(1.03);
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .grid-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover .grid-caption {
+      transform: translateY(0);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      color: black;
+      padding: 60px 0;
+      margin: 60px 0;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') center center/cover;
+      opacity: 0.1;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      background: whitesmoke;
+      border-radius: 10px;
+      backdrop-filter: blur(2px);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-10px);
+      background: skyblue;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: black;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Comments Section */
+    .comments-section {
+      margin-top: 80px;
+      padding: 60px 0;
+      background-color: var(--light-bg);
+      border-radius: 15px;
+    }
+
+    .comment {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .comment:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .comment-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 3px solid var(--primary-color);
+    }
+
+    .comment-content {
+      flex-grow: 1;
+    }
+
+    .comment-author {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--primary-color);
+    }
+
+    .comment-date {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .comment-text {
+      line-height: 1.6;
+    }
+
+    /* Form Section */
+    .form-section {
+      margin-top: 80px;
+      padding: 60px;
+      background: linear-gradient(135deg, var(--light-bg), white);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      position: relative;
+    }
+
+    .form-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .form-control {
+      height: 50px;
+      padding: 15px 20px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.2);
+    }
+
+    textarea.form-control {
+      height: 150px;
+      resize: none;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(78, 84, 200, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(78, 84, 200, 0.4);
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        height: auto;
+        padding: 100px 0;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-image {
+        height: 300px;
+      }
+
+      .form-section {
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+
+      .comment {
+        flex-direction: column;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  </head>
+
+</html>
