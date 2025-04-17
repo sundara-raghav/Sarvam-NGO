@@ -30,7 +30,7 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  
+
   <style>
     /* Hero Section */
     .services-hero {
@@ -41,7 +41,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .services-hero::before {
       content: '';
       position: absolute;
@@ -52,7 +52,7 @@
       background: url('assets/img/services-bg-pattern.png') center/cover;
       opacity: 0.1;
     }
-    
+
     .services-hero h1 {
       font-size: 3.5rem;
       font-weight: 700;
@@ -60,7 +60,7 @@
       position: relative;
       display: inline-block;
     }
-    
+
     .services-hero h1::after {
       content: '';
       position: absolute;
@@ -72,56 +72,56 @@
       background: white;
       border-radius: 2px;
     }
-    
+
     .services-hero p {
       font-size: 1.2rem;
       max-width: 700px;
       margin: 0 auto 30px;
     }
-    
+
     /* Breadcrumb */
     .breadcrumb-container {
       background: rgba(255, 255, 255, 0.2);
       padding: 15px 0;
     }
-    
+
     .breadcrumb {
       justify-content: center;
       background: transparent;
       padding: 0;
       margin: 0;
     }
-    
+
     .breadcrumb-item a {
       color: white;
       text-decoration: none;
       transition: all 0.3s ease;
     }
-    
+
     .breadcrumb-item a:hover {
       color: #f8f9fa;
       text-decoration: underline;
     }
-    
+
     .breadcrumb-item.active {
       color: #f8f9fa;
     }
-    
+
     .breadcrumb-item+.breadcrumb-item::before {
       color: white;
     }
-    
+
     /* Service Categories Section */
     .service-categories {
       padding: 80px 0;
       background: #f9f9ff;
     }
-    
+
     .category-header {
       text-align: center;
       margin-bottom: 60px;
     }
-    
+
     .category-header h2 {
       font-size: 2.5rem;
       color: #4e54c8;
@@ -129,7 +129,7 @@
       position: relative;
       display: inline-block;
     }
-    
+
     .category-header h2::after {
       content: '';
       position: absolute;
@@ -141,14 +141,14 @@
       background: #4e54c8;
       border-radius: 2px;
     }
-    
+
     .category-header p {
       font-size: 1.1rem;
       color: #666;
       max-width: 700px;
       margin: 0 auto;
     }
-    
+
     /* Filter Buttons */
     .filter-buttons {
       display: flex;
@@ -157,7 +157,7 @@
       gap: 15px;
       margin-bottom: 40px;
     }
-    
+
     .filter-btn {
       padding: 12px 25px;
       border: none;
@@ -172,28 +172,28 @@
       gap: 8px;
       cursor: pointer;
     }
-    
+
     .filter-btn i {
       font-size: 1.1rem;
     }
-    
+
     .filter-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(78, 84, 200, 0.2);
     }
-    
+
     .filter-btn.active {
       background: #4e54c8;
       color: white;
     }
-    
+
     /* Service Cards */
     .service-cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 30px;
     }
-    
+
     .service-card {
       background: white;
       border-radius: 12px;
@@ -204,36 +204,36 @@
       transform: translateY(20px);
       animation: fadeInUp 0.6s forwards;
     }
-    
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(78, 84, 200, 0.15);
     }
-    
+
     .card-img-container {
       height: 220px;
       overflow: hidden;
       position: relative;
     }
-    
+
     .card-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    
+
     .service-card:hover .card-img {
       transform: scale(1.05);
     }
-    
+
     .card-category {
       position: absolute;
       top: 20px;
@@ -246,31 +246,31 @@
       color: white;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    
+
     .education {
       background: linear-gradient(135deg, #4e54c8, #8f94fb);
     }
-    
+
     .environment {
       background: linear-gradient(135deg, #28a745, #5cb85c);
     }
-    
+
     .women {
       background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
     }
-    
+
     .health {
       background: linear-gradient(135deg, #17a2b8, #5bc0de);
     }
-    
+
     .hunger {
       background: linear-gradient(135deg, #fd7e14, #f0ad4e);
     }
-    
+
     .card-content {
       padding: 25px;
     }
-    
+
     .card-content h3 {
       color: #333;
       margin-bottom: 15px;
@@ -278,7 +278,7 @@
       position: relative;
       padding-bottom: 10px;
     }
-    
+
     .card-content h3::after {
       content: '';
       position: absolute;
@@ -288,13 +288,13 @@
       height: 3px;
       background: #4e54c8;
     }
-    
+
     .card-text p {
       color: #666;
       margin-bottom: 15px;
       line-height: 1.7;
     }
-    
+
     .card-stats {
       display: flex;
       justify-content: space-between;
@@ -302,7 +302,7 @@
       padding-top: 15px;
       border-top: 1px solid #eee;
     }
-    
+
     .stat-item {
       display: flex;
       align-items: center;
@@ -310,44 +310,44 @@
       color: #666;
       font-size: 0.9rem;
     }
-    
+
     .stat-item i {
       color: #4e54c8;
       font-size: 1.1rem;
     }
-    
+
     /* Impact Section */
     .impact-section {
       padding: 80px 0;
       background: linear-gradient(135deg, rgba(78, 84, 200, 0.05), rgba(143, 148, 251, 0.05));
     }
-    
+
     .impact-container {
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
-    
+
     .impact-container h2 {
       font-size: 2.5rem;
       color: #4e54c8;
       margin-bottom: 20px;
     }
-    
+
     .impact-container p {
       font-size: 1.1rem;
       color: #666;
       max-width: 700px;
       margin: 0 auto 40px;
     }
-    
+
     .impact-stats {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 30px;
     }
-    
+
     .impact-stat {
       background: white;
       padding: 30px;
@@ -356,24 +356,24 @@
       width: 200px;
       transition: all 0.3s ease;
     }
-    
+
     .impact-stat:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(78, 84, 200, 0.1);
     }
-    
+
     .stat-number {
       font-size: 2.5rem;
       font-weight: 700;
       color: #4e54c8;
       margin-bottom: 10px;
     }
-    
+
     .stat-label {
       font-size: 1rem;
       color: #666;
     }
-    
+
     /* CTA Section */
     .cta-section {
       padding: 80px 0;
@@ -381,23 +381,23 @@
       color: white;
       text-align: center;
     }
-    
+
     .cta-container {
       max-width: 800px;
       margin: 0 auto;
     }
-    
+
     .cta-container h2 {
       font-size: 2.5rem;
       margin-bottom: 20px;
     }
-    
+
     .cta-container p {
       font-size: 1.1rem;
       margin-bottom: 30px;
       opacity: 0.9;
     }
-    
+
     .cta-btn {
       display: inline-block;
       padding: 15px 35px;
@@ -409,75 +409,227 @@
       transition: all 0.3s ease;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
-    
+
     .cta-btn:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
-    
+
     /* Responsive Adjustments */
     @media (max-width: 992px) {
       .service-cards {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       }
-      
+
       .impact-stat {
         width: 160px;
         padding: 25px 15px;
       }
     }
-    
+
     @media (max-width: 768px) {
       .services-hero h1 {
         font-size: 2.8rem;
       }
-      
+
       .services-hero p {
         font-size: 1rem;
       }
-      
+
       .category-header h2 {
         font-size: 2rem;
       }
-      
+
       .filter-buttons {
         gap: 10px;
       }
-      
+
       .filter-btn {
         padding: 10px 20px;
         font-size: 0.9rem;
       }
-      
+
       .impact-stat {
         width: 120px;
         padding: 20px 10px;
       }
-      
+
       .stat-number {
         font-size: 2rem;
       }
     }
-    
+
     @media (max-width: 576px) {
       .services-hero {
         padding: 100px 0 60px;
       }
-      
+
       .services-hero h1 {
         font-size: 2.2rem;
       }
-      
+
       .service-cards {
         grid-template-columns: 1fr;
       }
-      
+
       .impact-stats {
         gap: 15px;
       }
-      
+
       .impact-stat {
         width: 45%;
+      }
+    }
+
+    .earth {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9f9ff;
+    }
+
+    .earth-loader {
+      --watercolor: #3344c1;
+      --landcolor: #7cc133;
+      width: 7.5em;
+      height: 7.5em;
+      background-color: var(--watercolor);
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      box-shadow:
+        inset 0em 0.5em rgb(255, 255, 255, 0.25),
+        inset 0em -0.5em rgb(0, 0, 0, 0.25);
+      border: solid 0.15em white;
+      animation: startround 1s;
+      animation-iteration-count: 1;
+    }
+
+    .earth-loader svg:nth-child(1) {
+      position: absolute;
+      bottom: -2em;
+      width: 7em;
+      height: auto;
+      animation: round1 5s infinite linear 0.75s;
+    }
+
+    .earth-loader svg:nth-child(2) {
+      position: absolute;
+      top: -3em;
+      width: 7em;
+      height: auto;
+      animation: round1 5s infinite linear;
+    }
+
+    .earth-loader svg:nth-child(3) {
+      position: absolute;
+      top: -2.5em;
+      width: 7em;
+      height: auto;
+      animation: round2 5s infinite linear;
+    }
+
+    .earth-loader svg:nth-child(4) {
+      position: absolute;
+      bottom: -2.2em;
+      width: 7em;
+      height: auto;
+      animation: round2 5s infinite linear 0.75s;
+    }
+
+    @keyframes startround {
+      0% {
+        filter: brightness(500%);
+        box-shadow: none;
+      }
+
+      75% {
+        filter: brightness(500%);
+        box-shadow: none;
+      }
+
+      100% {
+        filter: brightness(100%);
+        box-shadow:
+          inset 0em 0.5em rgb(255, 255, 255, 0.25),
+          inset 0em -0.5em rgb(0, 0, 0, 0.25);
+      }
+    }
+
+    @keyframes round1 {
+      0% {
+        left: -2em;
+        opacity: 100%;
+        transform: skewX(0deg) rotate(0deg);
+      }
+
+      30% {
+        left: -6em;
+        opacity: 100%;
+        transform: skewX(-25deg) rotate(25deg);
+      }
+
+      31% {
+        left: -6em;
+        opacity: 0%;
+        transform: skewX(-25deg) rotate(25deg);
+      }
+
+      35% {
+        left: 7em;
+        opacity: 0%;
+        transform: skewX(25deg) rotate(-25deg);
+      }
+
+      45% {
+        left: 7em;
+        opacity: 100%;
+        transform: skewX(25deg) rotate(-25deg);
+      }
+
+      100% {
+        left: -2em;
+        opacity: 100%;
+        transform: skewX(0deg) rotate(0deg);
+      }
+    }
+
+    @keyframes round2 {
+      0% {
+        left: 5em;
+        opacity: 100%;
+        transform: skewX(0deg) rotate(0deg);
+      }
+
+      75% {
+        left: -7em;
+        opacity: 100%;
+        transform: skewX(-25deg) rotate(25deg);
+      }
+
+      76% {
+        left: -7em;
+        opacity: 0%;
+        transform: skewX(-25deg) rotate(25deg);
+      }
+
+      77% {
+        left: 8em;
+        opacity: 0%;
+        transform: skewX(25deg) rotate(-25deg);
+      }
+
+      80% {
+        left: 8em;
+        opacity: 100%;
+        transform: skewX(25deg) rotate(-25deg);
+      }
+
+      100% {
+        left: 5em;
+        opacity: 100%;
+        transform: skewX(0deg) rotate(0deg);
       }
     }
   </style>
@@ -518,9 +670,10 @@
     <section class="services-hero">
       <div class="container">
         <h1 data-aos="fade-up">Our Impactful Services</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Comprehensive social welfare initiatives transforming rural communities in Namakkal district</p>
+        <p data-aos="fade-up" data-aos-delay="100">Comprehensive social welfare initiatives transforming rural
+          communities in Namakkal district</p>
       </div>
-      
+
       <div class="breadcrumb-container" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
           <nav aria-label="breadcrumb">
@@ -538,9 +691,10 @@
       <div class="container">
         <div class="category-header" data-aos="fade-up">
           <h2>Our Areas of Impact</h2>
-          <p>Discover how Sarvam Educational Trust is making a difference across multiple sectors in rural communities</p>
+          <p>Discover how Sarvam Educational Trust is making a difference across multiple sectors in rural communities
+          </p>
         </div>
-        
+
         <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
           <button class="filter-btn active" data-filter="all">
             <i class="bi bi-grid-fill"></i> All Services
@@ -561,7 +715,7 @@
             <i class="bi bi-egg-fried"></i> No Hunger
           </button>
         </div>
-        
+
         <div class="service-cards" id="service-cards-container">
           <!-- Education Card -->
           <div class="service-card" data-category="education" data-aos="fade-up" data-aos-delay="200">
@@ -572,8 +726,10 @@
             <div class="card-content">
               <h3>Education Support Programs</h3>
               <div class="card-text">
-                <p>We regularly distribute educational kits containing school supplies, uniforms, and books to underprivileged students across government schools in Namakkal district.</p>
-                <p>Our skill development initiative offers free typing classes and vocational training programs to enhance employability among rural youth.</p>
+                <p>We regularly distribute educational kits containing school supplies, uniforms, and books to
+                  underprivileged students across government schools in Namakkal district.</p>
+                <p>Our skill development initiative offers free typing classes and vocational training programs to
+                  enhance employability among rural youth.</p>
               </div>
               <div class="card-stats">
                 <div class="stat-item">
@@ -587,7 +743,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Environment Card -->
           <div class="service-card" data-category="environment" data-aos="fade-up" data-aos-delay="250">
             <div class="card-img-container">
@@ -597,8 +753,10 @@
             <div class="card-content">
               <h3>Environmental Conservation</h3>
               <div class="card-text">
-                <p>Our environmental programs include large-scale tree plantation drives across multiple villages in collaboration with MGNREGA workers and NSS volunteers.</p>
-                <p>We maintain a continuous cycle of sapling collection, plantation, and maintenance activities, focusing on native species that support local ecosystems.</p>
+                <p>Our environmental programs include large-scale tree plantation drives across multiple villages in
+                  collaboration with MGNREGA workers and NSS volunteers.</p>
+                <p>We maintain a continuous cycle of sapling collection, plantation, and maintenance activities,
+                  focusing on native species that support local ecosystems.</p>
               </div>
               <div class="card-stats">
                 <div class="stat-item">
@@ -612,7 +770,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Women Empowerment Card -->
           <div class="service-card" data-category="women" data-aos="fade-up" data-aos-delay="300">
             <div class="card-img-container">
@@ -622,8 +780,10 @@
             <div class="card-content">
               <h3>Women Empowerment</h3>
               <div class="card-text">
-                <p>Our women's empowerment programs focus on creating awareness about rights, health, and self-confidence in rural communities.</p>
-                <p>We distribute sanitary kits and conduct menstrual hygiene education sessions in government schools to break taboos and promote health.</p>
+                <p>Our women's empowerment programs focus on creating awareness about rights, health, and
+                  self-confidence in rural communities.</p>
+                <p>We distribute sanitary kits and conduct menstrual hygiene education sessions in government schools to
+                  break taboos and promote health.</p>
               </div>
               <div class="card-stats">
                 <div class="stat-item">
@@ -637,7 +797,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Health Card -->
           <div class="service-card" data-category="health" data-aos="fade-up" data-aos-delay="350">
             <div class="card-img-container">
@@ -647,8 +807,10 @@
             <div class="card-content">
               <h3>Health & Sanitation</h3>
               <div class="card-text">
-                <p>We improve rural sanitation through construction of bio-toilets in villages lacking proper facilities.</p>
-                <p>Our medical camps provide free general checkups, maternal care services, and child health screenings to underserved populations.</p>
+                <p>We improve rural sanitation through construction of bio-toilets in villages lacking proper
+                  facilities.</p>
+                <p>Our medical camps provide free general checkups, maternal care services, and child health screenings
+                  to underserved populations.</p>
               </div>
               <div class="card-stats">
                 <div class="stat-item">
@@ -662,7 +824,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Hunger Card -->
           <div class="service-card" data-category="hunger" data-aos="fade-up" data-aos-delay="400">
             <div class="card-img-container">
@@ -672,8 +834,10 @@
             <div class="card-content">
               <h3>No Hunger Initiative</h3>
               <div class="card-text">
-                <p>Our food security program provides daily nutritious meals to homeless individuals in Namakkal through a network of local vendors.</p>
-                <p>The initiative focuses on consistent, reliable meal provision while connecting beneficiaries with additional support services when needed.</p>
+                <p>Our food security program provides daily nutritious meals to homeless individuals in Namakkal through
+                  a network of local vendors.</p>
+                <p>The initiative focuses on consistent, reliable meal provision while connecting beneficiaries with
+                  additional support services when needed.</p>
               </div>
               <div class="card-stats">
                 <div class="stat-item">
@@ -687,7 +851,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Additional Education Card -->
           <div class="service-card" data-category="education" data-aos="fade-up" data-aos-delay="450">
             <div class="card-img-container">
@@ -697,8 +861,10 @@
             <div class="card-content">
               <h3>Special Education Support</h3>
               <div class="card-text">
-                <p>Special educational support is provided to vulnerable groups including orphaned children and students from single-parent families.</p>
-                <p>Our team conducts village surveys to identify educational needs and provides free tuition classes for students from backward communities.</p>
+                <p>Special educational support is provided to vulnerable groups including orphaned children and students
+                  from single-parent families.</p>
+                <p>Our team conducts village surveys to identify educational needs and provides free tuition classes for
+                  students from backward communities.</p>
               </div>
               <div class="card-stats">
                 <div class="stat-item">
@@ -716,46 +882,631 @@
       </div>
     </section>
 
-    <!-- Impact Section -->
-    <section class="impact-section">
-      <div class="impact-container" data-aos="fade-up">
-        <h2>Our Impact in Numbers</h2>
-        <p>Measuring the difference we've made in the communities we serve</p>
-        
-        <div class="impact-stats">
-          <div class="impact-stat" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-number" data-count="5000">0</div>
-            <div class="stat-label">Meals Served</div>
-          </div>
-          <div class="impact-stat" data-aos="fade-up" data-aos-delay="150">
-            <div class="stat-number" data-count="2000">0</div>
-            <div class="stat-label">Trees Planted</div>
-          </div>
-          <div class="impact-stat" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-number" data-count="500">0</div>
-            <div class="stat-label">Students Helped</div>
-          </div>
-          <div class="impact-stat" data-aos="fade-up" data-aos-delay="250">
-            <div class="stat-number" data-count="300">0</div>
-            <div class="stat-label">Women Empowered</div>
-          </div>
-          <div class="impact-stat" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-number" data-count="50">0</div>
-            <div class="stat-label">Toilets Built</div>
+    <div class="earth" id="earth-loader">
+      <div class="earth-loader">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <path transform="translate(100 100)"
+            d="M29.4,-17.4C33.1,1.8,27.6,16.1,11.5,31.6C-4.7,47,-31.5,63.6,-43,56C-54.5,48.4,-50.7,16.6,-41,-10.9C-31.3,-38.4,-15.6,-61.5,-1.4,-61C12.8,-60.5,25.7,-36.5,29.4,-17.4Z"
+            fill="#7CC133"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <path transform="translate(100 100)"
+            d="M31.7,-55.8C40.3,-50,45.9,-39.9,49.7,-29.8C53.5,-19.8,55.5,-9.9,53.1,-1.4C50.6,7.1,43.6,14.1,41.8,27.6C40.1,41.1,43.4,61.1,37.3,67C31.2,72.9,15.6,64.8,1.5,62.2C-12.5,59.5,-25,62.3,-31.8,56.7C-38.5,51.1,-39.4,37.2,-49.3,26.3C-59.1,15.5,-78,7.7,-77.6,0.2C-77.2,-7.2,-57.4,-14.5,-49.3,-28.4C-41.2,-42.4,-44.7,-63,-38.5,-70.1C-32.2,-77.2,-16.1,-70.8,-2.3,-66.9C11.6,-63,18.6,-52.3,30.6,-49.2Z"
+            fill="#7CC133"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <path transform="translate(100 100)"
+            d="M30.6,-49.2C42.5,-46.1,57.1,-43.7,67.6,-35.7C78.1,-27.6,84.6,-13.8,80.3,-2.4C76.1,8.9,61.2,17.8,52.5,29.1C43.8,40.3,41.4,53.9,33.7,64C26,74.1,13,80.6,2.2,76.9C-8.6,73.1,-17.3,59,-30.6,52.1C-43.9,45.3,-61.9,45.7,-74.1,38.2C-86.4,30.7,-92.9,15.4,-88.6,2.5C-84.4,-10.5,-69.4,-20.9,-60.7,-34.6C-52.1,-48.3,-49.8,-65.3,-40.7,-70C-31.6,-74.8,-15.8,-67.4,-3.2,-61.8C9.3,-56.1,18.6,-52.3,30.6,-49.2Z"
+            fill="#7CC133"></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <path transform="translate(100 100)"
+            d="M39.4,-66C48.6,-62.9,51.9,-47.4,52.9,-34.3C53.8,-21.3,52.4,-10.6,54.4,1.1C56.3,12.9,61.7,25.8,57.5,33.2C53.2,40.5,39.3,42.3,28.2,46C17,49.6,8.5,55.1,1.3,52.8C-5.9,50.5,-11.7,40.5,-23.6,37.2C-35.4,34,-53.3,37.5,-62,32.4C-70.7,27.4,-70.4,13.7,-72.4,-1.1C-74.3,-15.9,-78.6,-31.9,-73.3,-43C-68.1,-54.2,-53.3,-60.5,-39.5,-60.9C-25.7,-61.4,-12.9,-56,1.1,-58C15.1,-59.9,30.2,-69.2,39.4,-66Z"
+            fill="#7CC133"></path>
+        </svg>
+      </div>
+    </div>
+
+    <footer id="footer" class="footer position-relative light-background">
+
+      <!-- Impact Section -->
+      <section class="impact-section">
+        <div class="impact-container" data-aos="fade-up">
+          <h2>Our Impact in Numbers</h2>
+          <p>Measuring the difference we've made in the communities we serve</p>
+
+          <div class="impact-stats">
+            <div class="impact-stat" data-aos="fade-up" data-aos-delay="100">
+              <div class="stat-number" data-count="5000">0</div>
+              <div class="stat-label">Meals Served</div>
+            </div>
+            <div class="impact-stat" data-aos="fade-up" data-aos-delay="150">
+              <div class="stat-number" data-count="2000">0</div>
+              <div class="stat-label">Trees Planted</div>
+            </div>
+            <div class="impact-stat" data-aos="fade-up" data-aos-delay="200">
+              <div class="stat-number" data-count="500">0</div>
+              <div class="stat-label">Students Helped</div>
+            </div>
+            <div class="impact-stat" data-aos="fade-up" data-aos-delay="250">
+              <div class="stat-number" data-count="300">0</div>
+              <div class="stat-label">Women Empowered</div>
+            </div>
+            <div class="impact-stat" data-aos="fade-up" data-aos-delay="300">
+              <div class="stat-number" data-count="50">0</div>
+              <div class="stat-label">Toilets Built</div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="cta-container" data-aos="fade-up">
-        <h2>Join Us in Making a Difference</h2>
-        <p>Your support helps us transform lives and build a better future for rural communities in Namakkal district.</p>
-        <a href="donate.html" class="cta-btn">Donate Now</a>
-      </div>
-    </section>
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-container" data-aos="fade-up">
+          <h2>Join Us in Making a Difference</h2>
+          <p>Your support helps us transform lives and build a better future for rural communities in Namakkal district.
+          </p>
+          <a href="donate.html" class="cta-btn">Donate Now</a>
+        </div>
+      </section>
+      <style>
+        .heading {
+          color: #4e54c8;
+          font-weight: 600;
+          margin-bottom: 20px;
+          position: relative;
+          padding-bottom: 10px;
+        }
 
+        .heading::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 50px;
+          height: 3px;
+          background: linear-gradient(to right, #4e54c8, #8f94fb);
+        }
+
+        /* Filter Sidebar */
+        .filter-sidebar {
+          padding: 30px;
+          position: sticky;
+          top: 20px;
+          background: white;
+          border: none;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+          height: fit-content;
+        }
+
+        .filter-list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          margin: 25px 0;
+        }
+
+        .filter-btn {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          background: none;
+          border: none;
+          padding: 12px 20px;
+          text-align: left;
+          cursor: pointer;
+          transition: none;
+          border-radius: 6px;
+          font-size: 15px;
+          color: #555;
+        }
+
+        .filter-btn i {
+          color: #4e54c8;
+        }
+
+        .filter-btn.active {
+          font-weight: 600;
+          box-shadow: 0 3px 10px rgba(78, 84, 200, 0.2);
+          background-color: rgba(78, 84, 200, 0.1);
+          color: #4e54c8;
+        }
+
+        /* Quick Links */
+        .quick-links {
+          margin: 30px 0;
+          padding: 20px 0;
+          border-top: 1px solid #eee;
+          border-bottom: 1px solid #eee;
+        }
+
+        .quick-links h4 {
+          color: #4e54c8;
+          margin-bottom: 15px;
+        }
+
+        .quick-link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 8px 0;
+          color: #555;
+          text-decoration: none;
+          transition: none;
+        }
+
+        .quick-link i {
+          font-size: 12px;
+        }
+
+        /* Help Box */
+        .help-box {
+          text-align: center;
+          padding: 25px;
+          background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+          border-radius: 8px;
+          margin-top: 30px;
+        }
+
+        .help-icon {
+          font-size: 2.5rem;
+          color: #4e54c8;
+          margin-bottom: 15px;
+        }
+
+        .help-box h4 {
+          color: #4e54c8;
+          margin-bottom: 15px;
+        }
+
+        .help-box p {
+          margin-bottom: 8px;
+          color: #555;
+        }
+
+        .help-box i {
+          margin-right: 8px;
+          color: #4e54c8;
+        }
+
+        /* Cards Container */
+        .cards-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 35px;
+        }
+
+        .service-card {
+          display: none;
+          max-width: 1100px;
+          width: 100%;
+          position: relative;
+          background: white;
+          border-radius: 12px;
+          overflow: hidden;
+          transition: none;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          margin: 0 auto;
+        }
+
+        .service-card.active {
+          display: block;
+        }
+
+        .hover-indicator {
+          display: none;
+        }
+
+        .card-img-container {
+          position: relative;
+          height: 250px;
+          overflow: hidden;
+        }
+
+        .card-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: none;
+        }
+
+        .card-category {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          padding: 6px 15px;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: white;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .education {
+          background-color: #148aea;
+        }
+
+        .environment {
+          background-color: #148aea;
+        }
+
+        .women {
+          background-color: #148aea;
+        }
+
+        .health {
+          background-color: #148aea;
+        }
+
+        .hunger {
+          background-color: #148aea;
+        }
+
+        .card-content {
+          padding: 30px;
+        }
+
+        .card-content h3 {
+          color: #333;
+          margin-bottom: 20px;
+          font-size: 24px;
+          font-weight: 700;
+          position: relative;
+          padding-left: 15px;
+        }
+
+        .card-content h3::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 5px;
+          height: 70%;
+          width: 4px;
+          background: #4e54c8;
+          border-radius: 2px;
+        }
+
+        .card-text p {
+          color: #666;
+          margin-bottom: 20px;
+          line-height: 1.7;
+          font-size: 16px;
+        }
+
+        .card-stats {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 25px;
+          padding-top: 20px;
+          border-top: 1px solid #eee;
+        }
+
+        .stat-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: #666;
+          font-size: 15px;
+        }
+
+        .stat-item i {
+          color: #4e54c8;
+          font-size: 18px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+          .cards-container {
+            padding: 0 20px;
+          }
+        }
+
+        @media (max-width: 991px) {
+          .filter-sidebar {
+            position: static;
+            margin-bottom: 40px;
+          }
+
+          .cards-container {
+            padding: 0 20px;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .card-img-container {
+            height: 220px;
+          }
+
+          .service-card {
+            margin-left: 0;
+          }
+        }
+      </style>
+
+      <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function () {
+          const filterButtons = document.querySelectorAll('.filter-btn');
+          const serviceCards = document.querySelectorAll('.service-card');
+
+          filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+              // Remove active class from all buttons
+              filterButtons.forEach(btn => btn.classList.remove('active'));
+
+              // Add active class to clicked button
+              this.classList.add('active');
+
+              const filterValue = this.getAttribute('data-filter');
+
+              // Show/hide cards based on filter
+              serviceCards.forEach(card => {
+                card.classList.remove('active');
+
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                  card.classList.add('active');
+                }
+              });
+            });
+          });
+
+          // Smooth scrolling for quick links
+          document.querySelectorAll('.quick-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+              const targetId = this.getAttribute('href');
+              const targetElement = document.querySelector(targetId);
+
+              if (targetElement) {
+                window.scrollTo({
+                  top: targetElement.offsetTop - 100,
+                  behavior: 'smooth'
+                });
+
+                // Highlight the filtered category
+                const category = targetElement.getAttribute('data-category');
+                filterButtons.forEach(btn => {
+                  btn.classList.remove('active');
+                  if (btn.getAttribute('data-filter') === category ||
+                    (category && btn.getAttribute('data-filter') === 'all')) {
+                    btn.classList.add('active');
+                  }
+                });
+
+                // Show only the relevant cards
+                serviceCards.forEach(card => {
+                  card.classList.remove('active');
+                  if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.add('active');
+                  }
+                });
+              }
+            });
+          });
+        });
+
+        // Custom Cursor System
+        const cursorDot = document.createElement('div');
+        cursorDot.classList.add('cursor-dot');
+        document.body.appendChild(cursorDot);
+
+        const cursorFollower = document.createElement('div');
+        cursorFollower.classList.add('cursor-follower');
+        document.body.appendChild(cursorFollower);
+
+        window.addEventListener('mousemove', (e) => {
+          cursorDot.style.left = `${e.clientX}px`;
+          cursorDot.style.top = `${e.clientY}px`;
+
+          cursorFollower.style.left = `${e.clientX}px`;
+          cursorFollower.style.top = `${e.clientY}px`;
+        });
+
+        // Scroll-triggered animations
+        AOS.init({
+          duration: 1200, // Animation duration in milliseconds
+          offset: 100, // Offset (in pixels) from the original trigger point
+          once: true, // Whether animation should happen only once
+        });
+
+        // Add hover effect for buttons dynamically
+        const buttons = document.querySelectorAll('.button-hover');
+        buttons.forEach(button => {
+          button.addEventListener('mouseenter', () => {
+            button.style.transform = 'scale(1.1)';
+          });
+          button.addEventListener('mouseleave', () => {
+            button.style.transform = 'scale(1)';
+          });
+        });
+
+        // Animated Counters
+        const counters = document.querySelectorAll('.stat-item');
+        counters.forEach(counter => {
+          const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / 200;
+
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(updateCount, 10);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCount();
+        });
+
+        // Initialize Particle.js
+        particlesJS('particles-js', {
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: true,
+                value_area: 800
+              }
+            },
+            color: {
+              value: "#ffffff"
+            },
+            shape: {
+              type: "circle",
+              stroke: {
+                width: 0,
+                color: "#000000"
+              },
+              polygon: {
+                nb_sides: 5
+              }
+            },
+            opacity: {
+              value: 0.5,
+              random: false,
+              anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+              }
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false
+              }
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: "#ffffff",
+              opacity: 0.4,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 6,
+              direction: "none",
+              random: false,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200
+              }
+            }
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: {
+                enable: true,
+                mode: "repulse"
+              },
+              onclick: {
+                enable: true,
+                mode: "push"
+              },
+              resize: true
+            },
+            modes: {
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 1
+                }
+              },
+              bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4
+              },
+              push: {
+                particles_nb: 4
+              },
+              remove: {
+                particles_nb: 2
+              }
+            }
+          },
+          retina_detect: true
+        });
+
+        // Earth loader functionality
+        document.addEventListener('DOMContentLoaded', function () {
+          const environmentButton = document.querySelector('.filter-btn[data-filter="environment"]');
+          const earthLoader = document.getElementById('earth-loader');
+
+          environmentButton.addEventListener('click', function () {
+            // Show the loader
+            earthLoader.style.display = 'flex';
+
+            // Simulate a delay for loading
+            setTimeout(() => {
+              earthLoader.style.display = 'none';
+            }, 2000); // Adjust the delay as needed
+          });
+        });
+      </script>
+
+      <script>
+        // Smooth scrolling for service navigation
+        const serviceLinks = document.querySelectorAll('.services-list a');
+
+        serviceLinks.forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Remove active class from all links
+            serviceLinks.forEach(link => link.classList.remove('active'));
+
+            // Add active class to the clicked link
+            this.classList.add('active');
+
+            // Scroll to the target section
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust offset for sticky header
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      </script>
+
+      <script>
+        // Ensure correct filter is applied based on URL hash for all filters
+        window.addEventListener('DOMContentLoaded', () => {
+          const hash = window.location.hash;
+          if (hash) {
+            const targetFilter = hash.replace('#', '').toLowerCase();
+            const filterButton = document.querySelector(`.filter-btn[data-filter="${targetFilter}"]`);
+
+            if (filterButton) {
+              // Simulate a click on the corresponding filter button
+              filterButton.click();
+            }
+          }
+        });
+      </script>
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
@@ -775,7 +1526,8 @@
             <span class="sitename">Sarvam Educational Trust</span>
             <div class="logo-underline"></div>
           </a>
-          <p class="footer-description">Empowering communities through social welfare initiatives. Join us in our mission to create a better future for all.</p>
+          <p class="footer-description">Empowering communities through social welfare initiatives. Join us in our
+            mission to create a better future for all.</p>
           <div class="social-links d-flex mt-4">
             <a href="#" class="social-icon twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="#" class="social-icon facebook"><i class="bi bi-facebook"></i></a>
@@ -798,12 +1550,14 @@
         <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="300">
           <h4 class="footer-heading">Legal</h4>
           <ul>
-            <li><a href="terms-conditon.html" class="nav-link hover-underline"><span>Terms and Conditions</span></a></li>
+            <li><a href="terms-conditon.html" class="nav-link hover-underline"><span>Terms and Conditions</span></a>
+            </li>
             <li><a href="privacy.html" class="nav-link hover-underline"><span>Privacy Policy</span></a></li>
           </ul>
         </div>
 
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start" data-aos="fade-up"
+          data-aos-delay="400">
           <h4 class="footer-heading">Contact Us</h4>
           <div class="contact-info">
             <p><i class="bi bi-geo-alt-fill contact-icon"></i> No: 17/2016, Park Street,</p>
@@ -817,7 +1571,8 @@
     </div>
 
     <div class="container copyright text-center mt-4" data-aos="fade-up" data-aos-delay="500">
-      <p class="copyright-text">© <span>Copyright</span> <strong class="sitename pulse">Sarvam Educational Trust</strong> <span>All Rights Reserved</span></p>
+      <p class="copyright-text">© <span>Copyright</span> <strong class="sitename pulse">Sarvam Educational
+          Trust</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         Designed by <a href="https://skyspheretech.com/" class="designer-link">SkySphere Technologies</a>
       </div>
@@ -825,7 +1580,8 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -846,21 +1602,21 @@
 
   <script>
     // Filter functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const filterButtons = document.querySelectorAll('.filter-btn');
       const serviceCards = document.querySelectorAll('.service-card');
-      
+
       // Filter button click event
       filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
           // Remove active class from all buttons
           filterButtons.forEach(btn => btn.classList.remove('active'));
-          
+
           // Add active class to clicked button
           this.classList.add('active');
-          
+
           const filterValue = this.getAttribute('data-filter');
-          
+
           // Show/hide cards based on filter
           serviceCards.forEach(card => {
             if (filterValue === 'all') {
@@ -873,24 +1629,24 @@
               }
             }
           });
-          
+
           // Trigger AOS animation for filtered items
           setTimeout(() => {
             AOS.refresh();
           }, 500);
         });
       });
-      
+
       // Counter animation for impact stats
       const counters = document.querySelectorAll('.stat-number');
       const speed = 200;
-      
+
       function animateCounters() {
         counters.forEach(counter => {
           const target = +counter.getAttribute('data-count');
           const count = +counter.innerText;
           const increment = target / speed;
-          
+
           if (count < target) {
             counter.innerText = Math.ceil(count + increment);
             setTimeout(animateCounters, 1);
@@ -899,7 +1655,7 @@
           }
         });
       }
-      
+
       // Start counter animation when impact section is in view
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -909,9 +1665,9 @@
           }
         });
       }, { threshold: 0.5 });
-      
+
       observer.observe(document.querySelector('.impact-section'));
-      
+
       // Initialize AOS
       AOS.init({
         duration: 800,
@@ -923,4 +1679,5 @@
   </script>
 
 </body>
+
 </html>
