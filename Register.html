@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Sarvam NGO - Make a Difference</title>
+    <link href="https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0076a8;
+            --primary-dark: #005f8b;
+            --secondary: #00b4ff;
+            --light: #f5f9ff;
+            --dark: #1d1d1f;
+            --gray: #7a7a8c;
+            --light-gray: #e1f0ff;
+            --success: #28a745;
+            --error: #dc3545;
+            --shadow: 0 4px 30px rgba(0, 180, 255, 0.15);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .hero-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #e6f4ff 0%, #cce9ff 100%);
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 180, 255, 0.1);
+            animation: float 15s infinite linear;
+            filter: blur(1px);
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            animation: float-up 20s infinite linear;
+            filter: blur(2px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(5px, 10px) rotate(5deg); }
+            50% { transform: translate(0, 15px) rotate(0deg); }
+            75% { transform: translate(-5px, 10px) rotate(-5deg); }
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 900px;
+            padding: 60px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 180, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .logo {
+            height: 80px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            filter: drop-shadow(0 2px 10px rgba(0, 180, 255, 0.3));
+        }
+
+        .logo:hover {
+            transform: scale(1.1) rotate(-5deg);
+            filter: drop-shadow(0 5px 15px rgba(0, 180, 255, 0.4));
+        }
+
+        .header h1 {
+            color: #000;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+            text-shadow: 0 2px 10px rgba(0, 180, 255, 0.2);
+        }
+
+        .header p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: var(--transition);
+        }
+
+        .header:hover p {
+            color: var(--primary-dark);
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+        }
+
+        .form-group {
+            flex: 1 0 calc(50% - 24px);
+            margin: 0 12px 30px;
+            position: relative;
+        }
+
+        .form-group.full-width {
+            flex: 1 0 calc(100% - 24px);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--dark);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(0, 180, 255, 0.2);
+            background: white;
+        }
+
+        .form-control:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 180, 255, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: var(--gray);
+            opacity: 0.6;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 180, 255, 0.3);
+            margin-top: 10px;
+            animation: pulse 2.5s infinite;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 180, 255, 0.4);
+            animation: none;
+        }
+
+        .btn:disabled {
+            background: var(--gray);
+            transform: none;
+            box-shadow: none;
+            animation: none;
+            cursor: not-allowed;
+        }
+
+        .btn:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success), #5cb85c);
+            animation: none;
+        }
+
+        .btn-error {
+            background: linear-gradient(135deg, var(--error), #c82333);
+            animation: none;
+        }
+
+        .form-footer {
+            margin-top: 40px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .form-footer:hover {
+            color: var(--primary-dark);
+        }
+
+        .form-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .form-footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .form-footer a:hover {
+            color: var(--primary-dark);
+        }
+
+        .form-footer a:hover::after {
+            width: 100%;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: '⌄';
+            font-size: 1.2rem;
+            color: var(--gray);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .select-wrapper:hover::after {
+            color: var(--primary);
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        select.form-control {
+            appearance: none;
+            padding-right: 50px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .checkbox-group:hover {
+            background: rgba(0, 180, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .checkbox-group input {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .checkbox-group:hover input {
+            transform: scale(1.2);
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checkbox-group:hover label {
+            color: var(--primary);
+        }
+
+        .illustration {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 180, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .illustration:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 180, 255, 0.3);
+        }
+
+        .illustration img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .illustration:hover img {
+            transform: scale(1.02);
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: var(--light-gray);
+            border-radius: 3px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress {
+            height: 100%;
+            width: 33%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+            transition: width 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.8) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            animation: progress-shine 2s infinite;
+        }
+
+        @keyframes progress-shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Floating label styles */
+        .float-label {
+            position: relative;
+        }
+
+        .float-label label {
+            position: absolute;
+            top: 18px;
+            left: 20px;
+            pointer-events: none;
+            transition: var(--transition);
+            color: var(--gray);
+        }
+
+        .float-label input:focus + label,
+        .float-label input:not(:placeholder-shown) + label,
+        .float-label select:focus + label,
+        .float-label select:valid + label,
+        .float-label textarea:focus + label,
+        .float-label textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 12px;
+            font-size: 0.8rem;
+            background: white;
+            padding: 0 8px;
+            color: var(--primary);
+            font-weight: 600;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 180, 255, 0.1);
+        }
+
+        /* Alert styles */
+        .alert {
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Error message styles */
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-control.error {
+            border-color: var(--error);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            .form-group {
+                flex: 1 0 calc(100% - 24px);
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-background">
+        <!-- Background elements will be added by JavaScript -->
+    </div>
+
+    <div class="container animate_animated animate_fadeIn">
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="header">
+            <img src="assets/img/sarvam-logo-removebg-preview (1).png" alt="Sarvam NGO Logo" class="logo">
+            <h1>Join Our Movement</h1>
+            <p>Become part of something bigger. Together we can create lasting change in our communities.</p>
+        </div>
+
+        <div class="illustration">
+            <img src="assets/img/register-page.jpg" alt="Community service" class="animate_animated animate_fadeInUp">
+        </div>
+
+        <form id="registrationForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="2839ecf9-e760-4da1-ba8c-88fbd428c076">
+            <input type="hidden" name="subject" value="New Volunteer Application - Sarvam NGO">
+            <input type="hidden" name="from_name" value="Sarvam NGO Website">
+            <input type="hidden" name="redirect" value="false">
+            <input type="checkbox" name="botcheck" id="" style="display: none;">
+            
+            <div id="alert-container"></div>
+            
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder=" " required>
+                    <label for="firstName">First Name</label>
+                    <div class="error-message" id="firstName-error">Please enter your first name</div>
+                </div>
+
+                <div class="form-group float-label">
+                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder=" " required>
+                    <label for="lastName">Last Name</label>
+                    <div class="error-message" id="lastName-error">Please enter your last name</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="email" id="email" name="email" class="form-control" placeholder=" " required>
+                    <label for="email">Email Address</label>
+                    <div class="error-message" id="email-error">Please enter a valid email address</div>
+                </div>
+
+                <div class="form-group float-label">
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder=" " required>
+                    <label for="phone">Phone Number</label>
+                    <div class="error-message" id="phone-error">Please enter a valid phone number</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="date" id="dob" name="dob" class="form-control" required>
+                    <label for="dob">Date of Birth</label>
+                    <div class="error-message" id="dob-error">Please enter your date of birth</div>
+                </div>
+
+                <div class="form-group float-label">
+                    <select id="gender" name="gender" class="form-control" required>
+                        <option value="" selected disabled></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                    <label for="gender">Gender</label>
+                    <div class="error-message" id="gender-error">Please select your gender</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="address" name="address" class="form-control" placeholder=" " required></textarea>
+                    <label for="address">Full Address</label>
+                    <div class="error-message" id="address-error">Please enter your address</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group float-label">
+                    <input type="text" id="city" name="city" class="form-control" placeholder=" " required>
+                    <label for="city">City</label>
+                    <div class="error-message" id="city-error">Please enter your city</div>
+                </div>
+
+                <div class="form-group float-label">
+                    <input type="text" id="pincode" name="pincode" class="form-control" placeholder=" " required>
+                    <label for="pincode">Pincode</label>
+                    <div class="error-message" id="pincode-error">Please enter a valid pincode</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label>Areas of Interest (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="education" name="interest" value="education">
+                        <label for="education">Education Initiatives</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="environment" name="interest" value="environment">
+                        <label for="environment">Environmental Conservation</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="healthcare" name="interest" value="healthcare">
+                        <label for="healthcare">Healthcare Programs</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="women-empowerment" name="interest" value="women-empowerment">
+                        <label for="women-empowerment">Women Empowerment</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="skills" name="skills" class="form-control" placeholder=" "></textarea>
+                    <label for="skills">Skills/Expertise</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group full-width float-label">
+                    <textarea id="motivation" name="motivation" class="form-control" placeholder=" " required></textarea>
+                    <label for="motivation">Why do you want to join Sarvam NGO?</label>
+                    <div class="error-message" id="motivation-error">Please tell us why you want to join</div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn" id="submitBtn">
+                    Continue Application
+                </button>
+            </div>
+
+            <div class="form-footer">
+                <p>By registering, you agree to our <a href="services-details.html" class="terms-link">Terms of Service</a> and <a href="privacy.html" class="privacy-link">Privacy Policy</a>.</p>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create dynamic particles and bubbles
+            const heroBg = document.querySelector('.hero-background');
+    
+            // Create particles
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+    
+                const size = Math.random() * 120 + 30;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+    
+                particle.style.width = ${size}px;
+                particle.style.height = ${size}px;
+                particle.style.top = ${posY}%;
+                particle.style.left = ${posX}%;
+                particle.style.animationDuration = ${duration}s;
+                particle.style.animationDelay = ${delay}s;
+                particle.style.opacity = Math.random() * 0.15 + 0.05;
+    
+                heroBg.appendChild(particle);
+            }
+    
+            // Create bubbles
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+    
+                const size = Math.random() * 40 + 10;
+                const posX = Math.random() * 100;
+                const duration = Math.random() * 15 + 10;
+                const delay = Math.random() * 15;
+    
+                bubble.style.width = ${size}px;
+                bubble.style.height = ${size}px;
+                bubble.style.left = ${posX}%;
+                bubble.style.bottom = -${size}px;
+                bubble.style.animationDuration = ${duration}s;
+                bubble.style.animationDelay = ${delay}s;
+    
+                heroBg.appendChild(bubble);
+            }
+    
+            // Form validation
+            const form = document.getElementById('registrationForm');
+            const submitBtn = document.getElementById('submitBtn');
+    
+            // Initialize floating labels for pre-filled values
+            document.querySelectorAll('.float-label input, .float-label select, .float-label textarea').forEach(el => {
+                if (el.value) {
+                    const label = el.parentNode.querySelector('label');
+                    label.style.top = '-10px';
+                    label.style.left = '12px';
+                    label.style.fontSize = '0.8rem';
+                    label.style.background = 'white';
+                    label.style.padding = '0 8px';
+                    label.style.color = 'var(--primary)';
+                    label.style.fontWeight = '600';
+                }
+            });
+    
+            // Validate on blur
+            document.querySelectorAll('input, select, textarea').forEach(input => {
+                input.addEventListener('blur', () => validateField(input));
+            });
+    
+            function validateField(field) {
+                const errorElement = document.getElementById(${field.id}-error);
+                
+                if (field.required && !field.value.trim()) {
+                    field.classList.add('error');
+                    errorElement.style.display = 'block';
+                    return false;
+                }
+                
+                // Email validation
+                if (field.type === 'email' && field.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        field.classList.add('error');
+                        errorElement.textContent = 'Please enter a valid email address';
+                        errorElement.style.display = 'block';
+                        return false;
+                    }
+                }
+                
+                // Phone validation
+                if (field.id === 'phone' && field.value.trim()) {
+                    const phoneRegex = /^[0-9]{10,15}$/;
+                    if (!phoneRegex.test(field.value)) {
+                        field.classList.add('error');
+                        errorElement.textContent = 'Please enter a valid phone number (10-15 digits)';
+                        errorElement.style.display = 'block';
+                        return false;
+                    }
+                }
+                
+                // Pincode validation
+                if (field.id === 'pincode' && field.value.trim()) {
+                    const pincodeRegex = /^[0-9]{6}$/;
+                    if (!pincodeRegex.test(field.value)) {
+                        field.classList.add('error');
+                        errorElement.textContent = 'Please enter a valid 6-digit pincode';
+                        errorElement.style.display = 'block';
+                        return false;
+                    }
+                }
+                
+                field.classList.remove('error');
+                errorElement.style.display = 'none';
+                return true;
+            }
+    
+            // Form submission
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                
+                // Validate all fields
+                let isValid = true;
+                document.querySelectorAll('input[required], select[required], textarea[required]').forEach(field => {
+                    if (!validateField(field)) {
+                        isValid = false;
+                    }
+                });
+                
+                if (!isValid) {
+                    alert('Please fill all required fields correctly');
+                    return;
+                }
+                
+                // Disable submit button
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+                
+                try {
+                    // Get form data
+                    const formData = new FormData(form);
+                    
+                    // Submit to Web3Forms
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        alert('🎉 Your application has been submitted successfully! We will contact you soon.');
+                        form.reset();
+                        
+                        // Reset floating labels
+                        document.querySelectorAll('.float-label input, .float-label select, .float-label textarea').forEach(el => {
+                            const label = el.parentNode.querySelector('label');
+                            label.style.top = '18px';
+                            label.style.left = '20px';
+                            label.style.fontSize = '0.95rem';
+                            label.style.background = 'transparent';
+                            label.style.padding = '0';
+                            label.style.color = 'var(--gray)';
+                            label.style.fontWeight = '500';
+                        });
+                        
+                        submitBtn.classList.remove('btn-error');
+                        submitBtn.classList.add('btn-success');
+                        submitBtn.textContent = 'Submitted Successfully!';
+                        
+                        setTimeout(() => {
+                            submitBtn.classList.remove('btn-success');
+                            submitBtn.innerHTML = 'Continue Application';
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    } else {
+                        throw new Error(result.message || 'Submission failed. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('🎉 Your application has been submitted successfully! We will contact you soon.');
+                    submitBtn.classList.remove('btn-success');
+                    submitBtn.classList.add('btn-error');
+                    submitBtn.textContent = 'Error - Try Again';
+                    
+                    setTimeout(() => {
+                        submitBtn.classList.remove('btn-error');
+                        submitBtn.innerHTML = 'Continue Application';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }
+            });
+            
+            // Animate progress bar on scroll
+            window.addEventListener('scroll', function () {
+                const progressBar = document.querySelector('.progress');
+                const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = ${33 + (scrollPercentage * 0.67)}%;
+            });
+        });
+    </script>
+</body>
+
+</html>

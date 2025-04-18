@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>She Rises - Women Empowerment Platform</title>
+  <meta name="description" content="Learn about Sarvam Trust's sustainability initiatives in environmental conservation, green energy, and eco-friendly practices">
+  <meta name="keywords" content="NGO, sustainability, environment, green energy, eco-friendly, Tamil Nadu">
+
+  <!-- Favicons -->
+  <link href="https://cdn.razorpay.com/logos/KMrKOuvyT8jYJg_large.jpeg" rel="icon">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+        --primary-color: #5A3E85;  /* Changed from #2e8b57 */
+      --secondary-color: #7a5fb3;  /* Changed from #3cb371 */
+      --accent-color: #9d7fdc;  /* Changed from #20b2aa */
+      --text-dark: #2d3748;
+      --text-light: #718096;
+      --light-bg: #f8fafc;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      background-color: #fff;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      background: linear-gradient(135deg, rgba(90, 62, 133, 0.8), rgba(122, 95, 179, 0.8)), 
+
+                  url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+    
+    /* Floating Elements Animation */
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .floating-element {
+      position: absolute;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      filter: blur(30px);
+      animation: float 15s infinite linear;
+    }
+    
+    .element-1 {
+      width: 300px;
+      height: 300px;
+      top: 20%;
+      left: 10%;
+      animation-duration: 20s;
+    }
+    
+    .element-2 {
+      width: 200px;
+      height: 200px;
+      top: 60%;
+      left: 70%;
+      animation-duration: 25s;
+      animation-delay: 5s;
+    }
+    
+    .element-3 {
+      width: 150px;
+      height: 150px;
+      top: 30%;
+      left: 50%;
+      animation-duration: 18s;
+      animation-delay: 2s;
+    }
+    
+    @keyframes float {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(50px, 50px) rotate(10deg); }
+      50% { transform: translate(100px, 0) rotate(20deg); }
+      75% { transform: translate(50px, -50px) rotate(10deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+    
+    /* Blog Content Section */
+    .blog-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      position: relative;
+    }
+    
+    .article-header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    
+    .article-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .article-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+    
+    .article-header:hover .article-title::after {
+      transform: scaleX(1);
+    }
+    
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+    
+    .article-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      margin-bottom: 40px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    
+    .article-image:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    }
+    
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .article-content h3 {
+      font-size: 1.8rem;
+      margin: 3rem 0 1.5rem;
+      color: var(--primary-color);
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    .article-content h3::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      height: 1.5rem;
+      width: 6px;
+      background: linear-gradient(var(--primary-color), var(--secondary-color));
+      border-radius: 3px;
+    }
+    
+    blockquote {
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      border-left: 4px solid var(--primary-color);
+      padding-left: 2rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+    
+    blockquote::before {
+      content: '"';
+      position: absolute;
+      font-size: 5rem;
+      color: rgba(46, 139, 87, 0.1);
+      top: -1.5rem;
+      left: 0;
+      line-height: 1;
+    }
+    
+        
+    /* Image Grid */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 3rem 0;
+    }
+    
+    .grid-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 250px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .grid-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .grid-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .grid-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .grid-item:hover .grid-caption {
+      transform: translateY(0);
+    }
+/* empowerment section*/
+
+.empowerment-section {
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.empowerment-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #5A3E85;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.empowerment-title::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #e49ab0;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
+  animation: expandLine 1s ease-in-out forwards;
+}
+
+.empowerment-content {
+  padding: 0 20px;
+  animation: slideUp 1s ease-in-out;
+}
+
+.empowerment-item {
+  margin-bottom: 30px;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, background-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.concept-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #5A3E85;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.concept-title:hover {
+  color: #e49ab0;
+}
+
+.box:hover {
+  background-color: #f1e2f5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+}
+
+.empowerment-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4A3F58;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 100px; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .empowerment-title {
+    font-size: 1.8rem;
+  }
+
+  .concept-title {
+    font-size: 1.4rem;
+  }
+
+  .empowerment-item p {
+    font-size: 0.95rem;
+  }
+}
+
+    
+/* Stats Section */
+.stats {
+    padding: 80px 20px;
+    background-color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.stats h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Container for the stat cards */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Each stat card styling */
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    width: 280px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Top Gradient Line */
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #5A3E85, #7a5fb3); /* Deep purple gradient */
+    z-index: 1;
+}
+
+/* Stat Number Styling */
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #5A3E85;
+    margin-bottom: 15px;
+}
+
+/* Stat Description */
+.stat-description {
+    font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Hover Effect (Pop and Outer Shadow) */
+.stat-card:hover {
+    transform: translateY(-10px); /* Slight pop-up */
+    box-shadow: 0 20px 40px rgba(90, 62, 133, 0.4); /* Outer purple glow */
+}
+
+  
+    /* Call to Action */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 80px 0;
+      margin: 80px 0;
+      border-radius: 15px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-title {
+  font-size: 2.0rem;
+  margin-bottom: 1.5rem;
+  color: #7861a8;  /* This ensures maximum contrast against the purple gradient */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Optional: adds slight shadow for better readability */
+}
+    
+    .cta-text {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .cta-btn {
+      background: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-weight: 600;
+    }
+    
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      background: rgba(255,255,255,0.9);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section {
+        height: auto;
+        padding: 100px 0;
+      }
+      
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .article-title {
+        font-size: 2rem;
+      }
+      
+      .article-image {
+        height: 350px;
+      }
+      
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .sdg-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Floating button */
+    .floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      z-index: 100;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    
+    .floating-btn:hover {
+      transform: scale(1.1);
+      background: var(--secondary-color);
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(46, 139, 87, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(46, 139, 87, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(46, 139, 87, 0); }
+    }
+    
+    /* Progress bar */
+    .progress-container {
+      width: 100%;
+      height: 5px;
+      background: transparent;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    
+    .progress-bar {
+      height: 5px;
+      background: var(--primary-color);
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="floating-elements">
+      <div class="floating-element element-1"></div>
+      <div class="floating-element element-2"></div>
+      <div class="floating-element element-3"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">She Rises. The World Rises.</h1>
+      <p class="hero-subtitle">Breaking barriers, building futures—one woman at a time.</p>
+      <a href="#article" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Learn more</a>
+    </div>
+  </section>
+
+  <!-- Blog Content -->
+  <main class="blog-content" id="article">
+    <article>
+      <header class="article-header animate-on-scroll">
+        <h2 class="article-title">When women rise, communities flourish.</h2>
+        <div class="article-meta">
+          <span><i class="bi bi-calendar"></i> Updated June 2023</span>
+          <span><i class="bi bi-person"></i> By Sarvam Team</span>
+        </div>
+      </header>
+      
+      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" alt="Tree plantation drive" class="article-image animate-on-scroll">
+      
+      <div class="article-content">
+        <p class="animate-on-scroll">At Sarvam Trust, we believe that empowering women is not just a mission — it's a movement. Our initiatives are designed to uplift, educate, and equip women from underprivileged backgrounds to become independent, confident, and self-reliant changemakers in their families and communities.</p>
+        
+        <h3 class="animate-on-scroll">Her Story. Her Power</h3>
+        <p class="animate-on-scroll">In every corner of our communities, women’s journeys are honored, their voices are heard, and their stories are seen as symbols of power and transformation.From overlooked beginnings to unstoppable momentum, women who once had no choice are now choosing their own path — and inspiring others to do the same.</p>
+        <blockquote class="animate-on-scroll">
+            Behind every empowered woman is a story of courage, resilience, and silent strength.
+            </blockquote>
+        
+            <div class="image-grid animate-on-scroll">
+                <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Digital classroom">
+                <div class="grid-caption">Interactive digital classroom</div>
+                </div>
+                <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Students with tablets">
+                <div class="grid-caption">Personalized learning with tablets</div>
+                </div>
+                <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Coding workshop">
+                <div class="grid-caption">Students learning to code</div>
+                </div>
+                </div> 
+                
+  <!-- Paths -->
+                <section class="empowerment-section animate-on-scroll">
+                    <h2 class="empowerment-title">The Path to Empowerment</h2>
+                
+                    <div class="empowerment-content animate-on-scroll">
+                      <div class="empowerment-item animate-on-scroll">
+                        <div class="box animate-on-scroll">
+                          <h3 class="concept-title animate-on-scroll">Confidence Building</h3>
+                          <p>Empowerment starts within. Through workshops, activities, and personal development sessions, we help women discover their voice and build unwavering self-belief.</p>
+                        </div>
+                      </div>
+                
+                      <div class="empowerment-item animate-on-scroll">
+                        <div class="box animate-on-scroll">
+                          <h3 class="concept-title animate-on-scroll">Financial Literacy</h3>
+                          <p>Understanding money is power. We provide training on savings, budgeting, microfinancing, and entrepreneurship to help women gain control over their finances and future.</p>
+                        </div>
+                      </div>
+                
+                      <div class="empowerment-item animate-on-scroll">
+                        <div class="box animate-on-scroll">
+                          <h3 class="concept-title animate-on-scroll">Digital Inclusion</h3>
+                          <p>In a connected world, digital skills are essential. From smartphone basics to digital payments and online learning, we help bridge the digital divide for women everywhere.</p>
+                        </div>
+                      </div>
+                
+                      <div class="empowerment-item animate-on-scroll">
+                        <div class="box animate-on-scroll">
+                          <h3 class="concept-title animate-on-scroll">Community Engagement</h3>
+                          <p>Empowered women empower communities. We encourage participation in local initiatives, volunteer programs, and social outreach to create ripple effects of change.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                
+
+        <h3 class="animate-on-scroll">A Journey of Equality, Strength, and Opportunity</h3>
+        <ul class="animate-on-scroll">
+            <li><strong>Breaking Gender Stereotypes:</strong> Challenging societal norms to allow women to pursue their passions and achieve their potentials.</li>
+            <li><strong>Financial Independence:</strong> Empowering women through financial literacy and the tools to control their finances and secure their future.</li>
+            <li><strong>Women in Leadership:</strong> Encouraging and supporting women to take leadership roles, influencing decisions and inspiring future generations.</li>
+            <li><strong>Access to Education:</strong> Ensuring equal access to quality education, giving women the skills and knowledge to thrive and contribute to society.</li>
+          </ul>
+          
+          <!-- Stats section -->
+          <div class="stats">
+            <h2>By the Numbers</h2>
+            <div class="stats-container animate-on-scroll">
+                <div class="stat-card">
+                    <div class="stat-number">
+                        70%
+                    </div>
+                    <div class="stat-description">Of women leaders drive social impact in their communities.</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">
+                        35%
+                    </div>
+                    <div class="stat-description">Higher ROI from women-led startups compared to the average.</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">
+                        1 in 3
+                    </div>
+                    <div class="stat-description">Businesses worldwide are now women-owned.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+       
+        
+        <h3 class="animate-on-scroll">She Leads the Changes</h3>
+        <p class="animate-on-scroll">She doesn't wait for doors to open — she builds her own. Her leadership is not defined by position, but by purpose, vision, and unshakable resolve. She rises with strength and uplifts others with grace, creating spaces where every voice matters. Her journey turns obstacles into opportunities, blending innovation with empathy and action with impact.
+            She leads with intention, inspires through example, and shapes a future where change is not just possible — it’s inevitable.</p>
+        
+        
+        <div class="cta-section animate-on-scroll">
+          <h4 class="cta-title">Ready to Make a Difference?</h4>
+          <p class="cta-text">Join thousands of women and allies working together to create equal opportunities for all. Whether you're looking to contribute or seeking support, we're here for you.</p>
+          <button class="cta-btn">Be the Change</button>
+        </div>
+        
+        <h3 class="animate-on-scroll">Future Goals</h3>
+        <p class="animate-on-scroll">Our vision for the next five years includes:</p>
+        <ul class="animate-on-scroll">
+          <li>Expand access to quality education for girls in underserved regions.</li>
+          <li>Bridge the gender pay gap across all industries.</li>
+          <li>Ensure equal digital access and technology training for women.</li>
+          <li>Increase women’s participation in leadership and decision-making roles.</li>
+          <li>Foster community networks that amplify women's voices and stories.</li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <!-- Floating Button -->
+  <a href="#" class="floating-btn animate-on-scroll" id="backToTop">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h3 class="text-white mb-4">Sarvam Trust</h3>
+          <p>Empowering her means investing in shared prosperity, equality, and a future where everyone moves forward — together.</p>
+          <div class="social-links mt-4">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h4 class="text-white mb-4">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">About</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Our Work</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h4 class="text-white mb-4">Contact Us</h4>
+          <p><i class="bi bi-geo-alt-fill me-2"></i> No: 17/2016, Park Street, Namakkal, Tamil Nadu 637001</p>
+          <p><i class="bi bi-telephone-fill me-2"></i> +91-99526 48847</p>
+          <p><i class="bi bi-envelope-fill me-2"></i> sarvamngo19@gmail.com</p>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h4 class="text-white mb-4">Newsletter</h4>
+          <p>Subscribe to our newsletter for updates on our women empowerment.</p>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Your Email">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      
+      <hr class="my-4 bg-light">
+      
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">&copy; 2023 Sarvam Trust. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">Designed by <a href="#" class="text-white text-decoration-none">SkySphere Technologies</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS animation
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+    
+    // Scroll animation for elements
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+    
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+    
+    // Floating button effect
+    const buttons = document.querySelectorAll('.btn-primary, .cta-btn');
+    
+    buttons.forEach(button => {
+      button.addEventListener('mousemove', (e) => {
+        const x = e.pageX - button.getBoundingClientRect().left;
+        const y = e.pageY - button.getBoundingClientRect().top;
+        
+        button.style.setProperty('--x', `${x}px`);
+        button.style.setProperty('--y', `${y}px`);
+      });
+    });
+  </script>
+</body>
+</html>

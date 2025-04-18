@@ -56,9 +56,7 @@
 
   <link href="assets/css/main.css" rel="stylesheet">
 
-
-
-
+ 
 
 </head>
 
@@ -93,7 +91,7 @@
           <li><a href="index.html#hero" class="active">Home</a></li>
 
           <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
+          <li><a href="services-details.html#all">Services</a></li>
 
           <li><a href="index.html#portfolio">Works</a></li>
 
@@ -113,7 +111,7 @@
 
       <a href="donate.html" target="_blank" class="btn-getstarted">DONATE</a>
 
-     
+
 
     </div>
 
@@ -158,8 +156,8 @@
 
 
 
-   
-      </div>
+
+    </div>
 
 
 
@@ -181,23 +179,26 @@
             <div class="content">
               <center>
 
-              <h3 class="section-title">About Us</h3>
-            </center>
+                <h3 class="section-title">About Us</h3>
+              </center>
+              <br>
+              <br>
 
-              <h2 class="section-title">Who We Are?</h2>
               <p style="text-align: justify;">
-                Founded on July 13, 2016, in Namakkal, Tamil Nadu, Sarvam Educational Trust was established with a
-                singular purpose to bridge socio-economic gaps and empower underprivileged communities through
-                holistic development programs. We recognize that sustainable progress is only possible when education,
-                health, and social welfare are integrated into a well-structured framework.
+                Founded on July 13, 2016, in Namakkal, Tamil Nadu, Sarvam Educational Trust was created with a clear and
+                compassionate mission — to bridge socio-economic gaps and uplift underprivileged communities through
+                holistic development initiatives.</p>
+              <br>
+              <p>We believe true and lasting progress happens when education, healthcare, and social welfare are
+                interconnected and delivered through a thoughtful, structured framework.
               </p>
 
 
 
               <div class="additional-content" data-aos="fade-up" data-aos-delay="300">
 
-                <p>Over the past 8 years, we have impacted over 50,000 lives through our various initiatives. Our work
-                  focuses on three core pillars:</p>
+                <p>Over the past 8 years, we have positively transformed the lives of over 50,000 individuals through
+                  our diverse programs. Our work revolves around three core pillars:</p>
 
                 <ul class="animated-list">
 
@@ -229,40 +230,45 @@
                 <div class="icon-box animated-card">
                   <div class="icon"><i class="bi bi-book"></i></div>
                   <h3>Planning</h3>
-                  <p>We mapped out a clear goal to spread hygiene and waste awareness using stickers, student volunteers, and local leaders.</p>
+                  <p>We crafted a thoughtful approach to raise awareness about hygiene. By involving energetic student
+                    volunteers, eye-catching stickers, and support from local influencers, we aimed to inspire positive
+                    change in the community.</p>
                   <div class="wave-animation"></div>
                 </div>
               </div>
-          
+
               <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
                 <div class="icon-box animated-card">
                   <div class="icon"><i class="bi bi-heart-pulse"></i></div>
                   <h3>Organising</h3>
-                  <p>Teams handled stickers, logistics, and outreach. Materials and roles were ready ahead of time with full coordination.</p>
+                  <p>Dedicated teams took charge of design, logistics, and community engagement. With well-prepared
+                    materials and clearly defined roles, we ensured seamless coordination and efficient execution.</p>
                   <div class="wave-animation"></div>
                 </div>
               </div>
-          
+
               <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
                 <div class="icon-box animated-card">
                   <div class="icon"><i class="bi bi-people-fill"></i></div>
                   <h3>Scheduling</h3>
-                  <p>The event ran from 8 AM to 4 PM with campaigns, speeches, and group activities—all time-slotted and well-managed.</p>
+                  <p>The event featured a series of campaigns, impactful speeches, and engaging group activities, all
+                    organized with careful planning to ensure smooth execution throughout the day.</p>
                   <div class="wave-animation"></div>
                 </div>
               </div>
-          
+
               <div class="col-md-6" data-aos="zoom-in" data-aos-delay="500">
                 <div class="icon-box animated-card">
                   <div class="icon"><i class="bi bi-tree-fill"></i></div>
                   <h3>Executing</h3>
-                  <p>Volunteers engaged every household. Guest talks and community sessions made it memorable and impactful for all.</p>
+                  <p>Volunteers connected with every household, making a real difference. Guest talks and community
+                    sessions added depth, leaving a memorable and lasting impact.</p>
                   <div class="wave-animation"></div>
                 </div>
               </div>
             </div>
           </div>
-          
+
 
 
 
@@ -275,112 +281,229 @@
       <!-- Internal Style (can be moved to CSS file) -->
 
       <style>
-        .animated-list {
-
-          list-style: none;
-
-          padding: 0;
-
+        /* Service Details Section */
+        .service-details {
+          padding: 60px 0;
+          background-color: #f9f9f9;
         }
 
-
-
-        .animated-list li {
-
-          margin-bottom: 10px;
-
-          display: flex;
-
-          align-items: center;
-
-          font-size: 1rem;
-
+        /* Filter Sidebar */
+        .filter-sidebar {
+          padding: 20px;
+          position: sticky;
+          top: 20px;
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
-
-
-        .animated-list i {
-
+        .filter-sidebar .heading {
           color: #148aea;
-
-          margin-right: 10px;
-
+          margin-bottom: 20px;
+          font-weight: 600;
         }
 
+        .filter-list {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
 
+        .filter-btn {
+          padding: 10px 15px;
+          border: none;
+          background: #f1f9ff;
+          color: #333;
+          border-radius: 8px;
+          text-align: left;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          font-size: 0.95rem;
+        }
+
+        .filter-btn i {
+          margin-right: 8px;
+          font-size: 1.1rem;
+        }
+
+        .filter-btn.active {
+          background: #148aea;
+          color: white;
+        }
+
+        .filter-btn:not(.active):hover {
+          background: #e1f0fa;
+        }
+
+        /* Cards Container */
+        .cards-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 20px;
+          height: auto;
+          overflow: visible;
+        }
+
+        /* Service Card */
+        .service-card {
+          border: none;
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-img-container {
+          position: relative;
+          height: 200px;
+          overflow: hidden;
+        }
+
+        .card-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .card-img {
+          transform: scale(1.05);
+        }
+
+        .card-category {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          padding: 5px 12px;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: white;
+          text-transform: uppercase;
+        }
+
+        .education {
+          background-color: #4CAF50;
+        }
+
+        .environment {
+          background-color: #8BC34A;
+        }
+
+        .women {
+          background-color: #E91E63;
+        }
+
+        .health {
+          background-color: #00BCD4;
+        }
+
+        .hunger {
+          background-color: #FF9800;
+        }
+
+        .card-content {
+          padding: 20px;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .card-content h3 {
+          color: #148aea;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+
+        .card-text {
+          margin-bottom: 20px;
+          flex: 1;
+        }
+
+        .card-text p {
+          color: #555;
+          margin-bottom: 10px;
+          font-size: 0.95rem;
+        }
+
+        .card-stats {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          margin-top: auto;
+        }
 
         .stat-item {
-
-          flex: 1 1 30%;
-
-          min-width: 100px;
-
+          display: flex;
+          align-items: center;
+          font-size: 0.9rem;
+          color: #666;
         }
 
+        .stat-item i {
+          margin-right: 5px;
+          color: #148aea;
+        }
 
+        /* Animated List Styles */
+        .animated-list {
+          list-style: none;
+          padding: 0;
+        }
 
+        .animated-list li {
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          font-size: 1rem;
+        }
+
+        .animated-list i {
+          color: #148aea;
+          margin-right: 10px;
+        }
+
+        /* Icon Box Animation */
         .icon-box.animated-card {
-
           background: #fff;
-
           border-radius: 15px;
-
           padding: 20px;
-
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-
           position: relative;
-
           overflow: hidden;
-
           transition: transform 0.3s ease;
-
         }
-
-
 
         .icon-box.animated-card:hover {
-
           transform: translateY(-8px);
-
         }
-
-
 
         .icon-box .icon {
-
           font-size: 2rem;
-
           color: #148aea;
-
           margin-bottom: 10px;
-
         }
-
-
 
         .wave-animation {
-
           position: absolute;
-
           bottom: 0;
-
           left: 0;
-
           height: 4px;
-
           width: 100%;
-
           background: linear-gradient(90deg, #148aea, #44c6f0);
-
           animation: waveSlide 2s infinite linear;
-
         }
 
-
-
         @keyframes waveSlide {
-
           0% {
             transform: translateX(-100%);
           }
@@ -388,7 +511,39 @@
           100% {
             transform: translateX(100%);
           }
+        }
 
+        /* No Scroll on Filter */
+        .row {
+          overflow: hidden;
+        }
+
+        .cards-container {
+          overflow: visible;
+          min-height: 600px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+          .cards-container {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          }
+        }
+
+        @media (max-width: 768px) {
+          .filter-sidebar {
+            position: static;
+            margin-bottom: 30px;
+          }
+
+          .filter-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+
+          .filter-btn {
+            flex: 1 0 auto;
+          }
         }
       </style>
 
@@ -691,8 +846,425 @@
     </script>
 
 
+    <!-- 
+founder view -->
 
 
+    <!--Founders views starts-->
+
+    <section id="founders-view" class="founder-section">
+      <!-- Background Animated Shape -->
+      <div class="background-shape"></div>
+
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Founder Image Section -->
+          <div class="col-lg-6 founder-image">
+            <img src="assets/img/Founder .jpg" alt="Founder Image">
+          </div>
+
+          <!-- Founder Text Section -->
+          <div class="col-lg-6 founder-text">
+            <h2>From the Founder</h2>
+            <h3>Our Journey & Mission</h3>
+            <p>
+              SARVAM Educational Trust was born out of a deep-rooted belief that <strong>every human deserves dignity,
+                safety, and hope</strong>.
+              Since its inception in 2016, we've been driven by the mission to transform the lives of the underserved,
+              providing education, shelter, food, and care to those in need.
+            </p>
+            <p>
+              Through each initiative, we strive to uplift individuals, empower communities, and create a sustainable
+              future. Our mission continues with unwavering dedication to improving lives, one step at a time.
+            </p>
+            <p class="founder-quote">
+              "When we see someone in need, we don’t walk away. We extend our hand, and our heart."
+              <br>– Ms.Ramya, Founder
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internal CSS (can be moved to your external CSS file) -->
+    <style>
+      .founder-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+        position: relative;
+        min-height: 500px;
+        overflow: hidden;
+      }
+
+      /* Founder Text */
+      .founder-text {
+        flex: 1 1 500px;
+        padding: 40px;
+        animation: fadeInLeft 1.5s ease-out;
+        z-index: 10;
+      }
+
+      .founder-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #000509;
+        /* text-transform: uppercase; */
+        letter-spacing: 2px;
+        position: relative;
+      }
+
+      .founder-text h2::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #148aea;
+        margin-top: 8px;
+      }
+
+      .founder-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .founder-quote {
+        font-style: italic;
+        color: #555;
+        border-left: 4px solid #148aea;
+        padding-left: 20px;
+        margin-top: 30px;
+        font-size: 1.3rem;
+      }
+
+      /* Founder Image */
+      .founder-image {
+        flex: 1 1 450px;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+        animation: fadeInRight 1.5s ease-out;
+        z-index: 10;
+      }
+
+      .founder-image img {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(20, 138, 234, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .founder-image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(20, 138, 234, 0.4);
+      }
+
+      /* Background Animation */
+      .background-shape {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(45deg, #44c6f0, #148aea);
+        filter: blur(100px);
+        animation: backgroundMotion 10s infinite alternate;
+        z-index: -1;
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes backgroundMotion {
+        0% {
+          transform: translateX(-50%);
+        }
+
+        100% {
+          transform: translateX(50%);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .founder-section {
+          flex-direction: column;
+          padding: 60px 20px;
+        }
+
+        .founder-text h2 {
+          font-size: 2rem;
+        }
+
+        .founder-text p {
+          font-size: 1rem;
+        }
+
+        .founder-quote {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+
+    <!--Founders views ends-->
+
+
+    <!--Our team section starts-->
+
+    <section id="team" class="team section light-background">
+      <canvas id="particles-bg"></canvas>
+      <!-- Section Title -->
+
+      <div class="container section-title" data-aos="fade-up">
+
+        <h2>Meet the Team</h2>
+
+        <p>Our Passionate People</p>
+
+      </div><!-- End Section Title -->
+
+
+      <div class="container position-relative z-2">
+        <!-- <div class="text-center mb-5">
+      <h2 class="section-subtitle reveal">Meet the Team</h3>
+      <h2 class="section-title light-sweep">Our Passionate People</h2>
+    </div> -->
+
+        <div class="row justify-content-center gx-4 gy-5">
+          <!-- Team Member 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Anita Raj">
+              </div>
+              <h4>Anita Raj</h4>
+              <p class="role">Founder & Director</p>
+              <p>Visionary behind Sarvam Trust, leading with purpose since 2016.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Ravi Kumar">
+              </div>
+              <h4>Ravi Kumar</h4>
+              <p class="role">Project Manager</p>
+              <p>Oversees all on-ground projects and ensures impact delivery.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Meena Devi">
+              </div>
+              <h4>Meena Devi</h4>
+              <p class="role">Health Coordinator</p>
+              <p>Leads rural health campaigns and mobile clinic initiatives.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Suresh Babu">
+              </div>
+              <h4>Suresh Babu</h4>
+              <p class="role">Education Lead</p>
+              <p>Implements after-school and digital learning programs.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 5 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Lakshmi Priya">
+              </div>
+              <h4>Lakshmi Priya</h4>
+              <p class="role">Women Empowerment Lead</p>
+              <p>Trains and mentors women in vocational and leadership skills.</p>
+            </div>
+          </div>
+
+          <!-- Team Member 6 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="team-box">
+              <div class="team-img">
+                <img src="https://via.placeholder.com/120" alt="Ajay Das">
+              </div>
+              <h4>Ajay Das</h4>
+              <p class="role">Environment Officer</p>
+              <p>Promotes eco-awareness and sustainable farming practices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STYLES -->
+      <style>
+        .team {
+          position: relative;
+          overflow: hidden;
+          padding: 100px 0;
+          background: linear-gradient(to bottom, #f4f9ff, #ffffff);
+        }
+
+        #particles-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+        }
+
+        .team-box {
+          background: #fff;
+          border-radius: 20px;
+          padding: 30px;
+          text-align: center;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .team-box:hover {
+          transform: translateY(-12px);
+          box-shadow: 0 25px 50px rgba(20, 138, 234, 0.25);
+        }
+
+        .team-img img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 4px solid #148aea;
+          margin-bottom: 15px;
+        }
+
+        .team-box h4 {
+          font-weight: 600;
+          margin-bottom: 5px;
+          color: #148aea;
+        }
+
+        .team-box .role {
+          font-size: 0.9rem;
+          color: #888;
+          margin-bottom: 10px;
+        }
+
+        .section-title.light-sweep {
+          display: inline-block;
+          background: linear-gradient(90deg, #148aea, #44c6f0);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          position: relative;
+        }
+
+        .section-title.light-sweep::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -70%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+          animation: sweep 3s infinite;
+        }
+
+        @keyframes sweep {
+          0% {
+            left: -70%;
+          }
+
+          100% {
+            left: 100%;
+          }
+        }
+      </style>
+
+      <!-- PARTICLES BACKGROUND SCRIPT -->
+      <script>
+        const canvas = document.getElementById("particles-bg");
+        const ctx = canvas.getContext("2d");
+        let particles = [];
+
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function createParticles() {
+          particles = [];
+          for (let i = 0; i < 70; i++) {
+            particles.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              r: Math.random() * 2 + 1,
+              dx: (Math.random() - 0.5) * 0.5,
+              dy: (Math.random() - 0.5) * 0.5
+            });
+          }
+        }
+
+        function drawParticles() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(20,138,234,0.3)";
+            ctx.fill();
+
+            p.x += p.dx;
+            p.y += p.dy;
+
+            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+          });
+          requestAnimationFrame(drawParticles);
+        }
+
+        createParticles();
+        drawParticles();
+      </script>
+    </section>
+
+
+
+    <!--our team section ends-->
 
     <!-- Stats Section -->
 
@@ -700,7 +1272,7 @@
 
 
 
-      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+      <img src="assets\img\voluteer-img.jpg.jpeg" alt="" data-aos="fade-in">
 
 
 
@@ -846,7 +1418,7 @@
 
               <div>
 
-                <h4 class="title"><a href="services-details.html" class="stretched-link">Education</a></h4>
+                <h4 class="title"><a href="services-details.html#education" class="stretched-link">Education</a></h4>
 
                 <p class="description">Providing quality education and learning resources to underprivileged children
                   and adults to empower them with knowledge and skills for a better future.</p>
@@ -869,7 +1441,8 @@
 
               <div>
 
-                <h4 class="title"><a href="services-details.html" class="stretched-link">Environment</a></h4>
+                <h4 class="title"><a href="services-details.html#environment" class="stretched-link">Environment</a>
+                </h4>
 
                 <p class="description">Promoting environmental conservation through tree plantation drives, waste
                   management programs, and sustainable development initiatives.</p>
@@ -890,7 +1463,8 @@
 
               <div>
 
-                <h4 class="title"><a href="services-details.html" class="stretched-link">Women Empowerment</a></h4>
+                <h4 class="title"><a href="services-details.html#women" class="stretched-link">Women Empowerment</a>
+                </h4>
 
                 <p class="description">Creating opportunities for women through skill development, financial literacy
                   programs, and support for entrepreneurship.</p>
@@ -911,7 +1485,7 @@
 
               <div>
 
-                <h4 class="title"><a href="services-details.html" class="stretched-link">No Hunger</a></h4>
+                <h4 class="title"><a href="services-details.html#hunger" class="stretched-link">No Hunger</a></h4>
 
                 <p class="description">Running community kitchens, food distribution programs, and agricultural
                   initiatives to eliminate hunger and malnutrition.</p>
@@ -934,7 +1508,8 @@
 
                 <div>
 
-                  <h4 class="title"><a href="services-details.html" class="stretched-link">Health & Sanitation</a></h4>
+                  <h4 class="title"><a href="services-details.html#health" class="stretched-link">Health &
+                      Sanitation</a></h4>
 
                   <p class="description">Providing medical camps, health awareness programs, and sanitation facilities
                     to improve community health standards.</p>
@@ -1415,7 +1990,7 @@
 
 
 
-    <!-- Faq Section -->
+    <!-- Faq Section --
 
     <section id="faq" class="faq section">
 
@@ -1468,8 +2043,7 @@
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
 
-              </div><!-- End Faq item-->
-
+              </div><!-- End Faq item--
 
 
               <div class="faq-item">
@@ -1486,7 +2060,7 @@
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
 
-              </div><!-- End Faq item-->
+              </div><!-- End Faq item--
 
 
 
@@ -1505,7 +2079,7 @@
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
 
-              </div><!-- End Faq item-->
+              </div><!-- End Faq item
 
 
 
@@ -1524,7 +2098,7 @@
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
 
-              </div><!-- End Faq item-->
+              </div><!-- End Faq item
 
 
 
@@ -1542,7 +2116,7 @@
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
 
-              </div><!-- End Faq item-->
+              </div><!-- End Faq item
 
 
 
@@ -1560,7 +2134,7 @@
 
                 <i class="faq-toggle bi bi-chevron-right"></i>
 
-              </div><!-- End Faq item-->
+              </div><!-- End Faq item
 
 
 
@@ -1576,7 +2150,7 @@
 
 
 
-    </section><!-- /Faq Section -->
+    </section> Faq Section -->
 
 
     <!-- Team Section 
@@ -1827,7 +2401,7 @@
 
 
 
-      <img src="assets/img/cta-bg.jpg" alt="">
+      <img src="assets\img\statsbg1.jpg" alt="">
 
 
 
@@ -1839,12 +2413,23 @@
 
             <div class="text-center">
 
+<<<<<<< HEAD
               <h3>Join Your Hands With Us</h3>
+=======
+              <h3>Join your hands with us</h3>
+>>>>>>> fba0efc9102323a0ec8ee68ae4e7a3cbc5e30578
 
               <p>At Sarvam NGO, we believe every individual deserves access to education, healthcare, and
-                empowerment—regardless of their background. But we can’t do it alone</p>
+                empowerment—regardless of their background. But we can’t do it alone.When you volunteer or support our
+                initiatives, you become a catalyst for change. Your involvement helps
+                children go to school, families receive basic medical aid, and communities grow stronger with the tools
+                they need to thrive.</p>
 
+<<<<<<< HEAD
               <a class="cta-btn" href="#contact">Register Now</a>
+=======
+              <a class="cta-btn" href="Register.html">Register now</a>
+>>>>>>> fba0efc9102323a0ec8ee68ae4e7a3cbc5e30578
 
             </div>
 
@@ -1860,7 +2445,7 @@
 
 
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section 
 
     <section id="testimonials" class="testimonials section light-background">
 
@@ -1978,7 +2563,7 @@
 
                   </div>
 
-                </div><!-- End testimonial item -->
+                </div>
 
 
 
@@ -2022,7 +2607,9 @@
 
                   </div>
 
-                </div><!-- End testimonial item -->
+                </div>
+                 <!-End testimonial item 
+
 
 
 
@@ -2066,7 +2653,7 @@
 
                   </div>
 
-                </div><!-- End testimonial item -->
+                </div><!-- End testimonial item 
 
 
 
@@ -2110,7 +2697,7 @@
 
                   </div>
 
-                </div><!-- End testimonial item -->
+                </div><!- End testimonial item 
 
 
 
@@ -2134,33 +2721,35 @@
 
 
 
-    </section><!-- /Testimonials Section -->
+    </section> /Testimonials Section -->
 
 
 
-    <!-- Recent Posts Section -->
+    <!--Recent Posts Section --
     <section id="recent-posts" class="recent-posts section">
 
-      <!-- Section Title -->
+      <!-- Section Title 
       <div class="container section-title" data-aos="fade-up">
         <h2>Recent Updates</h2>
         <p>Stay informed about our latest initiatives and impact in rural communities</p>
-      </div><!-- End Section Title -->
-    
+      </div><!-- End Section Title -
+
       <div class="container">
         <div class="row gy-4">
-    
+
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <article>
               <div class="post-img">
-                <img src="assets/img/blog/education-update.jpg" alt="Children learning in rural classroom" class="img-fluid">
+                <img src="assets/img/blog/education-update.jpg" alt="Children learning in rural classroom"
+                  class="img-fluid">
               </div>
               <p class="post-category">Education</p>
               <h2 class="title">
                 <a href="blog-details.html">Mobile Learning Vans Reach Remote Villages</a>
               </h2>
               <div class="d-flex align-items-center">
-                <img src="assets/img/team/education-head.jpg" alt="Education Coordinator" class="img-fluid post-author-img flex-shrink-0">
+                <img src="assets/img/team/education-head.jpg" alt="Education Coordinator"
+                  class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
                   <p class="post-author">Ramesh Kumar</p>
                   <p class="post-date">
@@ -2169,8 +2758,8 @@
                 </div>
               </div>
             </article>
-          </div><!-- End post list item -->
-    
+          </div><!-- End post list item -
+
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <article>
               <div class="post-img">
@@ -2181,7 +2770,8 @@
                 <a href="blog-details.html">120 Women Graduate From Vocational Program</a>
               </h2>
               <div class="d-flex align-items-center">
-                <img src="assets/img/team/women-coordinator.jpg" alt="Women's Coordinator" class="img-fluid post-author-img flex-shrink-0">
+                <img src="assets/img/team/women-coordinator.jpg" alt="Women's Coordinator"
+                  class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
                   <p class="post-author">Priya Sharma</p>
                   <p class="post-date">
@@ -2190,8 +2780,8 @@
                 </div>
               </div>
             </article>
-          </div><!-- End post list item -->
-    
+          </div><!-- End post list item --
+
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <article>
               <div class="post-img">
@@ -2202,7 +2792,8 @@
                 <a href="blog-details.html">1000+ Saplings Planted in Green Initiative</a>
               </h2>
               <div class="d-flex align-items-center">
-                <img src="assets/img/team/environment-head.jpg" alt="Environment Head" class="img-fluid post-author-img flex-shrink-0">
+                <img src="assets/img/team/environment-head.jpg" alt="Environment Head"
+                  class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
                   <p class="post-author">Arjun Patel</p>
                   <p class="post-date">
@@ -2211,63 +2802,63 @@
                 </div>
               </div>
             </article>
-          </div><!-- End post list item -->
-    
-        </div><!-- End recent posts list -->
+          </div><!-- End post list item 
+
+        </div><-- End recent posts list 
       </div>
     </section>
-    
+
     <style>
       .recent-posts .post-img {
         height: 200px;
         overflow: hidden;
       }
-      
+
       .recent-posts .post-img img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transition: transform 0.3s ease;
       }
-      
+
       .recent-posts article:hover .post-img img {
         transform: scale(1.05);
       }
-      
+
       .post-category {
         color: #4e54c8;
         font-weight: 600;
         margin: 15px 0 5px;
       }
-      
+
       .recent-posts .title {
         font-size: 1.2rem;
         margin-bottom: 15px;
       }
-      
+
       .recent-posts .title a {
         color: #333;
         text-decoration: none;
         transition: color 0.3s ease;
       }
-      
+
       .recent-posts .title a:hover {
         color: #148aea;
       }
-      
+
       .post-author-img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         margin-right: 10px;
       }
-      
+
       @media (max-width: 768px) {
         .recent-posts .post-img {
           height: 150px;
         }
       }
-    </style><!-- /Recent Posts Section -->
+    </style> /Recent Posts Section-->
 
     <!-- Contact Section -->
 
@@ -2510,7 +3101,7 @@
               </div>
 
             </form> -->
-             <!-- <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- <form action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="51f6e9fd-0ee8-4442-89eb-1e4378cc2cb1">
               <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html">
             
@@ -2565,7 +3156,7 @@
             </form> -->
             <form action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="51f6e9fd-0ee8-4442-89eb-1e4378cc2cb1">
-              
+
               <!-- Your Form Fields -->
               <div class="row gy-4">
                 <div class="col-md-6">
@@ -2575,7 +3166,7 @@
                     <div class="focus-line"></div>
                   </div>
                 </div>
-          
+
                 <div class="col-md-6">
                   <div class="form-group floating-label">
                     <input type="email" class="form-control" name="email" id="email" required>
@@ -2583,7 +3174,7 @@
                     <div class="focus-line"></div>
                   </div>
                 </div>
-          
+
                 <div class="col-12">
                   <div class="form-group floating-label">
                     <input type="text" class="form-control" name="subject" id="subject" required>
@@ -2591,7 +3182,7 @@
                     <div class="focus-line"></div>
                   </div>
                 </div>
-          
+
                 <div class="col-12">
                   <div class="form-group floating-label">
                     <textarea class="form-control" name="message" id="message" rows="6" required></textarea>
@@ -2599,12 +3190,12 @@
                     <div class="focus-line"></div>
                   </div>
                 </div>
-          
+
                 <div class="col-12 text-center">
-                  <div class="loading">Loading...</div>
+                  <div class="loading"></div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
-          
+
                   <button type="submit" class="btn-magnetic">
                     <span class="btn-text">Send Message</span>
                     <span class="btn-icon"><i class="bi bi-send-fill"></i></span>
@@ -2613,7 +3204,7 @@
                 </div>
               </div>
             </form>
-          
+
             <!-- <script>
               const form = document.querySelector("form");
               const loading = document.querySelector(".loading");
@@ -2653,224 +3244,224 @@
                 });
               });
             </script> -->
-              <!-- The Modal for Success Popup -->
-  <div id="successModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Your message has been sent. Thank you!</h2>
-    </div>
-  </div>
-  <style>
-    /* Animation Styles */
-    .title-animate {
-      animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-    }
+            <!-- The Modal for Success Popup -->
+            <div id="successModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Your message has been sent. Thank you!</h2>
+              </div>
+            </div>
+            <style>
+              /* Animation Styles */
+              .title-animate {
+                animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+              }
 
-    .subtitle-animate {
-      animation: fade-in 1.2s ease-in-out both;
-      animation-delay: 0.3s;
-    }
+              .subtitle-animate {
+                animation: fade-in 1.2s ease-in-out both;
+                animation-delay: 0.3s;
+              }
 
-    @keyframes text-focus-in {
-      0% {
-        filter: blur(12px);
-        opacity: 0;
-      }
+              @keyframes text-focus-in {
+                0% {
+                  filter: blur(12px);
+                  opacity: 0;
+                }
 
-      100% {
-        filter: blur(0px);
-        opacity: 1;
-      }
-    }
+                100% {
+                  filter: blur(0px);
+                  opacity: 1;
+                }
+              }
 
-    @keyframes fade-in {
-      0% {
-        opacity: 0;
-      }
+              @keyframes fade-in {
+                0% {
+                  opacity: 0;
+                }
 
-      100% {
-        opacity: 1;
-      }
-    }
+                100% {
+                  opacity: 1;
+                }
+              }
 
-    /* Form Styles */
-    .form-animate {
-      animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
+              /* Form Styles */
+              .form-animate {
+                animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+              }
 
-    @keyframes slide-in-right {
-      0% {
-        transform: translateX(100px);
-        opacity: 0;
-      }
+              @keyframes slide-in-right {
+                0% {
+                  transform: translateX(100px);
+                  opacity: 0;
+                }
 
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
+                100% {
+                  transform: translateX(0);
+                  opacity: 1;
+                }
+              }
 
-    .floating-label {
-      position: relative;
-      margin-bottom: 25px;
-    }
+              .floating-label {
+                position: relative;
+                margin-bottom: 25px;
+              }
 
-    .floating-label label {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      color: #999;
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
+              .floating-label label {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                color: #999;
+                transition: all 0.3s ease;
+                pointer-events: none;
+              }
 
-    .floating-label input:focus~label,
-    .floating-label input:valid~label,
-    .floating-label textarea:focus~label,
-    .floating-label textarea:valid~label {
-      top: -10px;
-      left: 10px;
-      font-size: 12px;
-      background: white;
-      padding: 0 5px;
-      color: #4e54c8;
-    }
+              .floating-label input:focus~label,
+              .floating-label input:valid~label,
+              .floating-label textarea:focus~label,
+              .floating-label textarea:valid~label {
+                top: -10px;
+                left: 10px;
+                font-size: 12px;
+                background: white;
+                padding: 0 5px;
+                color: #4e54c8;
+              }
 
-    .focus-line {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
-      transition: width 0.4s ease;
-    }
+              .focus-line {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+                transition: width 0.4s ease;
+              }
 
-    .floating-label input:focus~.focus-line,
-    .floating-label textarea:focus~.focus-line {
-      width: 100%;
-    }
+              .floating-label input:focus~.focus-line,
+              .floating-label textarea:focus~.focus-line {
+                width: 100%;
+              }
 
-    /* Button Styles */
-    .btn-magnetic {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 30px;
-      background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      font-weight: 600;
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
-    }
+              /* Button Styles */
+              .btn-magnetic {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px 30px;
+                background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+                color: white;
+                border: none;
+                border-radius: 50px;
+                font-weight: 600;
+                overflow: hidden;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(78, 84, 200, 0.4);
+              }
 
-    .btn-magnetic:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(78, 84, 200, 0.6);
-    }
+              .btn-magnetic:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(78, 84, 200, 0.6);
+              }
 
-    .btn-magnetic .btn-icon {
-      margin-left: 10px;
-      transform: translateX(0);
-      transition: transform 0.3s ease;
-    }
+              .btn-magnetic .btn-icon {
+                margin-left: 10px;
+                transform: translateX(0);
+                transition: transform 0.3s ease;
+              }
 
-    .btn-magnetic:hover .btn-icon {
-      transform: translateX(5px);
-    }
+              .btn-magnetic:hover .btn-icon {
+                transform: translateX(5px);
+              }
 
-    .magnetic-area {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-    }
+              .magnetic-area {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+              }
 
-    /* Status Messages */
-    .loading,
-    .error-message,
-    .sent-message {
-      display: none;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 4px;
-    }
+              /* Status Messages */
+              .loading,
+              .error-message,
+              .sent-message {
+                display: none;
+                padding: 10px;
+                margin-bottom: 15px;
+                border-radius: 4px;
+              }
 
-    .loading {
-      color: #4e54c8;
-    }
+              .loading {
+                color: #4e54c8;
+              }
 
-    .error-message {
-      color: #dc3545;
-      background: #f8d7da;
-    }
+              .error-message {
+                color: #dc3545;
+                background: #f8d7da;
+              }
 
-    .sent-message {
-      color: #28a745;
-      background: #d4edda;
-    }
-  </style>
-  
-  <script>
-    const form = document.querySelector("form");
-    const loading = document.querySelector(".loading");
-    const errorMessage = document.querySelector(".error-message");
+              .sent-message {
+                color: #28a745;
+                background: #d4edda;
+              }
+            </style>
 
-    // Modal elements
-    const modal = document.getElementById("successModal");
-    const closeModal = document.querySelector(".close");
+            <script>
+              const form = document.querySelector("form");
+              const loading = document.querySelector(".loading");
+              const errorMessage = document.querySelector(".error-message");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent the default form submission (no redirect)
+              // Modal elements
+              const modal = document.getElementById("successModal");
+              const closeModal = document.querySelector(".close");
 
-      loading.style.display = "block";
-      errorMessage.style.display = "none";
+              form.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission (no redirect)
 
-      const formData = new FormData(form);
+                loading.style.display = "block";
+                errorMessage.style.display = "none";
 
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-        headers: {
-          "Accept": "application/json"
-        }
-      }).then(response => {
-        loading.style.display = "none";
-        if (response.ok) {
-          modal.style.display = "block"; // Show the success popup
-          form.reset();
-        } else {
-          response.json().then(data => {
-            errorMessage.textContent = data.message || "Something went wrong.";
-            errorMessage.style.display = "block";
-          });
-        }
-      }).catch(() => {
-        loading.style.display = "none";
-        errorMessage.textContent = "Network error. Please try again.";
-        errorMessage.style.display = "block";
-      });
-    });
+                const formData = new FormData(form);
 
-    // When the user clicks on <span> (x), close the modal
-    closeModal.onclick = function () {
-      modal.style.display = "none";
-    }
+                fetch("https://api.web3forms.com/submit", {
+                  method: "POST",
+                  body: formData,
+                  headers: {
+                    "Accept": "application/json"
+                  }
+                }).then(response => {
+                  loading.style.display = "none";
+                  if (response.ok) {
+                    modal.style.display = "block"; // Show the success popup
+                    form.reset();
+                  } else {
+                    response.json().then(data => {
+                      errorMessage.textContent = data.message || "Something went wrong.";
+                      errorMessage.style.display = "block";
+                    });
+                  }
+                }).catch(() => {
+                  loading.style.display = "none";
+                  errorMessage.textContent = "Network error. Please try again.";
+                  errorMessage.style.display = "block";
+                });
+              });
 
-    // When the user clicks anywhere outside the modal, close it
-    window.onclick = function (event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
+              // When the user clicks on <span> (x), close the modal
+              closeModal.onclick = function () {
+                modal.style.display = "none";
+              }
+
+              // When the user clicks anywhere outside the modal, close it
+              window.onclick = function (event) {
+                if (event.target === modal) {
+                  modal.style.display = "none";
+                }
+              }
+            </script>
           </div><!-- End Contact Form -->
 
 
@@ -2884,8 +3475,6 @@
 
 
     </section>
-
-
 
     <style>
       /* Animation Styles */
