@@ -681,7 +681,7 @@
         </div>
       </header>
       
-      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" alt="Tree plantation drive" class="article-image animate-on-scroll">
+      <img src="/Sarvam-NGO//assets/img/wnm1.jpg" alt="Tree plantation drive" class="article-image animate-on-scroll">
       
       <div class="article-content">
         <p class="animate-on-scroll">At Sarvam Trust, we believe that empowering women is not just a mission — it's a movement. Our initiatives are designed to uplift, educate, and equip women from underprivileged backgrounds to become independent, confident, and self-reliant changemakers in their families and communities.</p>
@@ -694,15 +694,15 @@
         
             <div class="image-grid animate-on-scroll">
                 <div class="grid-item">
-                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Digital classroom">
+                <img src="/Sarvam-NGO//assets/img/wnm2.jpg" alt="Digital classroom">
                 <div class="grid-caption">Interactive digital classroom</div>
                 </div>
                 <div class="grid-item">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Students with tablets">
+                <img src="/Sarvam-NGO//assets/img/wnm3.jpg" alt="Students with tablets">
                 <div class="grid-caption">Personalized learning with tablets</div>
                 </div>
                 <div class="grid-item">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Coding workshop">
+                <img src="/Sarvam-NGO//assets/img/wnm4.jpg" alt="Coding workshop">
                 <div class="grid-caption">Students learning to code</div>
                 </div>
                 </div> 
@@ -807,62 +807,1291 @@
   <a href="#" class="floating-btn animate-on-scroll" id="backToTop">
     <i class="bi bi-arrow-up"></i>
   </a>
+  <body class="blog-details-page">
 
+    <!-- Comment Section -->
+    <section id="blog-comments" class="blog-comments section py-5 bg-light">
+      <div class="container">
+        <h4 class="comments-count mb-4 animate__animated animate__fadeIn" id="commentsCount">Loading comments...</h4>
+  
+        <!-- Comment Form -->
+        <div class="comment-form mb-5 animate__animated animate__fadeInUp animate__delay-1s">
+          <h5 class="mb-3">Leave a Comment</h5>
+          <form id="commentForm">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <input type="text" class="form-control animate__animated" id="name" placeholder="Your Name*" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="email" class="form-control animate__animated animate__delay-1" id="email" placeholder="Your Email (optional)">
+              </div>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control animate__animated animate__delay-2s" id="comment" rows="4" placeholder="Your Comment*" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary animate__animated animate__delay-3s" id="submitBtn">
+              <span id="submitText">Post Comment</span>
+              <span id="submitSpinner" class="spinner-border spinner-border-sm d-none"></span>
+            </button>
+            <div id="formMessage" class="mt-3"></div>
+          </form>
+        </div>
+  
+        <!-- Comments List -->
+        <div id="commentsList" class="comments-container">
+          <div class="text-center py-4">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading comments...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Firebase Comment System -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import { getDatabase, ref, push, onValue, update } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+      import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+  
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCW5JtYKeVmlZc1UJcc4jI9P2gMi1eWcWE",
+        authDomain: "sarvam-ngo.firebaseapp.com",
+        databaseURL: "https://sarvam-ngo-default-rtdb.firebaseio.com",
+        projectId: "sarvam-ngo",
+        storageBucket: "sarvam-ngo.firebasestorage.app",
+        messagingSenderId: "167511858038",
+        appId: "1:167511858038:web:3b42ff2ef566ae090c3857",
+        measurementId: "G-4JXYENFTLC"
+      };
+  
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+      const auth = getAuth(app);
+  
+      // DOM elements
+      const commentForm = document.getElementById('commentForm');
+      const commentsList = document.getElementById('commentsList');
+      const submitBtn = document.getElementById('submitBtn');
+      const submitText = document.getElementById('submitText');
+      const submitSpinner = document.getElementById('submitSpinner');
+      const formMessage = document.getElementById('formMessage');
+  
+      // Emoji reactions configuration
+      const emojiReactions = [
+        { emoji: '❤️', code: 'heart', color: '#ff6b6b' },
+        { emoji: '😂', code: 'joy', color: '#feca57' },
+        { emoji: '👍', code: 'thumbsup', color: '#5f27cd' },
+        { emoji: '🔥', code: 'fire', color: '#ff9f43' },
+        { emoji: '👏', code: 'clap', color: '#1dd1a1' }
+      ];
+  
+      // Initialize comment system
+      document.addEventListener('DOMContentLoaded', () => {
+        initCommentSystem();
+        addInputAnimations();
+      });
+  
+      function addInputAnimations() {
+        const inputs = document.querySelectorAll('#name, #email, #comment');
+        inputs.forEach(input => {
+          // Focus animation
+          input.addEventListener('focus', () => {
+            input.classList.add('animate__animated', 'animate__pulse');
+            setTimeout(() => {
+              input.classList.remove('animate__animated', 'animate__pulse');
+            }, 1000);
+          });
+          
+          // Hover animation
+          input.addEventListener('mouseenter', () => {
+            input.classList.add('animate__animated', 'animate__headShake');
+            setTimeout(() => {
+              input.classList.remove('animate__animated', 'animate__headShake');
+            }, 1000);
+          });
+        });
+      }
+  
+      async function initCommentSystem() {
+        try {
+          // Sign in anonymously
+          const userCredential = await signInAnonymously(auth);
+          console.log("Anonymous authentication successful", userCredential.user.uid);
+          
+          // Load existing comments
+          loadComments();
+          
+          // Set up form submission
+          commentForm.addEventListener('submit', handleCommentSubmit);
+          
+        } catch (error) {
+          console.error("Initialization error:", error);
+          showMessage("Error initializing comments. Please refresh the page.", "danger");
+          commentsList.innerHTML = '<p class="text-danger py-4 animate__animated animate__shakeX">Authentication failed. Please refresh.</p>';
+        }
+      }
+  
+      function loadComments() {
+        // Changed from 'comments' to 'community/comments'
+        const commentsRef = ref(db, 'empowerment/comments');
+        
+        onValue(commentsRef, (snapshot) => {
+          commentsList.innerHTML = '';
+          
+          if (!snapshot.exists()) {
+            commentsList.innerHTML = `
+              <p class="text-muted py-4 animate__animated animate__fadeIn">
+                No comments yet. Be the first to comment!
+              </p>
+            `;
+            document.getElementById('commentsCount').textContent = "0 Comments";
+            return;
+          }
+          
+          const comments = [];
+          snapshot.forEach((childSnapshot) => {
+            const commentData = childSnapshot.val();
+            
+            if (commentData.name && commentData.text) {
+              comments.push({
+                id: childSnapshot.key,
+                name: commentData.name,
+                text: commentData.text,
+                timestamp: commentData.timestamp || Date.now(),
+                reactions: commentData.reactions || {}
+              });
+            }
+          });
+          
+          if (comments.length === 0) {
+            commentsList.innerHTML = `
+              <p class="text-muted py-4 animate__animated animate__fadeIn">
+                No valid comments found.
+              </p>
+            `;
+            document.getElementById('commentsCount').textContent = "0 Comments";
+            return;
+          }
+          
+          // Sort by timestamp (newest first)
+          comments.sort((a, b) => b.timestamp - a.timestamp);
+          
+          // Display comments with staggered animations
+          comments.forEach((comment, index) => {
+            setTimeout(() => {
+              const commentElement = createCommentElement(comment);
+              commentsList.appendChild(commentElement);
+              
+              // Add entrance animation
+              commentElement.classList.add('animate__animated', 'animate__fadeInUp');
+              
+              // Remove animation class after it completes to avoid interference
+              setTimeout(() => {
+                commentElement.classList.remove('animate__animated', 'animate__fadeInUp');
+              }, 1000);
+            }, index * 100);
+          });
+          
+          // Update comment count with animation
+          const countElement = document.getElementById('commentsCount');
+          countElement.classList.add('animate__animated', 'animate__rubberBand');
+          setTimeout(() => {
+            countElement.classList.remove('animate__animated', 'animate__rubberBand');
+          }, 1000);
+          countElement.textContent = `${comments.length} Comment${comments.length !== 1 ? 's' : ''}`;
+            
+        }, (error) => {
+          console.error("Error loading comments:", error);
+          commentsList.innerHTML = `
+            <p class="text-danger py-4 animate__animated animate__shakeX">
+              Error loading comments. Please try again.
+            </p>
+          `;
+        });
+      }
+  
+      function createCommentElement(comment) {
+        const commentElement = document.createElement('div');
+        commentElement.className = 'comment mb-4 p-3 bg-white rounded shadow-sm';
+        commentElement.dataset.commentId = comment.id;
+        
+        // Add hover effect
+        commentElement.style.transition = 'all 0.3s ease';
+        commentElement.addEventListener('mouseenter', () => {
+          commentElement.style.transform = 'translateY(-3px)';
+          commentElement.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+        });
+        commentElement.addEventListener('mouseleave', () => {
+          commentElement.style.transform = 'translateY(0)';
+          commentElement.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+        });
+        
+        const date = new Date(comment.timestamp);
+        const formattedDate = date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        
+        // Create avatar from name initial
+        const nameInitial = comment.name.charAt(0).toUpperCase();
+        const avatarColor = getAvatarColor(comment.name);
+        
+        commentElement.innerHTML = `
+          <div class="d-flex gap-3">
+            <div class="flex-shrink-0">
+              <div class="avatar rounded-circle d-flex align-items-center justify-content-center" 
+                   style="background-color: ${avatarColor}; width: 40px; height: 40px; color: white; font-weight: bold">
+                ${nameInitial}
+              </div>
+            </div>
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between align-items-center">
+                <h6 class="mb-0 fw-bold">${comment.name}</h6>
+                <small class="text-muted">${formattedDate}</small>
+              </div>
+              <p class="mb-2 mt-2">${comment.text}</p>
+              
+              <div class="reactions-container d-flex gap-2 mt-3" id="reactions-${comment.id}">
+                <!-- Reactions will be inserted here -->
+              </div>
+            </div>
+          </div>
+        `;
+        
+        // Add reactions with animation
+        const reactionsContainer = commentElement.querySelector(`#reactions-${comment.id}`);
+        emojiReactions.forEach((reaction, index) => {
+          setTimeout(() => {
+            const reactionElement = createReactionElement(comment.id, reaction, comment.reactions);
+            reactionsContainer.appendChild(reactionElement);
+            
+            // Add entrance animation
+            reactionElement.classList.add('animate__animated', 'animate__zoomIn');
+            setTimeout(() => {
+              reactionElement.classList.remove('animate__animated', 'animate__zoomIn');
+            }, 1000);
+          }, index * 150);
+        });
+        
+        return commentElement;
+      }
+  
+      function createReactionElement(commentId, reaction, reactionsData) {
+        const userId = auth.currentUser?.uid;
+        const hasReacted = userId && reactionsData && reactionsData[reaction.code] && reactionsData[reaction.code].users && reactionsData[reaction.code].users[userId];
+        const reactionCount = reactionsData && reactionsData[reaction.code] ? reactionsData[reaction.code].count || 0 : 0;
+        
+        const reactionElement = document.createElement('div');
+        reactionElement.className = `reaction-btn d-flex align-items-center gap-1 ${hasReacted ? 'reacted' : ''}`;
+        reactionElement.innerHTML = `
+          <span class="emoji">${reaction.emoji}</span>
+          <span class="count">${reactionCount}</span>
+        `;
+        
+        // Add hover animation
+        reactionElement.addEventListener('mouseenter', () => {
+          reactionElement.classList.add('animate__animated', 'animate__tada');
+          setTimeout(() => {
+            reactionElement.classList.remove('animate__animated', 'animate__tada');
+          }, 1000);
+        });
+        
+        reactionElement.addEventListener('click', () => {
+          reactionElement.classList.add('animate__animated', 'animate__bounce');
+          setTimeout(() => {
+            reactionElement.classList.remove('animate__animated', 'animate__bounce');
+          }, 1000);
+          handleReaction(commentId, reaction.code, hasReacted);
+        });
+        
+        return reactionElement;
+      }
+  
+      async function handleReaction(commentId, reactionCode, hasReacted) {
+        const userId = auth.currentUser?.uid;
+        if (!userId) {
+          showMessage("Please wait while we authenticate you", "info");
+          return;
+        }
+        
+        try {
+          const updates = {};
+          // Updated path to include 'community'
+          const reactionPath = `empowerment/comments/${commentId}/reactions/${reactionCode}`;
+          
+          if (hasReacted) {
+            // Remove reaction
+            updates[`${reactionPath}/count`] = increment(-1);
+            updates[`${reactionPath}/users/${userId}`] = null;
+          } else {
+            // Add reaction
+            updates[`${reactionPath}/count`] = increment(1);
+            updates[`${reactionPath}/users/${userId}`] = true;
+          }
+          
+          await update(ref(db), updates);
+          
+        } catch (error) {
+          console.error("Error updating reaction:", error);
+          showMessage("Error updating reaction. Please try again.", "danger");
+        }
+      }
+  
+      function increment(value) {
+        return {
+          '.sv': {
+            'increment': value
+          }
+        };
+      }
+  
+      async function handleCommentSubmit(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value.trim();
+        const comment = document.getElementById('comment').value.trim();
+        
+        if (!name || !comment) {
+          showMessage("Please fill in all required fields", "warning");
+          
+          // Add shake animation to empty fields
+          if (!name) {
+            const nameField = document.getElementById('name');
+            nameField.classList.add('animate__animated', 'animate__headShake');
+            setTimeout(() => nameField.classList.remove('animate__animated', 'animate__headShake'), 1000);
+          }
+          if (!comment) {
+            const commentField = document.getElementById('comment');
+            commentField.classList.add('animate__animated', 'animate__headShake');
+            setTimeout(() => commentField.classList.remove('animate__animated', 'animate__headShake'), 1000);
+          }
+          
+          return;
+        }
+  
+        // Show loading state with animation
+        submitBtn.disabled = true;
+        submitText.textContent = "Posting...";
+        submitSpinner.classList.remove('d-none');
+        submitBtn.classList.add('animate__animated', 'animate__pulse');
+        
+        try {
+          const newComment = {
+            name: name,
+            text: comment,
+            timestamp: Date.now(),
+            reactions: {}
+          };
+          
+          // Updated path to include 'community'
+          await push(ref(db, 'empowerment/comments'), newComment);
+          
+          // Clear form
+          commentForm.reset();
+          
+          // Success animation
+          submitBtn.classList.remove('animate__pulse');
+          submitBtn.classList.add('animate__bounce');
+          setTimeout(() => {
+            submitBtn.classList.remove('animate__animated', 'animate__bounce');
+          }, 1000);
+          
+          showMessage("Comment posted successfully!", "success");
+          
+          // Scroll to the new comment (it will appear with animation)
+          setTimeout(() => {
+            const firstComment = commentsList.querySelector('.comment');
+            if (firstComment) {
+              firstComment.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          }, 500);
+          
+        } catch (error) {
+          console.error("Error posting comment:", error);
+          
+          // Error animation
+          submitBtn.classList.remove('animate__pulse');
+          submitBtn.classList.add('animate__shakeX');
+          setTimeout(() => {
+            submitBtn.classList.remove('animate__animated', 'animate__shakeX');
+          }, 1000);
+          
+          showMessage("Error posting comment. Please try again.", "danger");
+        } finally {
+          // Reset button state
+          submitBtn.disabled = false;
+          submitText.textContent = "Post Comment";
+          submitSpinner.classList.add('d-none');
+          submitBtn.classList.remove('animate__animated', 'animate__pulse');
+        }
+      }
+  
+      function getAvatarColor(name) {
+        const colors = [
+          '#4e54c8', '#8f94fb', '#6a11cb', '#2575fc', 
+          '#1488cc', '#11998e', '#38ef7d', '#a8ff78'
+        ];
+        const hash = name.split('').reduce((acc, char) => char.charCodeAt(0) + acc, 0);
+        return colors[hash % colors.length];
+      }
+  
+      function showMessage(text, type) {
+        formMessage.innerHTML = `
+          <div class="alert alert-${type} alert-dismissible fade show animate__animated animate__fadeIn">
+            ${text}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        `;
+        
+        // Auto-dismiss after 5 seconds with animation
+        setTimeout(() => {
+          const alert = formMessage.querySelector('.alert');
+          if (alert) {
+            alert.classList.add('animate__fadeOut');
+            setTimeout(() => {
+              const bsAlert = new bootstrap.Alert(alert);
+              bsAlert.close();
+            }, 500);
+          }
+        }, 5000);
+      }
+    </script>
+  
+    <!-- Required Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+    <style>
+      /* Base Styles */
+      .reaction-btn {
+        padding: 4px 8px;
+        border-radius: 20px;
+        background-color: #f1f2f6;
+        cursor: pointer;
+        transition: all 0.2s;
+        user-select: none;
+        transform: scale(1);
+      }
+      
+      .reaction-btn:hover {
+        background-color: #dfe4ea;
+        transform: scale(1.1);
+      }
+      
+      .reaction-btn.reacted {
+        background-color: #e8f4fd;
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      .reaction-btn .emoji {
+        font-size: 1.1rem;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+      
+      .reaction-btn:hover .emoji {
+        transform: scale(1.3);
+      }
+      
+      .reaction-btn .count {
+        font-size: 0.8rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      
+      /* Comment animations */
+      .comment {
+        transition: all 0.3s ease;
+        opacity: 1;
+      }
+      
+      .comment.animate__fadeInUp {
+        animation-duration: 0.5s;
+      }
+      
+      /* Form animations */
+      #name.animate__animated, #email.animate__animated, #comment.animate__animated {
+        animation-duration: 0.5s;
+      }
+      
+      /* Button animations */
+      #submitBtn.animate__pulse {
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+      
+      /* Avatar animation */
+      .avatar {
+        transition: all 0.3s ease;
+      }
+      
+      .avatar:hover {
+        transform: rotate(15deg) scale(1.2);
+      }
+      
+      /* Floating animation for comments count */
+      .comments-count {
+        display: inline-block;
+        position: relative;
+      }
+      
+      .comments-count::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #0d6efd;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      
+      .comments-count:hover::after {
+        transform: scaleX(1);
+      }
+      
+      /* Textarea focus effect */
+      #comment:focus {
+        animation: textareaFocus 1.5s infinite alternate;
+      }
+      
+      @keyframes textareaFocus {
+        from {
+          box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+        }
+        to {
+          box-shadow: 0 0 15px rgba(13, 110, 253, 0.8);
+        }
+      }
+      
+      /* Pulse effect for new comments */
+      @keyframes pulseGlow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+        }
+      }
+      
+      .new-comment {
+        animation: pulseGlow 2s;
+      }
+      
+      /* Floating reaction buttons */
+      .reaction-btn {
+        position: relative;
+        top: 0;
+        transition: top 0.3s ease;
+      }
+      
+      .reaction-btn:hover {
+        top: -3px;
+      }
+    </style>
+  </body>
   <!-- Footer -->
-  <footer class="bg-dark text-white py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <h3 class="text-white mb-4">Sarvam Trust</h3>
-          <p>Empowering her means investing in shared prosperity, equality, and a future where everyone moves forward — together.</p>
-          <div class="social-links mt-4">
-            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        
-        <div class="col-lg-2 col-md-6 mb-4">
-          <h4 class="text-white mb-4">Quick Links</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
-            <li class="mb-2"><a href="#" class="text-white text-decoration-none">About</a></li>
-            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Our Work</a></li>
-            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h4 class="text-white mb-4">Contact Us</h4>
-          <p><i class="bi bi-geo-alt-fill me-2"></i> No: 17/2016, Park Street, Namakkal, Tamil Nadu 637001</p>
-          <p><i class="bi bi-telephone-fill me-2"></i> +91-99526 48847</p>
-          <p><i class="bi bi-envelope-fill me-2"></i> sarvamngo19@gmail.com</p>
-        </div>
-        
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h4 class="text-white mb-4">Newsletter</h4>
-          <p>Subscribe to our newsletter for updates on our women empowerment.</p>
-          <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Your Email">
-            <button class="btn btn-primary" type="button">Subscribe</button>
-          </div>
-        </div>
-      </div>
-      
-      <hr class="my-4 bg-light">
-      
-      <div class="row">
-        <div class="col-md-6 text-center text-md-start">
-          <p class="mb-0">&copy; 2023 Sarvam Trust. All rights reserved.</p>
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <p class="mb-0">Designed by <a href="#" class="text-white text-decoration-none">SkySphere Technologies</a></p>
-        </div>
-      </div>
+  <footer id="footer" class="footer position-relative light-background">
+
+
+
+    <!-- Floating Background Elements -->
+
+    <div class="footer-bg-elements">
+
+      <div class="bg-circle circle-1"></div>
+
+      <div class="bg-circle circle-2"></div>
+
+      <div class="bg-circle circle-3"></div>
+
+      <div class="bg-wave wave-1"></div>
+
+      <div class="bg-wave wave-2"></div>
+
     </div>
+
+
+
+    <div class="container footer-top">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-5 col-md-12 footer-about" data-aos="fade-up" data-aos-delay="100">
+
+          <a href="index.html" class="logo d-flex align-items-center logo-animate">
+
+            <span class="sitename">Sarvam Educational Trust</span>
+
+            <div class="logo-underline"></div>
+
+          </a>
+
+          <p class="footer-description">Empowering communities through social welfare initiatives. Join us in our
+            mission to create a better future for all.</p>
+
+          <div class="social-links d-flex mt-4">
+
+            <a href="#" class="social-icon twitter"><i class="bi bi-twitter-x"></i></a>
+
+            <a href="#" class="social-icon facebook"><i class="bi bi-facebook"></i></a>
+
+            <a href="#" class="social-icon instagram"><i class="bi bi-instagram"></i></a>
+
+            <a href="#" class="social-icon linkedin"><i class="bi bi-linkedin"></i></a>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="200">
+
+          <h4 class="footer-heading">Quick Links</h4>
+
+          <ul>
+
+            <li><a href="index.html#hero" class="nav-link hover-underline"><span>Home</span></a></li>
+
+            <li><a href="index.html#about" class="nav-link hover-underline"><span>About</span></a></li>
+
+            <li><a href="index.html#portfolio" class="nav-link hover-underline"><span>Works</span></a></li>
+
+            <li><a href="blog.html" class="nav-link hover-underline"><span>Blog</span></a></li>
+
+            <li><a href="index.html#contact" class="nav-link hover-underline"><span>Contact</span></a></li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div class="col-lg-2 col-6 footer-links" data-aos="fade-up" data-aos-delay="300">
+
+          <h4 class="footer-heading">Legal</h4>
+
+          <ul>
+
+            <li><a href="terms-conditon.html" class="nav-link hover-underline"><span>Terms and Conditions</span></a>
+            </li>
+
+            <li><a href="privacy.html" class="nav-link hover-underline"><span>Privacy Policy</span></a></li>
+
+          </ul>
+
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start" data-aos="fade-up"
+          data-aos-delay="400">
+
+          <h4 class="footer-heading">Contact Us</h4>
+
+          <div class="contact-info">
+
+            <p><i class="bi bi-geo-alt-fill contact-icon"></i> No: 17/2016, Park Street,</p>
+
+            <p>Aanjaneya Complex, 1st Floor,</p>
+
+            <p>Namakkal, Tamil Nadu 637001</p>
+
+            <p class="mt-4"><i class="bi bi-telephone-fill contact-icon"></i> <span>+91-99526 48847</span></p>
+
+            <p><i class="bi bi-envelope-fill contact-icon"></i> <span>sarvamngo19@gmail.com</span></p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container copyright text-center mt-4" data-aos="fade-up" data-aos-delay="500">
+
+      <p class="copyright-text">© <span>Copyright</span> <strong class="sitename pulse">Sarvam Educational
+          Trust</strong> <span>All Rights Reserved</span></p>
+
+      <div class="credits">
+
+        Designed by <a href="https://skyspheretech.com/" class="designer-link">SkySphere Technologies</a>
+
+      </div>
+
+    </div>
+
+
+
   </footer>
+
+
+
+  <style>
+    /* Base Footer Styles */
+
+    .footer {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 80px 0 40px;
+
+      background: #f9f9f9;
+
+      z-index: 1;
+
+    }
+
+
+
+    /* Background Elements */
+
+    .footer-bg-elements {
+
+      position: absolute;
+
+      width: 100%;
+
+      height: 100%;
+
+      top: 0;
+
+      left: 0;
+
+      z-index: -1;
+
+      overflow: hidden;
+
+    }
+
+
+
+    .bg-circle {
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      background: rgba(78, 84, 200, 0.05);
+
+      filter: blur(30px);
+
+    }
+
+
+
+    .circle-1 {
+
+      width: 300px;
+
+      height: 300px;
+
+      top: -100px;
+
+      right: -100px;
+
+      animation: float 15s ease-in-out infinite;
+
+    }
+
+
+
+    .circle-2 {
+
+      width: 200px;
+
+      height: 200px;
+
+      bottom: 50px;
+
+      left: -50px;
+
+      animation: float 12s ease-in-out infinite reverse;
+
+    }
+
+
+
+    .circle-3 {
+
+      width: 150px;
+
+      height: 150px;
+
+      top: 30%;
+
+      left: 40%;
+
+      animation: float 10s ease-in-out infinite 2s;
+
+    }
+
+
+
+    .bg-wave {
+
+      position: absolute;
+
+      width: 200%;
+
+      height: 100px;
+
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%234e54c8"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%234e54c8"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%234e54c8"/></svg>');
+
+      opacity: 0.1;
+
+      bottom: 0;
+
+      left: 0;
+
+      animation: wave 20s linear infinite;
+
+    }
+
+
+
+    .wave-2 {
+
+      bottom: 20px;
+
+      animation: wave 25s linear infinite reverse;
+
+      opacity: 0.05;
+
+    }
+
+
+
+    @keyframes float {
+
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+    }
+
+
+
+    @keyframes wave {
+
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+
+    }
+
+
+
+    /* Logo Animation */
+
+    .logo-animate {
+
+      position: relative;
+
+      display: inline-block;
+
+    }
+
+
+
+    .logo-underline {
+
+      position: absolute;
+
+      bottom: -5px;
+
+      left: 0;
+
+      width: 0;
+
+      height: 2px;
+
+      background: linear-gradient(90deg, #4e54c8, #8f94fb);
+
+      transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    }
+
+
+
+    .logo-animate:hover .logo-underline {
+
+      width: 100%;
+
+    }
+
+
+
+    .sitename {
+
+      font-weight: 700;
+
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+
+      color: transparent;
+
+      transition: all 0.3s ease;
+
+    }
+
+
+
+    .sitename.pulse {
+
+      animation: pulse 2s infinite;
+
+    }
+
+
+
+    @keyframes pulse {
+
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+
+    }
+
+
+
+    /* Social Icons */
+
+    .social-links {
+
+      gap: 15px;
+
+    }
+
+
+
+    .social-icon {
+
+      width: 40px;
+
+      height: 40px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: white;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: all 0.3s ease;
+
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    }
+
+
+
+    .social-icon::before {
+
+      content: '';
+
+      position: absolute;
+
+      width: 100%;
+
+      height: 100%;
+
+      background: linear-gradient(135deg, skyblue, white);
+
+      z-index: -1;
+
+      transition: all 0.3s ease;
+
+    }
+
+
+
+    .social-icon:hover {
+
+      transform: translateY(-5px) scale(1.1);
+
+      box-shadow: 0 8px 20px rgba(78, 84, 200, 0.3);
+
+    }
+
+
+
+    .social-icon:hover i {
+
+      animation: icon-bounce 0.6s ease;
+
+    }
+
+
+
+    @keyframes icon-bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+
+    }
+
+
+
+    /* Navigation Links */
+
+    .nav-link {
+
+      position: relative;
+
+      display: inline-block;
+
+      padding: 5px 0;
+
+      color: #333;
+
+      transition: color 0.3s ease;
+
+    }
+
+
+
+    .nav-link span {
+
+      position: relative;
+
+      z-index: 1;
+
+    }
+
+
+
+    .hover-underline::before {
+
+      content: '';
+
+      position: absolute;
+
+      bottom: 0;
+
+      left: 0;
+
+      width: 0;
+
+      height: 2px;
+
+      background: skyblue;
+
+      transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+    }
+
+
+
+    .nav-link:hover {
+
+      color: white;
+
+    }
+
+
+
+    .nav-link:hover::before {
+
+      width: 100%;
+
+      right: auto;
+
+    }
+
+
+
+    /* Contact Info */
+
+    .contact-icon {
+
+      color: rgb(37, 157, 222);
+
+      margin-right: 8px;
+
+      transition: transform 0.3s ease;
+
+    }
+
+
+
+    .contact-info p:hover .contact-icon {
+
+      transform: scale(1.2);
+
+    }
+
+
+
+    /* Copyright Section */
+
+    .copyright-text {
+
+      position: relative;
+
+      display: inline-block;
+
+    }
+
+
+
+    .copyright-text::after {
+
+      content: '';
+
+      position: absolute;
+
+      bottom: -5px;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 0;
+
+      height: 2px;
+
+      background: linear-gradient(90deg, #4e54c8, #8f94fb);
+
+      transition: width 0.4s ease;
+
+    }
+
+
+
+    .copyright:hover .copyright-text::after {
+
+      width: 100%;
+
+    }
+
+
+
+    .designer-link {
+
+      position: relative;
+
+      color: #4e54c8;
+
+      font-weight: 600;
+
+    }
+
+
+
+    .designer-link::after {
+
+      content: '';
+
+      position: absolute;
+
+      bottom: -2px;
+
+      left: 0;
+
+      width: 0;
+
+      height: 2px;
+
+      background: #4e54c8;
+
+      transition: width 0.3s ease;
+
+    }
+
+
+
+    .designer-link:hover::after {
+
+      width: 100%;
+
+    }
+
+
+
+    /* Responsive Adjustments */
+
+    @media (max-width: 768px) {
+
+      .footer {
+
+        padding: 60px 0 30px;
+
+      }
+
+
+
+      .footer-links,
+      .footer-contact {
+
+        text-align: center;
+
+      }
+
+
+
+      .social-links {
+
+        justify-content: center;
+
+      }
+
+    }
+  </style>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
